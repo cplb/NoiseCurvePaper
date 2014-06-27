@@ -1,0 +1,99 @@
+\section{Detectors}\label{sec:detectors}
+\subsection{Operating principle of an interferometric detector}\label{sec:principles}
+All of the man-made detectors discussed in this section work on the principle of interferometry. Such detectors work by taking a beam of monochromatic light and splitting it into two beams travelling at some angle to each other. Each beam is passed in to a Fabry-P\'{e}rot cavity where it undergoes a number of round trips before being recombined to form an interference pattern. The ends of the cavity are, in the ideal case, freely floating test masses which move in response to a passing GW, this effect is measured by observing the changing interference pattern.
+
+The response of a detector to an incident plane fronted GW depends upon the relative orientations of the detector and the incoming wave. Choosing the origin of our coordinate system to be the beam-splitter of the interferometer and let $l_{1}^{i}$ and $l_{2}^{i}$ be unit 3-vectors pointing along the two arms. In the absence of noise the output of the detector is the difference in strain between the two arms \citep{MTW}
+\begin{equation}\label{eq:hoftxx} h(t)=\frac{1}{2}h_{ij}\left( l_{1}^{i}l_{1}^{j}-l_{2}^{i}l_{2}^{j} \right)\; . \end{equation}
+where $h_{ij}$ are the spatial components of the GW metric perturbation. Let $n^{i}$ be the unit 3-vector pointing towards the source of the GWs, with spherical polar angles $(\theta,\phi)$ relative to some axes fixed to the detector, also let $p^{i}$ and $q^{i}$ be unit vectors orthogonal to $n^{i}$. There remains a freedom in the coordinates described, a rotation of $p^{i}$ and $q^{i}$ through an angle $\psi$ about $n^{i}$. Define the basis tensors,
+\begin{eqnarray}
+H^{+}_{ij}&=p_{i}p_{j}-q_{i}q_{j} \nonumber \\
+H^{\times}_{ij}&=p_{i}q_{j}+q_{i}p_{j} \; .
+\end{eqnarray}
+Consider a single frequency component of the incident GW, the strain induced by the incident GW may be written as
+\begin{equation}\label{eq:hijxx} h_{ij}=A_{+}H^{+}_{ij}\cos\left(2\pi ft\right)+A_{\times}H^{\times}_{ij}\cos\left(2\pi ft+\Delta \phi\right) \; ,\end{equation}
+where $A_{+}$ and $A_{\times}$ are the amplitudes of the two polarisation states. Combining (\ref{eq:hoftxx}) and (\ref{eq:hijxx}) allows the detector output to be written as
+\begin{equation} h(t)=F^{+}(\theta,\phi,\psi)A_{+}\cos\left(2\pi ft\right)+F^{\times}(\theta,\phi,\psi)A_{\times}\cos\left(2\pi f t + \Delta\phi \right)\; , \end{equation}
+where the response functions inherit their angular dependence from the choice of coordinates,
+\begin{eqnarray}
+F^{+}(\theta,\phi,\psi)&=\frac{1}{2}H^{+}_{ij}\left(l_{1}^{i}l_{1}^{j}-l_{2}^{i}l_{2}^{j}\right) \nonumber \\
+F^{\times}(\theta,\phi,\psi)&=\frac{1}{2}H^{\times}_{ij}\left(l_{1}^{i}l_{1}^{j}-l_{2}^{i}l_{2}^{j}\right) \; . 
+\end{eqnarray}
+The response function of a two-arm interferometric detector is quadrapolar, an example is plotted in figure \ref{fig:LIGO}.
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[trim=0cm 0cm 0cm 0cm, width=0.99\textwidth]{LIGO_detectorframe.pdf}
+ \caption{The angular response function of an interferometric detector shown both as a surface plot and in an Aitoff-Hammer projection. The two detector arms lie in the $xy$ plane either side of one of the zeros in the response.}
+ \label{fig:LIGO}
+\end{figure}
+
+Throughout this paper detector sensitivity refers to the polarisation and sky averaged sensitivity, $F$, where
+\begin{equation}\label{eq:skyav} F^{2}=\int_{0}^{2\pi}\frac{\textrm{d}\psi}{2\pi}\; \int_{0}^{\pi}\int_{0}^{2\pi}\frac{\sin\theta\,\textrm{d}\theta\textrm{d}\phi}{4\pi}\;\left(\frac{F^{+}\left(\theta,\phi,\psi\right)^{2}+F^{\times}\left(\theta,\phi,\psi\right)^{2}}{2}\right)\; .\end{equation}
+For a single $90\degree$ interferometer, such as LIGO (Laser Interferometer GW Observatory), the sky and polarisation averaged response is $F=\sqrt{1/5}\approx 0.447$.
+
+A detector may consist of several interferometers. Let $F_{a}$ be the averaged response of the $a^{\textrm{th}}$ interferometer. The average response of the detector network is obtained by adding in quadrature,
+\begin{equation} F_{\textrm{Total}}^{2}=\frac{1}{\left(\textrm{Number of interferometers}\right)}\sum_{x=1}^{N}F_{x}^{2} \; .\end{equation}
+
+The averaging in (\ref{eq:skyav}) assumes a uniform distribution of polarisation angles $\psi$. This will be the case for a stochastic background, however for a non-inspiralling circular binary the polarisation will be a function of the two spherical polar angles ($\iota,\xi$) specifying the orientation of the binary's orbital angular momentum. Here $\iota$ is the polar angle between the orbital angular momentum and the line joining the source to the detector while $\xi$ is the azimuthal angle around the same line. In this case the correct average to characterise the detector sensitivity would be an an average over all four angles ($\theta,\phi,\iota,\xi$). If the binary is inspiralling then the polarisation will depend on still more parameters which need to be averaged over. These more complicated averages all have the property that they depend on both the detector and the source, hence they are unhelpful for our present purpose. In addition the different averages don't work out to be so different from each other; \cite{1993PhRvD..47.2198F} calculated the sensitivity for a detector with the LIGO geometry averaged over the four angles ($\theta,\phi,\iota,\xi$) as $\sqrt{4/25}=0.4$ times peak sensitivity, which should be compared with the value $\sqrt{1/5}\approx 0.447$ above. For the remainder of this paper the 3 angle average defined in (\ref{eq:skyav}) will be used.
+
+\subsection{Ground based detectors}\label{sec:ground}
+On Earth approximations to the free floating test masses described above are achieved by suspending the mass from a pendulum system with natural frequency much greater than that of the GW. The interferometric detectors listed in Table \ref{table:t} are all sensitive to GWs in the frequency range ${\cal{O}}(10-10^{3})\,\textrm{Hz}$. They all have multiple narrow lines in their sensitivity curves which arise from noise sources in the instrument including resonances in the suspension system and electronic noise at multiples of $60\,\textrm{Hz}$: these have been removed in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} for clarity. The detectors fall broadly into three categories: 1\textsuperscript{st} generation detectors which have already operated, 2\textsuperscript{nd} generation detectors currently under construction and 3\textsuperscript{rd} generation detectors at the planning stage. 
+
+\begin{table}[h!]
+\caption{\label{table:t} For the aVIRGO sensitivity curve an interpolation to the data published on \url{https://wwwcascina.virgo.infn.it/advirgo/} (2013) was used. For KAGRA (Kamioka Gravitational Wave Detector) an interpolation to the data for version D of the detector published on \url{http://gwcenter.icrr.u-tokyo.ac.jp/en/researcher/parameter} (2013) was used. For the remaining detectors analytic fits to the sensitivity curves due to \cite{Sathyaprakash} were used.}
+\begin{indented}
+\item[]\begin{tabular}{ l l l l l }
+\br
+{\bf Detector} & {\bf Country} & {\bf Arm length} & {\bf  Approximate date} & {\bf Generation} \\
+\mr
+  GEO600 	&	Germany 	& $600\,\textrm{m}$ 	& 2001-present 	   & 1$^{\textrm{st}}$\\
+  TAMA300 	& 	Japan		& $300\,\textrm{m}$ 	& 1995-present     & 1$^{\textrm{st}}$\\
+  iLIGO		&	US		& $4\,\textrm{km}$ 	& 2004-2010 	   & 1$^{\textrm{st}}$\\
+  iVIRGO	& 	Italy		& $3\,\textrm{km}$ 	& 2007-2010 	   & 1$^{\textrm{st}}$\\
+  aLIGO 	&	US		& $4\,\textrm{km}$ 	& \emph{est.} 2016 & 2$^{\textrm{nd}}$\\
+  KAGRA		&	Japan		& $3\,\textrm{km}$ 	& \emph{est.} 2018 & 2$^{\textrm{nd}}$\\
+  aVIRGO	&	Italy	 	& $3\,\textrm{km}$ 	& \emph{est.} 2017 & 2$^{\textrm{nd}}$\\
+  ET (Einstein Telescope) &	Italy		& $10\,\textrm{km}$ 	& \emph{est.} 2025 & 3$^{\textrm{rd}}$\\
+\br
+\end{tabular}
+\end{indented}
+\end{table}
+
+
+\subsection{Space based detectors}\label{sec:space}
+Space based detectors works on similar principles to ground based detectors but with the test masses residing inside of independent, widely separated satellites. Space based detectors are sensitive to lower frequency gravitational waves than their ground based counterparts, this is partly because space based detectors can have much longer arms and partly because they are unaffected by seismic noise which limits the low frequency performance of ground based detectors. 
+
+The canonical design for a space based detector is LISA (Laser Interferometer Space Antenna), which would be sensitive to milli-Hz GWs. LISA would consist of three satellites flying in a triangular constellation with arms of length $5\times 10^{9}\,\textrm{m}$ in a $1\,\textrm{AU}$ orbit around the sun, trailing the Earth by $20\degree$. The laser arms in a LISA like detector are not a Fabry-P\'{e}rot cavity, the light only travels once along each arm. All of the sources discussed here lie within LISA's sensitivity reach. eLISA (evolved LISA) is a simpler version of LISA designed to probe the same frequency range, while proposals such as ALIA (Advanced Laser Interferometer Antenna), BBO (Big Bang Observer) and DECIGO (DECI-Hertz Interferometer GW Observatory) are designed to probe deci-Hz GWs.
+
+\subsubsection{LISA and eLISA}
+We use an analytic fit to the instrumental noise curve given by \cite{Sathyaprakash}. When observing individual sources with LISA there is an additional contribution to the noise from a background of unresolvable binaries. This is not included here as we consider the background as a source of GWs, see section \ref{sec:GB}. eLISA is a re-scoped version of the classic LISA mission, the main differences are shorter arms ($10^{9}\,\textrm{m}$ instead of $5\times 10^{9}\,\textrm{m}$), two laser arms instead of three and a different orbit (drifting away from Earth instead of $20\degree$ Earth trailing). The effect of these changes is a slightly reduced peak sensitivity and a shift to higher frequencies. We use an analytic fit to the instrumental noise curve given by \cite{Amaro-Seoane-et-al}.
+
+\subsubsection{ALIA, DECIGO and BBO}
+These missions are designed to probe the deci-Hz region of the GW spectrum, they are considerably more ambitious than the LISA or eLISA mission and their launches will be further into the future. For ALIA a simple analytic fit to the sensitivity curve is used, while for DECIGO and BBO fits to the sensitivity curves given by \cite{2011PhRvD..83d4011Y} are used.
+
+
+
+\subsection{Pulsar timing arrays (PTAs)}\label{sec:PTAgeneralproperties}
+\cjm{I am going to rewrite this section and give a similar level of detail as was given for interferometric detectors in section \ref{sec:principles}.}
+
+PTAs can be thought of as naturally occurring interferometers with galactic scale arm lengths, hence they are sensitive to much lower frequencies than the detectors considered so far. Each pulsar is a very regular clock and the measured arrival time can be compared against a prediction leaving a residual which includes the effects of passing GWs. \cite{SesanaVecchioColancino} describe the shape of the sensitivity curve obtained by correlating timing residuals from each of $N_{\textrm{p}}$ pulsars in an array. The total timing residual is the sum of the residuals due to noise and due to GWs,
+\begin{equation} \delta t= \delta t_{n} + \delta t _{h} \; .\end{equation}
+The maximum timing residual caused by a passing GW is the light travel time of along wavelength times the strain amplitude of the GW, $\delta t_{h}\approx h/f$. An upper limit to any background may be placed by assuming the residuals are due entirely to GWs. First consider the case of two pulsars; the minimum instantaneous detectable timing residual due to GWs is proportional to the root mean square error in the measurement of the timing residual, $\delta t_{h}\approx\delta t_{\textrm{r.m.s}}$. The minimum detectable signal decreases with the number of measured timing residuals (or data points). Over an observation time $T$, with individual observations taken at intervals of $\Delta T$ the minimum detectable signal is given by
+\begin{equation}\label{eq:GWtimingresidual} \delta t_{h} \propto \frac{\delta t_{\textrm{r.m.s}}}{\sqrt{T\Delta T ^{-1}}} \; . \end{equation}
+The PTA is sensitive to a minimum GW frequency of $T^{-1}$ and a maximum frequency of $\Delta T^{-1}$, hence the bandwidth is $\Delta f \approx \Delta T^{-1}-T^{-1}$. Assuming $\Delta T \ll T$ gives $T\Delta T^{-1} \approx T \Delta f$. Therefore the minimum characteristic strain the two-pulsar PTA is sensitive to is given by
+\begin{equation} h_{c}=\frac{\delta t_{\textrm{r.m.s.}}f}{\left(T\Delta f\right)^{1/4}} \; . \end{equation}
+When using more than two pulsars each separate pair of pulsars forms an independent detector, so the number of detectors scales as $N_{\textrm{p}}^{2}$. The optimum SNR is given by adding the individual SNRs in quadrature. Hence the total sensitivity is given by
+\begin{equation}\label{eq:PTA} h_{c}(f) \propto \frac{\delta t_{\textrm{r.m.s.}}f}{N_{\textrm{p}}^{1/2}\left( T\Delta f \right)^{1/4}} \; . \end{equation}
+The characteristic strain that the PTA is sensitive to scales linearly with $f$ between the minimum and maximum frequencies. This gives the wedge shaped curves plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega}. The absolute value of the sensitivity is fixed by normalising (\ref{eq:PTA}) to agree with a calculated limit at a given frequency for each PTA.
+
+There is a discrepancy between the treatment of PTA sensitivity curves here and the higher frequency detectors discussed in sections \ref{sec:ground} and \ref{sec:space}. When observing a long lived source, such as an inspiral, with a high frequency detector the convention was to define a \emph{characteristic} strain to satisfy (\ref{eq:hc}). Here the convention is to leave the strain untouched and instead adjust the PTA sensitivity curve with observation time, again to satisfy (\ref{eq:hc}). This discrepancy is an unfortunate result of the conventions in use by the different GW communities; however it is also natural given the sources under observation. When observing a transient source, such as a burst or inspiral, which changes within the lifetime of the detector it is natural to consider the detector as performing constantly while the signal changes. However when observing a monochromatic source or a stochastic background which is unchanging over the mission lifetime it is more natural to consider the source as being fixed and the sensitivity of the detector gradually improving. All that is required by the definition in (\ref{eq:hc}) is that the ratio $h_{c}(f)/h_{n}(f)$ is constant.
+
+\subsubsection{EPTA/PPTA/NANOGrav}
+The PTAs currently in operation are the EPTA (European Pulsar Timing Array), PPTA (Parkes Pulsar Timing Array, based in  Australia) and NANOGrav (North American Nanohertz Observatory for GWs). There are published limits on the amplitude of the stochastic background from all three detectors: currently the lowest is from the EPTA, \cite{Haasteren}. The EPTA curves in the figures show the  published limit based on an analysis of 5 pulsars over approximately 10 years.
+
+\subsubsection{IPTA}
+Combining the existing arrays would yield a single PTA using approximately 4 times as many pulsars pulsars. The IPTA curves plotted in the figures are based on 20 pulsars timed for twice as long as the current EPTA.
+
+\subsubsection{SKA}
+The sensitivity curve plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} for the SKA (Square Kilometer Array) assume a values of $\delta t^{2}_{\textrm{r.m.s.}}$ a factor of 10 better than current PTAs and 20 pulsars timed for twice as long as the current EPTA.
+

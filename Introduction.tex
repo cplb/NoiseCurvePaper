@@ -1,0 +1,105 @@
+\section{Introduction}
+
+The next few years promises to deliver the first direct detection of gravitational waves (GWs). This will most likely be achieved by the advanced LIGO \citep{2010CQGra..27h4006H} detector operating in the frequency range $(10-10^{3})\,\textrm{Hz}$. By the end of the decade it is expected that pulsar timing arrays \citep{1990ApJ361300F} will detect very low frequency GWs around $10^{-8}\,\textrm{Hz}$. Further into the future space based detectors, such as eLISA \citep{2012CQGra..29l4016A}, will probe GWs in the millihertz regime. This will herald the beginning of multi-wavelength GW astronomy. There already exists an extensive literature assessing the potential of all of these detectors to probe the astrophysics of various potential sources. There are several different methods commonly used to describe the sensitivity of a GW detector and the strength of a GW source. It is common practice in GW astronomy to summarise this information on a sensitivity curve plot. When producing these plots it is desirable to have a consistent convention between detectors and sources which allows information about both detectors and sources to be plotted on the same graph. Another desirable feature of such a plot is that the detectors and sources are represented in such a way that the relative detectability of the sources is immediately apparent from the plot.
+
+In this work we discuss the differing conventions commonly used in sensitivity curve plots. The amplitude of a GW is a strain, a dimensionless quantity $h$. This gives a fractional change in length, or equivalently light travel time, across a detector. The strain is small, making it a challenge to measure. To calibrate our expectations for detection it is necessary to quantify the sensitivity of our instruments and the strength of the target signals. There are three commonly used descriptions: the characteristic strain, the power spectral density and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
+
+We begin by expounding the various conventions and the relationships between them in sections \ref{sec:conventions} and \ref{sec:voc}. A review of GW detectors (both current and proposed for the future) is given in section \ref{sec:detectors} and a review of GW sources is given in section \ref{sec:sources}. In \ref{app:a} several example sensitivity curves are presented; there is also a website at \url{http://www.ast.cam.ac.uk/~rhc26/sources/} which can be used to generate similar figures with user specified detectors and sources included.
+
+
+\section{Signal analysis}\label{sec:conventions}
+
+Gravitational radiation has two independent polarization states denoted $+$ and $\times$; a general signal can be described as a linear combination the two polarization states, $h \nobreak=\nobreak A_{+} h_{+}\nobreak +\nobreak A_{\times} h_{\times}$. The sensitivity of a detector to each of these depends upon the relative orientations of the source and detector. The output of a gravitational wave detector, $s(t)$, will contain a superposition of noise, $n(t)$, and possibly a signal, $h(t)$,
+\begin{equation} s(t)=n(t)+h(t) \; . \end{equation}
+It will be necessary to work with the Fourier transform of the signal, the most common convention used in the GW community is
+\begin{eqnarray} x(t)&={\cal{F}}^{-1}\left\{\tilde{x}(f)\right\}&=\int_{-\infty}^{\infty}\textrm{d}f\;\tilde{x}(f)\exp (2\pi \rmi f t )  \nonumber \\
+\tilde{x}(f) &=\,\;{\cal{F}}\left\{x(t)\right\}&=\int_{-\infty}^{\infty}\textrm{d}t\;x(t)\exp (-2\pi \rmi f t )\; .\end{eqnarray}
+For simplicity it is assumed that the noise in the GW detector is stationary and Gaussian (with zero mean), under these assumptions the noise is fully characterised via the \emph{one-sided} noise power spectral density, $S_{n}(f)$,\footnote{An alternative convention is to use the two-sided power spectral density $S^{(2)}_{n}(f)=S_{n}(f)/2$.}, 
+\begin{equation}\label{eq:psd} \left<\tilde{n}(f)\tilde{n}^{*}(f')\right>=\frac{1}{2}\delta (f-f')S_{n}(f) \; .\end{equation}
+Angled brackets $\left<\ldots\right>$ denotes an ensemble average over many realisations of the noise. In reality we have only a single system to work with, so the ensemble average is replaced by a time average. The procedure is to measure the noise over a sufficiently long duration, $T$, and then compute the Fourier transform, $\tilde{n}(f)$, with a frequency resolution $\Delta f = T^{-1}$. This is then repeated many times to give the ensemble average; this procedure assumes the system is ergodic. Since the GW signal and detector output are real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact the $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only (see, for example, equations (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod})), for this reason $S_{n}(f)$ is called the \emph{one-sided} power spectral density. It is straightforward to show that the power spectral density has the property that integrated over all positive frequencies it gives the mean square noise amplitude in the detector.
+\begin{eqnarray}\label{eq:meansquare}
+\overline{n(t)^{2}}&=\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\textrm{d}t\;\left| n(t) \right|^{2} \nonumber \\
+&=\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\textrm{d}t\; \int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi (f-f')t \right)
+\end{eqnarray}
+Using the property of Fourier transforms, ${\cal{F}}\left\{ n(t+\tau) \right\}(f)=\tilde{n}(f)\exp (-2\pi \rmi f\tau )$, the exponential factors in equation (\ref{eq:meansquare}) may be absorbed as a time translation of the noise by an amount $t$. The noise is stationary and so it's long term time average is invariant under this time translation and is given by Equation (\ref{eq:psd}).
+\begin{eqnarray}\label{eq:meansquare1}
+\overline{n(t)^{2}}& = \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;{\cal{F}}\left\{ n(\tau-t) \right\}(f){\cal{F}}\left\{ n(\tau-t) \right\}(f')^{*} \nonumber \\
+&=\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\nonumber \\
+& = \int_{0}^{\infty}\textrm{d}f\; S_{n}(f)
+\end{eqnarray}
+
+
+
+
+
+Using the property of Fourier transforms, ${\cal{F}}\left\{ n(t+\tau) \right\}(f)=\tilde{n}(f)\exp (-2\pi \rmi f\tau )$, the time average can be turned into an ensemble average and hence the definition of power spectral density in (\ref{eq:psd}) may be used.
+\begin{eqnarray}\label{eq:meansquare1}
+%\left<n(t)^{2}\right>&=\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\int_{-T}^{T}\textrm{d}t\; {\cal{F}}\left\{n(\tau+t)\right\}\left[{\cal{F}}\left\{n(\tau+t)\right\}\right]^{*}\nonumber \\
+\overline{n(t)^{2}}& = \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\int_{-T}^{T}\textrm{d}t\; \tilde{n}(f)\tilde{n}^{*}(f') \nonumber \\
+&=\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\nonumber \\
+%&= \int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\frac{1}{2}S_{n}(f)\delta (f-f')\nonumber\\
+& = \int_{0}^{\infty}\textrm{d}f\; S_{n}(f)
+\end{eqnarray}
+Given a detector output the challenge is to extract the signal. There is a well known solution to this problem which involves constructing a Wiener optimal filter. Let $K(t)$ be the filter function with Fourier transform $\tilde{K}(f)$.
+Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
+\begin{equation}\label{eq:conv} \left(s*K\right)(\tau)=\int_{-\infty}^{\infty}\textrm{d}t\;(n(t)+h(t))K(t-\tau)=S+N\; .\end{equation}
+The signal contribution, $S$, is defined as the expectation of the convolution in (\ref{eq:conv}) when a signal is present, maximised by varying the offset $\tau$. Since the expectation of pure noise is zero it follows that
+\begin{equation} S = \int_{-\infty}^{\infty}\textrm{d}t\;h(t)K(t)=\int_{-\infty}^{\infty}\textrm{d}t\;h(t)K^{*}(t)=\int_{-\infty}^{\infty}\textrm{d}f\; \tilde{h}(f)\tilde{K}^{*}(f) \; .\end{equation}
+The squared contribution from noise, $N^{2}$, is defined as the mean square of the convolution in (\ref{eq:conv}) when no signal is present,
+\begin{eqnarray} 
+N^{2}&=\int_{-\infty}^{\infty}\textrm{d}t\;\int_{-\infty}^{\infty}\textrm{d}t'\;K(t)K(t')\left<n(t)n(t')\right> \nonumber \\
+&=\int_{-\infty}^{\infty}\textrm{d}t\;\int_{-\infty}^{\infty}\textrm{d}t'\;K(t)K^{*}(t')\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\exp\left(2\pi\rmi(ft-f't')\right)\nonumber \\
+%&=\int_{-\infty}^{\infty}\textrm{d}f\;\int_{-\infty}^{\infty}\textrm{d}t\;\int_{-\infty}^{\infty}\textrm{d}t'\;\frac{1}{2}S_{n}(f)K(t)K^{*}(t')\exp\left(2\pi\rmi f (t-t')\right)\nonumber \\
+&=\int_{-\infty}^{\infty}\textrm{d}f \; \frac{1}{2}S_{n}(f)\tilde{K}(f)\tilde{K}^{*}(f) \; .
+ \end{eqnarray}
+Where the definition of $S_{n}(f)$ from (\ref{eq:psd}) has been used. Hence the optimum signal-to-noise ratio (SNR), $\varrho$, is given by
+\begin{equation}\label{eq:SNRinnerprod} 
+\varrho^{2}= \frac{(S)^{2}}{N^{2}}= \frac{\left( \frac{1}{2}S_{n}(f)\tilde{K}(f) \Big| \tilde{h} \right)^{2}}{\left( \frac{1}{2}S_{n}(f)\tilde{K}(f) \Big| \frac{1}{2}S_{n}(f)\tilde{K}(f) \right)} \;,
+\end{equation}
+where the inner product between a pair of signals $A$ and $B$ has been defined
+\begin{equation}\label{eq:snrinnerprod} \left( A | B \right) = 4\Re\left\{\int_{0}^{\infty}\textrm{d}f\;\frac{\tilde{A}^{*}(f)\tilde{B}(f)}{S_{n}(f)}\right\} \; .\end{equation}
+The optimum filter is that which maximises the SNR in (\ref{eq:SNRinnerprod}). From the Cauchy-Schwarz inequality it follows that the optimum filter is
+\begin{equation} \tilde{K}(f)=\frac{\tilde{h}(f)}{S_{n}(f)} \; . \end{equation}
+This is the Wiener filter, it may be multiplied by an arbitrary constant since this will not change the SNR. Notice that in order to construct the Wiener filter it is necessary to know \emph{a priori} the form of the signal, $\tilde{h}(f)$. It is common to define the noise amplitude and characteristic strain as
+\begin{eqnarray}\label{eq:strains} h_{n}(f)^{2}&=fS_{n}(f) \\
+\label{eq:strains1} \label{eq:strainsagain}               h_{c}(f)^{2}&=4f^{2}\left| \tilde{h}(f) \right|^{2} \; , \end{eqnarray}
+so that the SNR in (\ref{eq:SNRinnerprod}) may be written compactly as
+\begin{equation}\label{eq:hc} 
+\varrho^{2}=\int_{0}^{\infty} \textrm{d}\left(\log f\right)\; \left(\frac{h_{c}(f)}{h_{n}(f)}\right)^{2} \;.
+\end{equation}
+The strain amplitudes $h_{n}(f)$ and $h_{c}(f)$ are dimensionless, while $S_{n}(f)$ has units of inverse frequency.
+
+Whilst the magnitude of the Fourier transform of the signal, $h(f)=\left|\tilde{h}(f)\right|$, provides a simple quantification of the GW amplitude as a function of frequency it has one main deficiency. For an inspiralling source the instantaneous amplitude can be orders of magnitude below the noise level in the detector; however, as the signal continues over many orbits the SNR can be integrated up to a detectable level. It is desirable to have a quantification of the GW amplitude that accounts for this effect; three such methods are described in the following sections.
+
+\subsection{Characteristic strain}
+One sensible choice of quantities to plot on a sensitivity curve is $h_{n}$ for the detector and $h_{c}$ for the source (see figure \ref{fig:hc}). Using this convention, when plotting on a log-log scale, the area between the source and detector curves is related to the SNR via (\ref{eq:hc}). This convention allows the reader to ``integrate by eye" for a given detector to assess the detectability of a given source. Also, when using this convention the reader does not need to worry about the observation time for each source because this is already accounted for in the definition of characteristic strain. An additional advantage of this convention is that the values on the strain axis for the detector curve have a simple physical interpretation, they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis do not directly relate to the amplitude of the waves from the source. Another disadvantage is that the characteristic strain for a monochromatic source is infinite!
+
+
+\subsection{Power spectral density}\label{sec:psd}
+Another common quantity to plot on sensitivity curves is the square root of the power spectral density (see figure \ref{fig:S}), which from (\ref{eq:strains}) is given by
+\begin{eqnarray}\label{eq:temp1} \sqrt{S_{n}(f)}&=h_{n}(f)f^{-1/2} \quad \textrm{for detectors, and by analogy} \\
+\sqrt{S_{h}(f)}&=h_{c}(f)f^{-1/2} \quad \textrm{for sources.}\label{eq:ShforSources}\end{eqnarray}
+The power spectral density is the most commonly plotted quantity in sensitivity curves in the literature and it has the nice property, proven in equation (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector.
+
+\subsection{Energy density}
+A third way of describing the detectability of a GW is through the energy carried by the waves, this quantity has the obvious advantage of having a clear physical significance. This quantity is most commonly used in sensitivity curves showing stochastic backgrounds of GWs, see section \ref{sec:stoch}. The energy in GWs is described by the Isaacson stress tensor \citep{MTW}
+\begin{equation} T_{\mu\nu}=\frac{c^{2}}{32\pi G}\left<\partial_{\mu}\bar{h}_{\alpha\beta}\partial_{\nu}\bar{h}^{\alpha\beta}\right> \;.\end{equation}
+The energy density, $\rho c^{2}$, is given by the $T_{00}$ component of this tensor. Using this together with (\ref{eq:psd}) to calculate the energy density in the GW signal gives
+\begin{eqnarray}\label{eq:specNRGdensity}
+\rho c^{2}&=\frac{c^{2}}{16\pi G}\int_{-\infty}^{\infty}\textrm{d}f\;\left(2\pi f\right)^{2}\tilde{h}(f)\tilde{h}^{*}(f)=\int_{0}^{\infty}\textrm{d}f\;\frac{\pi c^{2}}{4G}f^{2}S_{h}(f)\; ,
+\end{eqnarray} 
+where the definitions (\ref{eq:ShforSources}) and (\ref{eq:strainsagain}) have been used. Equation (\ref{eq:specNRGdensity}) motivates the definition of the spectral energy density in GWs, $S_{\textrm{E}}$, the energy per unit volume of space, per unit frequency, \cite{HellingsDowns}
+\begin{equation}\label{eq:spectralenergydensity} S_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ,\end{equation}
+and a corresponding expression for the noise with $S_{n}(f)$. It is usual to define the dimensionless quantity $\Omega_{\textrm{GW}}$ as the energy density per logarithmic frequency interval normalised to the critical density of the universe
+\begin{equation}\label{eq:omega} \Omega_{\textrm{GW}}(f)=\frac{fS_{\textrm{E}}(f)}{\rho_{\textrm{c}}c^{2}}\; . \end{equation}
+The critical density of the universe is $\rho_{\textrm{c}}=3H_{0}^{2}/8\pi G$, where $H_{0}=h_{100}\times 100\, \textrm{km}\,\textrm{s}^{-1}\,\textrm{Mpc}^{-1}$ is the Hubble constant (this equation serves as a definition of $h_{100}$, which here has nothing to do with strain). The most common quantity related to energy density to be plotted on sensitivity curves is $\Omega_{\textrm{GW}}h_{100}^{2}$ (figure \ref{fig:omega}). This quantity has one aesthetic advantage over the others: it accounts for the fact that there is less energy in low frequency waves of the same amplitude and does not place the sensitivity curves of very low frequency detectors much higher than most ground based detectors.
+
+
+
+\subsection{Relating the different descriptions}
+The dimensionless energy density in GWs, $\Omega_{\textrm{GW}}$, the spectral energy density in GWs, $S_{\textrm{E}}$, the one-sided power spectral density, $S_{h}$, and the characteristic strain are all related via
+\begin{equation}\label{eq:omega} 
+\Omega_{\textrm{GW}}(f)=\frac{fS_{\textrm{E}}(f)}{\rho_{\textrm{c}}c^{2}}=\frac{\pi}{4G\rho_{\textrm{c}}}f^{2}h_{c}(f)^{2}=\frac{\pi}{4G\rho_{\textrm{c}}}f^{3}S_{h}(f)  \; ,
+\end{equation}
+and corresponding expressions for the noise with $S_{n}(f)$ and $h_{n}(f)$. 
+

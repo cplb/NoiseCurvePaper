@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    INSTITUTE OF PHYSICS PUBLISHING                                   %
+%                                                                      %
+%   `Preparing an article for publication in an Institute of Physics   %
+%    Publishing journal using LaTeX'                                   %
+%                                                                      %
+%    LaTeX source code `ioplau2e.tex' used to generate `author         %
+%    guidelines', the documentation explaining and demonstrating use   %
+%    of the Institute of Physics Publishing LaTeX preprint files       %
+%    `iopart.cls, iopart12.clo and iopart10.clo'.                      %
+%                                                                      %
+%    `ioplau2e.tex' itself uses LaTeX with `iopart.cls'                %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[fleqn,12pt]{iopart}
+\newcommand{\gguide}{{\it Preparing graphics for IOP journals}}
+%Uncomment next line if AMS fonts required
+\usepackage{iopams}  
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{appendix}
+\usepackage[margin=1cm]{caption}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{color}
+
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 	definition of a solar mass symbol for use in equations.      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Msun}{\ensuremath{M_{ \odot }}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\cplb}[1]{{\color{red} #1}}
+\newcommand{\rhc}[1]{{\color{green} #1}}
+\newcommand{\cjm}[1]{{\color{blue} #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+\title{Gravitational wave sensitivity curves}
+\author{C J Moore}
+\address{Institute of Astronomy, Madingley Road, Cambridge, CB3 0HA, United Kingdom}
+\ead{cjm96@ast.cam.ac.uk}
+
+\begin{abstract}
+There are several common conventions in use by the gravitational wave community to describe the amplitude of sources and the sensitivity of detectors. These are frequently confused. We outline the merits and differences between the various quantities used for parametrising noise curves and characterising gravitational wave amplitudes. Sensitivity curves plots for each of the conventions are presented and interactive versions have been made available on-line at \url{http://www.ast.cam.ac.uk/~rhc26/sources/}.
+\end{abstract}
+
+\input{Introduction}
+\input{Typesofsource}
+\input{Detectors}
+\input{Sources}
+
+\section{Concluding remarks}\label{sec:discussion}
+When quantifying the sensitivity of a GW detector and the loudness of a GW source there are three commonly used quantities: the characteristic strain, the power spectral density, and the spectral energy density. Here we have carefully defined these quantities and derived the relationships between them. In addition example sensitivity curve plots using each of these quantities have been presented for a wide range of ground based detectors, space based detectors and pulsar timing arrays. Also plotted are predicted amplitudes for a wide range of sources, these predictions are based on astrophysical estimates of the event rates for a range of processes and are subject to varying degrees of uncertainty. There also exists the exciting possibility of sources nobody has yet considered. Interactive versions of these plots with user specified detectors and sources are made available on-line at \url{http://www.ast.cam.ac.uk/~rhc26/sources/}. Trying to summarise an entire field of astronomy on one plot is an impossible task; however we hope that the figures and analysis presented here provide useful insight.
+
+\ack{Christopher Moore is supported by the STFC. I would like to thank Dr Jonathan Gair, Christopher Berry and Robert Cole for help producing this work. I would also like to thank Robert Cole for help producing the figures on the website. }
+
+
+\bibliographystyle{apj}
+\bibliography{bibliography,apj-jour}    %% includes the journal abbrevs
+%\bibliography{bibliography}
+
+\input{Plots}
+
+\end{document}
+

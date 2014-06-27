@@ -1,0 +1,54 @@
+\section{Astrophysical sources}\label{sec:sources}
+All the sources described here are represented by boxes in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega}. The boxes are drawn in such a way that there is a reasonable event rate for sources at a detectable SNR. Descriptions of each source are given in the following sections. Sources with short durations (i.e., burst sources) and sources which evolve in time over much longer timescales than our observations are drawn with flat topped boxes. Inspiralling sources which change their frequency over observable timescales are drawn with sloping tops. The slope for the top of the box is chosen to be $-2/3$ for all sources, which is also the appropriate gradient for a stochastic backgrounds of binaries. The width of the box gives the range of frequencies sources of a given type can have a while remaining at a detectable amplitude.
+
+
+
+
+\subsection{Sources for ground based detectors}
+
+\subsubsection{Neutron star binaries}
+The inspiral and merger of a pair of neutron stars is the primary target for ground based detectors. The expected event rate for this type of source is uncertain, but estimates centre around $\rho_{\textrm{NS-NS}}=1.3\times 10^{-4}\;\textrm{Mpc}^{-3}\textrm{yr}^{-1}$, \cite{CBC}. Plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} is a box with an amplitude such that it produces a ratio $h_{c}/h_{n}=16$ for advanced LIGO at peak sensitivity and a width between $(3-300)\,\textrm{Hz}$.
+
+\subsubsection{Supernovae}
+Simulations of core collapse supernova events show that GWs between $(10^{2}-10^{3})\,\textrm{Hz}$ can be produced. The GW signal undergoes ${\cal{O}}(1)$ oscillation and hence is burst-like. \cite{2002A&A...393..523D} calculate the average maximum amplitude of GWs for a supernova at distance $r$ as
+\begin{equation} h=8.9\times 10^{-21}\left( \frac{10 \,\textrm{kpc}}{r} \right) \; .\end{equation}
+The event rate for supernova is approximately $\rho_{\textrm{SN}}=5\times10^{-4}\,\textrm{Mpc}^{-3}\textrm{yr}^{-1}$. The box plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} corresponds to a distance $r=3 \,\textrm{Mpc}$ with the frequency range quoted above. The LIGO and VIRGO detectors have already placed bounds on the event rate for these sources, \cite{Bursts}.
+
+\subsubsection{Continuous waves from rotating neutron stars}
+
+{\cjm{If someone is feeling keen they can write a very short section on these, maybe using this reference \cite{Einstein@Home}}}.
+
+
+\subsection{Sources for space based detectors}
+For a review of the GW sources for space based missions see, for example, \cite{Amaro-Seoane-et-al}, \cite{Gairetal} of the \cite{eLISAyellowbook}.
+
+
+\subsubsection{Massive black hole binaries}
+Space based detectors will be sensitive to equal mass mergers in the range $(10^{4}-10^{7})\,\Msun$. Predictions of the event rate for these mergers range from ${\cal{O}}(3-300)\,\textrm{yr}^{-1}$ for LISA with SNRs of up to 10000. The uncertainty in the rate reflects our uncertainty in the growth mechanisms of the supermassive black hole population. Plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} is a box with a ratio $h_{c}/h_{n}=100$ for eLISA at it's peak sensitivity. The range of frequencies plotted is $(3\times 10^{-4}-3\times 10^{-1})\,\textrm{Hz}$, this corresponds to circular binaries in the mass range quoted above.
+
+\subsubsection{Galactic white dwarf binaries} \label{sec:GB}
+
+\cjm{This section should probably be larger and more detailed. These are by far the most numerous sources and at the moment I don't even mention verification binaries.}
+
+These divide into two classes, the unresolvable and the resolvable galactic binaries. The distinction between resolvable and unresolvable is detector specific; here we choose LISA. For the unresolvable binaries the box plotted corresponds to the estimate of the background due to \cite{Nelemans},
+\begin{equation} h_{c}(f)= 5\times 10^{-21} \left(\frac{f}{10^{-3}\,\textrm{Hz}}\right)^{-2/3} \; . \end{equation}
+This background is unchanging over the mission lifetime, therefore, as discussed in section \ref{sec:PTAgeneralproperties}, when plotting the amplitude on a sensitivity curve plot an observation time must be specified; here an observation time of one year is used. Estimates for the event rate of resolvable binaries centre around ${\cal{O}}(10^{3})$ events for eLISA. The box plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} has an ratio $h_{c}/h_{n}=50$ for eLISA at its peak sensitivity, the frequency range of the box is $\left(3\times10^{-4}-10^{-2}\right)\,\textrm{Hz}$, based on visual inspection of Monte Carlo population simulation results presented in \cite{Amaro-Seoane-et-al}.
+
+\subsubsection{Extreme mass ratio inspirals}
+EMRI events occur when a compact stellar mass object inspirals into a supermassive black hole. There is extreme uncertainty in the event rate for EMRIs due to the poorly constrained astrophysics in galactic centres; the best guess estimate is ${\cal{O}}(10)$ events per year with eLISA with SNR $\ge 20$. The box plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} has a characteristic strain of $h_{c}=3\times 10^{-20}$ at $10^{-2}\;\textrm{Hz}$ which corresponds to a $10\Msun$ BH inspiralling into a $10^{6}\Msun$ black hole at a luminosity distance of $1\,\textrm{Gpc}$. The frequency width of the box is somewhat unknown, EMRI events can occur into a black hole of any mass, and hence EMRIs can occur at any frequency. However there is substantial uncertainty in the black hole mass function, so the box in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} is drawn with a width comparable to that of the LISA sensitivity curve.
+
+
+
+
+\subsection{Sources for PTAs}
+
+\subsubsection{Supermassive black hole binaries}
+The main target for PTAs is a stochastic background of GWs produced by a population of supermassive black hole binaries at cosmological distances. Supermassive black holes are known to lie at the centres of most galaxies and the black hole mergers are associated with the mergers of the host galaxies. The current best published limit for the amplitude of the stochastic background is $h_{c}=6\times 10^{-15}$ at a frequency of $f_{0}=1\,\textrm{yr}^{-1}$, \cite{Haasteren}. There is strong theoretical evidence that the actual background lies close to the current limit, \cite{imminentdetectionofgravitationalwaves} and \cite{Sesana-2012}. 
+
+Sources at higher frequencies are inspiralling faster and hence there are fewer of them per frequency bin. At a certain frequency, these sources will cease to be a background and become individually resolvable. The exact distinction between resolvable and unresolvable is detector specific. Plotted in figures \ref{fig:hc}, \ref{fig:S} and \ref{fig:omega} for the unresolvable background is a third of the current limit with a cut off frequency of $f=1\,\textrm{yr}^{-1}$ which is suggested by Monte Carlo population studies, \cite{SesanaVecchioColancino}. For the resolvable sources the amplitude of the current limit is plotted between $\left(3\times 10^{-9} - 3\times 10^{-7}\right)\,\textrm{Hz}$.
+
+
+
+
+\subsection{Cosmological sources}
+\cjm{Christopher, would you be happy to write a section on very high redshift sources of stochastic backgrounds. Stressing that these in principal can be at any frequency. And also saying that because of the lack of certainty here we don't include these sources in the figures. Maybe reference recent excitement caused by BICEP2 results.}
