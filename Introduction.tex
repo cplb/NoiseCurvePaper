@@ -162,12 +162,12 @@ H_0 =h_{100}\times 100~\mathrm{km\,s^{-1}\,Mpc^{-1}}.
 \end{equation}
 The reduced Hubble parameter $h_{100}$ has nothing to do with strain. The most common quantity related to energy density to be plotted on sensitivity curves is $\Omega_{\mathrm{GW}}h_{100}^{2}$ (figure \ref{fig:omega}) as this removes sensitivity to the measured value of the Hubble constant.
 
-This quantity has one aesthetic advantage over the others: it accounts for the fact that there is less energy in low frequency waves of the same amplitude and does not place the sensitivity curves of very low frequency detectors much higher than most ground based detectors.
+This quantity has one aesthetic advantage over the others: it automatically accounts for the fact that there is less energy in low frequency waves of the same amplitude. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the SNR.
 
 \subsection{Relating the different descriptions}
 The dimensionless energy density in GWs $\Omega_{\mathrm{GW}}$, spectral energy density $S_{\mathrm{E}}$, one-sided power spectral density $S_{h}$, characteristic strain $h_\mathrm{c}$ and frequency-domain strain $\tilde{h}(f)$ are related via
 \begin{equation}
-H_0^2\Omega_{\mathrm{GW}}(f)= \frac{8 \pi G}{3 c^{2}} fS_{\mathrm{E}}(f) = \frac{2\pi^2}{3} f^3 S_h(f) = \frac{2\pi^2}{3} f^2 h_\mathrm{c}^2(f) = \frac{2\pi^2}{3} f^4 \left|\tilde{h}(f)\right|^2\; ,
+H_0^2\Omega_{\mathrm{GW}}(f)= \frac{8 \pi G}{3 c^{2}} fS_{\mathrm{E}}(f) = \frac{2\pi^2}{3} f^3 S_h(f) = \frac{2\pi^2}{3} f^2 h_\mathrm{c}^2(f) = \frac{8\pi^2}{3} f^4 \left|\tilde{h}(f)\right|^2\; ,
 \end{equation}
 using (\ref{eq:strain-hc}), (\ref{eq:ShforSources}), (\ref{eq:spectralenergydensity}), (\ref{eq:omega}) and (\ref{eq:crit-density}).
 Corresponding expressions for the noise are obtained by substituting $S_{n}(f)$ for $S_h(f)$, $h_{n}(f)$ for $h_\mathrm{c}(f)$ and $\tilde{n}(f)$ for $\tilde{h}(f)$. 
