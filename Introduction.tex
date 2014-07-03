@@ -35,7 +35,7 @@ For simplicity, it is assumed that the noise in the GW detector is stationary an
 \end{equation}
 where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise power spectral density $S_{n}(f)$ has units of inverse frequency.
 
-Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod})); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} power spectral density.\footnote{An alternative convention is to use the two-sided power spectral density $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
+Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} power spectral density.\footnote{An alternative convention is to use the two-sided power spectral density $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
 When integrated over all positive frequencies the power spectral density gives the mean square noise amplitude. Starting with taking the average of the square of the detector noise:
 \begin{eqnarray}\label{eq:meansquare}
@@ -148,7 +148,8 @@ S_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ;
 a corresponding expression for the noise can be formulated by replacing $S_h(F)$ with $S_{n}(f)$.
 
 Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe:
-\begin{equation}\label{eq:omega}
+\begin{equation}
+\label{eq:omega}
 \Omega_{\mathrm{GW}}(f)= \frac{fS_{\mathrm{E}}(f)}{\rho_{\mathrm{c}}c^{2}} = \frac{\pi}{4G\rho_{c}}f^{3}S_{h}(f) = \frac{\pi}{4G\rho_{c}}f^{2}h_{c}(f)^{2}\; .
 \end{equation}
 The critical density of the universe is
