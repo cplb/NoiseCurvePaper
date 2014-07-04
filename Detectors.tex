@@ -1,5 +1,7 @@
 \section{Detectors}\label{sec:detectors}
 
+In this section we introduce the detector noise curves used in \ref{app:a}. We begin with with a description of the basic operation of detectors. We then discuss ground-based detectors, space-based detectors and PTAs. The latter function somewhat different than conventional interferometers, so we include a brief introduction to PTA analysis. References for the noise curve used for individual detectors can be found in the relevant subsections, further information about the detectors can be in discovered these.
+
 \subsection{Operating principle of an interferometric detector}\label{sec:principles}
 
 All of the man-made detectors discussed in this section work on the principle of interferometry. Such detectors work by taking a beam of monochromatic light and splitting it into two beams travelling at some angle to each other. Each beam is passed in to an optical cavity where it undergoes a number of round trips before being recombined to form an interference pattern. The ends of the cavity are, in the ideal case, freely floating test masses which move in response to a passing GW, this effect is measured by observing the changing interference pattern. % LIGO isn't Fabry-P\'{e}rot
@@ -79,57 +81,85 @@ The Einstein Telescope (ET) is an ambitious proposal to construct an underground
 \end{indented}
 \end{table}
 
-In \ref{app:a}, we use an interpolation to the data published on \url{https://wwwcascina.virgo.infn.it/advirgo/} (2013) for the AdV sensitivity curve, an interpolation to the data for version D of the detector published on \url{http://gwcenter.icrr.u-tokyo.ac.jp/en/researcher/parameter} (2013) for KAGRA and analytic fits to the sensitivity curves from \citet{Sathyaprakash} for the remaining detectors.
+We use an interpolation to the data published on \url{https://wwwcascina.virgo.infn.it/advirgo/} (2013) for the AdV sensitivity curve, an interpolation to the data for version D of the detector published on \url{http://gwcenter.icrr.u-tokyo.ac.jp/en/researcher/parameter} (2013) for KAGRA and analytic fits to the sensitivity curves from \citet{Sathyaprakash} for the remaining detectors.
 
 \subsection{Space-based detectors}\label{sec:space}
 
 Space-based detectors work on similar principles to ground based detectors, but with the test masses residing inside of independent, widely separated satellites. Space-based detectors are sensitive to lower frequency GWs than their ground-based counterparts; this is partly because space based detectors can have much longer arms, and partly because they are unaffected by seismic noise which limits the low frequency performance of ground-based detectors. 
 
-The canonical design for a space-based detector is the aser Interferometer Space Antenna (LISA), which is sensitive to millihertz GWs. LISA would consist of three satellites flying in a triangular constellation with arms of length $5\times 10^{9}~\mathrm{m}$ in a $1~\mathrm{AU}$ orbit around the sun, trailing the Earth by $20\degree$. The laser arms in a LISA like detector are not a cavity, the light only travels once along each arm. eLISA is a simpler version of LISA designed to probe the same frequency range, while proposals such as the Advanced Laser Interferometer Antenna (ALIA), Big Bang Observer (BBO) and Deci-hertz Interferometer GW Observatory (DECIGO) are designed to probe decihertz GWs.
+The canonical design for a space-based detector is the Laser Interferometer Space Antenna (LISA), which is sensitive to millihertz GWs. LISA would consist of three satellites flying in a triangular constellation with arms of length $5\times 10^{9}~\mathrm{m}$ in a $1~\mathrm{AU}$ orbit around the sun, trailing the Earth by $20\degree$. The laser arms in a LISA like detector are not a cavity, the light only travels once along each arm. eLISA is a reduced version of LISA designed to probe the same frequency range, while proposals such as the Advanced Laser Interferometer Antenna (ALIA), Big Bang Observer (BBO) and Deci-hertz Interferometer GW Observatory (DECIGO) are designed to probe decihertz GWs.
 
 \subsubsection{LISA and eLISA}
 
-The instrumental noise curves for LISA by the analytic fit given by \citet{Sathyaprakash}, which we use for the plots in \ref{app:a}. When observing individual sources with LISA there is an additional contribution to the noise from a background of unresolvable binaries. This is not included here as we consider the background as a source of GWs (see section \ref{sec:GB}). eLISA is a re-scoped version of the classic LISA mission, the main differences are shorter arms ($10^{9}~\mathrm{m}$ instead of $5\times 10^{9}~\mathrm{m}$), two laser arms instead of three, and a different orbit (drifting away from Earth instead of $20\degree$ Earth trailing). The effect of these changes is a slightly reduced peak sensitivity and a shift to higher frequencies. In \ref{app:a}, we use an analytic fit to the instrumental noise curve given by \citet{Amaro-Seoane-et-al}.
+The instrumental noise curves for LISA by the analytic fit given by \citet{Sathyaprakash}, which we use for the plots in \ref{app:a}. When observing individual sources with LISA there is an additional contribution to the noise from a background of unresolvable binaries. This is not included here as we consider the background as a source of GWs (see section \ref{sec:GB}). eLISA is a re-scoped version of the classic LISA mission, the main differences are shorter arms ($10^{9}~\mathrm{m}$ instead of $5\times 10^{9}~\mathrm{m}$), two laser arms instead of three, and a different orbit (drifting away from Earth instead of $20\degree$ Earth trailing). The effect of these changes is a slightly reduced peak sensitivity and a shift to higher frequencies. We use an analytic fit to the instrumental noise curve given by \citet{Amaro-Seoane-et-al}.
 
 \subsubsection{DECIGO, ALIA and BBO}
 
-These missions are designed to probe the decihertz region of the GW spectrum; they are considerably more ambitious than the LISA or eLISA mission and their launches will be further into the future. In \ref{app:a} we use a simple analytic fit to the sensitivity curve for ALIA \cplb{[citation needed]}, while for DECIGO and BBO, fits to the sensitivity curves given by \citet{2011PhRvD..83d4011Y} are used.
-
-
+These missions are designed to probe the decihertz region of the GW spectrum; they are considerably more ambitious than the LISA or eLISA mission and their launches will be further into the future. We use a simple analytic fit to the sensitivity curve for ALIA \cplb{[citation needed]}, while for DECIGO and BBO, fits to the sensitivity curves given by \citet{2011PhRvD..83d4011Y} are used.
 
 \subsection{Pulsar timing arrays}\label{sec:PTAgeneralproperties}
-PTAs can be thought of as naturally occurring interferometers with galactic scale arm lengths, hence they are sensitive to much lower frequencies than the detectors considered so far. Each pulsar is a very regular clock and the measured pulse arrival time (in practice, arrival times are corrected to arrival times at the solar-system  barycenter, SSB) can be compared against a prediction leaving a residual which includes the effects of passing GWs. Using an array of these pulsars spread across the sky allows us to correlate residuals between different pulsars and exploit the fact that the GWs influence all pulsars where as intrinsic pulsar noise clearly does not. The correlation between different pulsars depends only on their angular separation on the sky and has a distinctive shape, known as the Hellings and Downs curve \citep{HellingsDowns}, which we will now derive.
 
-The redshift of the rate of arrival of pulses for a pulsar at a distance $L$ from Earth, in the direction of the unit spatial vector $\vec{p}$ induced by a GW travelling in the direction of the unit vector $\hat{\Omega}$ is given by \citep{anholm-2009}
-\begin{equation}\label{eq:pulsarredshift} z(t,\hat{\Omega})=\frac{1}{2}\frac{\hat{p}^{j}\hat{p}^{i}} {1+\hat{\Omega}\cdot\hat{p}}\left(h_{ij}^{\mathrm{Pulsar}}(t-L,\hat{\Omega} )-h_{ij}^{\mathrm{Earth}}(t,\hat{\Omega} )\right)=\frac{1}{2}\frac{\hat{p}^{j}\hat{p}^{i}} {1+\hat{\Omega}\cdot\hat{p}}\Delta h_{ij}(t,\hat{\Omega})\; . \end{equation}
-The redshift includes two terms, the pulsar term and the Earth term. The pulsar term is often neglected in PTA analysis as it can be considered as an extra noise term which averages to zero. The experimentally measured quantity is not the redshift but the timing residual, the two are related via
-\begin{equation}\label{eq:restored}  R(t,\hat{\Omega})=\int_{0}^{t}\mathrm{d}t'\;z(t',\hat{\Omega}) \; . \end{equation}
-All of the pulsars, and the Earth, reside in the same metric perturbation field which may be expressed in terms of its Fourier transform
-\begin{equation} h_{ij}(t,\hat{x})=\sum_{A=+,\times}\int\mathrm{d}f\;\iint_{S_{2}}\mathrm{d}\hat{\Omega}\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega})e^{ 2\pi i f (t-\hat{\Omega}\cdot\vec{x}) } \; ,\end{equation}
-where $e^{A}_{ij}(\hat{\Omega})$ is the $A$ polarisation basis tensor for direction $\hat{\Omega}$. Choosing the SSB as the origin of our coordinate system, so the pulsar is at position $L\hat{p}$, gives
-\begin{equation}\label{eq:deltahij} \Delta h_{ij}(t,\hat{\Omega})=\sum_{A=+,\times}\int\mathrm{d}f\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega})e^{ 2\pi i f t }\left(e^{-2\pi\rmi fL (1+\hat{p}\cdot\hat{\Omega})}-1\right) \; . \end{equation}
-From (\ref{eq:pulsarredshift}) and (\ref{eq:deltahij}) the Fourier transform of the redshift, $\tilde{z}(f,\hat{\Omega})$, may be read off as
-\begin{equation}\label{eq:45} \tilde{z}(f,\hat{\Omega})=\left(e^{-2\pi\rmi fL (1+\hat{p}\cdot\hat{\Omega})}-1\right)\sum_{A=+,\times} \tilde{h}_{A}(f,\hat{\Omega})F^{A}(\hat{\Omega})\;, \mathrm{where}\; F^{A}(\hat{\Omega})=\frac{e_{ij}^{A}(\hat{\Omega})\hat{p}^{j}\hat{p}^{i}} {2(1+\hat{\Omega}\cdot\hat{p})} \, .\end{equation}
-The function $F^{A}(\hat{\Omega})$ may be regarded as the PTA equivalent of the detector response functions in (\ref{eq:responsefuncs}). The stochastic background of GWs is fully characterised by the one-sided power spectral density via the following expectation value
-\begin{equation}\label{eq:stochback} \left<h_{A}^{*}(f,\hat{\Omega})h_{A'}(f',\hat{\Omega}')\right>=\frac{1}{2}S_{h}(f)\delta^{(2)}(\hat{\Omega},\hat{\Omega}')\delta_{AA'}\delta(f-f') \; ,\end{equation}
-where $\delta^{(2)}(\hat{\Omega},\hat{\Omega}')$ is the delta function on the sphere. From (\ref{eq:stochback}) and (\ref{eq:45}) the expectation of the product of signals from two different pulsars in directions $\hat{p}_{1}$ and $\hat{p}_{2}$ may be evaluated
-\begin{eqnarray} & \left<z_{1}(f)z_{2}^{*}(f')\right>=\frac{1}{2}S_{h}(f)\delta (f-f')\Gamma(f)\quad \mathrm{where,} \\
-& \Gamma(f)=\sum_{A=+,\times}\iint_{{\cal{S}}^{2}}\mathrm{d}\hat{\Omega}\,\left(e^{2\pi\rmi fL_{1}(1+\hat{\Omega}\cdot\hat{p}_{1})}-1\right)\left(e^{-2\pi\rmi fL_{2}(1+\hat{\Omega}\cdot\hat{p}_{2})}-1\right)F_{1}^{A}(\hat{\Omega})F_{2}^{A}(\hat{\Omega}) \; . \nonumber\end{eqnarray}
-The overlap function, $\Gamma(f)$, tends to a constant value in the limit that the distances to the pulsars are large compared to the wavelength of GWs, PTAs operate in this limit, so the overlap may be approximated as a constant 
-\begin{equation} \Gamma(f)\approx\Gamma_{0}= \sum_{A=+,\times}\iint_{{\cal{S}}^{2}}\mathrm{d}\hat{\Omega}\;F_{1}^{A}(\hat{\Omega})F_{2}^{A}(\hat{\Omega})\;.\end{equation}
-Neglecting the exponential terms in the overlap is the frequency domain equivalent of neglecting the pulsar term in (\ref{eq:pulsarredshift}). The integral may be evaluated to give an expression depending only on the angle, $\theta$, between the two pulsars; this is the famous Hellings and Downs curve, see figure \ref{fig:HnD},
-\begin{equation} \Gamma_{0}=\frac{1}{2}+\frac{3x}{2}\left(\log (x)-\frac{1}{6}\right) \quad \mathrm{where}\quad x=\frac{1-\cos\theta}{2}\; .\end{equation}
+PTAs can be thought of as naturally occurring interferometers with galactic-scale arm lengths. Accordingly, they are sensitive to much lower frequencies than the detectors previously discussed. Each pulsar is a regular clock and the measured pulse arrival time can be compared against a prediction, leaving a residual which includes the effects of passing GWs. Using an array of these pulsars spread across the sky allows us to correlate residuals between different pulsars, to exploit the fact that GWs influence all pulsars whereas intrinsic pulsar noise does not. The correlation between different pulsars depends only on their angular separation on the sky, and has a distinctive shape, known as the Hellings and Downs curve \citep{HellingsDowns}.
 
+The redshift of the rate of arrival of pulses for a pulsar at a distance $L$ from the Solar-System barycentre (SSB), in the direction of the unit spatial vector $\hat{p}$ induced by a GW travelling in direction of the unit vector $\hat{\Omega}$ is \citep{anholm-2009}
+\begin{equation}\label{eq:pulsarredshift}
+z(t,\hat{\Omega})= \frac{1}{2} \frac{\hat{p}^{j}\hat{p}^{i}} {1+\hat{\Omega}\cdot\hat{p}}\left[h_{ij}^{\mathrm{Pulsar}}\left(t-\frac{L}/c,\hat{\Omega} \right)-h_{ij}^{\mathrm{Earth}}(t,\hat{\Omega} )\right] = \frac{1}{2}\frac{\hat{p}^{j}\hat{p}^{i}}{1+\hat{\Omega}\cdot\hat{p}} \Delta h_{ij}(t,\hat{\Omega})\; .
+\end{equation}
+The redshift includes two terms: the pulsar term and the Earth term. The pulsar term is often neglected in PTA analysis as it can be considered as an extra noise term which averages to zero across the array. The experimentally measured quantity is not the redshift but the timing residual, the two are related via
+\begin{equation}\label{eq:restored}
+R(t,\hat{\Omega}) = \int_{0}^{t}\mathrm{d}t'\;z(t',\hat{\Omega}) \; .
+\end{equation}
+All of the pulsars, and the Earth, are subject to the same metric perturbation field. This may be expressed in terms of its Fourier transform
+\begin{equation}
+h_{ij}(t,\hat{x}) = \sum_{A\,=\,+,\,\times}\int\mathrm{d}f\;\iint_{\mathbb{S}_{2}}\mathrm{d}\hat{\Omega}\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega}) \exp\left[2\pi i f (t-\hat{\Omega}\cdot\vec{x}\right] \; ,
+\end{equation}
+where $e^{A}_{ij}(\hat{\Omega})$ is the $A$ polarisation basis tensor for direction $\hat{\Omega}$ \cplb{What is $x$?}. Choosing the SSB as the origin of our coordinate system, so the pulsar is at position $L\hat{p}$, gives
+\begin{equation}\label{eq:deltahij}
+\Delta h_{ij}(t,\hat{\Omega}) = \sum_{A\,=\,+,\,\times}\int\mathrm{d}f\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega})\exp\left(2\pi \rmi f t\right)\left\{\exp\left[-2\pi\rmi fL \left(1+\hat{p}\cdot\hat{\Omega}\right)\right]-1\right\} \; .
+\end{equation}
+From (\ref{eq:pulsarredshift}) and (\ref{eq:deltahij}), the Fourier transform of the redshift $\tilde{z}(f,\hat{\Omega})$ can be identified as
+\begin{equation}\label{eq:45}
+\tilde{z}(f,\hat{\Omega}) = \left\{\exp\left[-2\pi\rmi fL \left(1+\hat{p}\cdot\hat{\Omega}\right)\right]-1\right\} \sum_{A\,=\,+,\,\times} \tilde{h}_{A}(f,\hat{\Omega})F^{A}(\hat{\Omega}) \; ,
+\end{equation}
+where
+\begin{equation}
+F^{A}(\hat{\Omega}) = \frac{e_{ij}^{A}(\hat{\Omega})\hat{p}^{j}\hat{p}^{i}} {2\left(1+\hat{\Omega}\cdot\hat{p}\right)} \, .
+\end{equation}
+The function $F^{A}(\hat{\Omega})$ may be regarded as the PTA equivalent of the detector response functions in (\ref{eq:responsefuncs}). The stochastic background of GWs is fully characterised by the one-sided power spectral density via the expectation value
+\begin{equation}\label{eq:stochback}
+\left<h_{A}^{*}(f,\hat{\Omega})h_{A'}(f',\hat{\Omega}')\right> = \frac{1}{2}S_{h}(f)\delta^{(2)}(\hat{\Omega}, \hat{\Omega}')\delta_{AA'}\delta(f-f') \; ,
+\end{equation}
+where $\delta^{(2)}(\hat{\Omega},\hat{\Omega}')$ is the delta-function on the sphere. From (\ref{eq:45}) and (\ref{eq:stochback}), the expectation of the product of signals from two different pulsars in directions $\hat{p}_{1}$ and $\hat{p}_{2}$ may be evaluated AS
+\begin{equation} 
+\left<z_{1}(f)z_{2}^{*}(f')\right> = \frac{1}{2}S_{h}(f)\delta (f-f')\Gamma(f)
+\end{equation}
+where,
+\begin{eqnarray}
+\Gamma(f) &= \sum_{A\,=\,+,\,\times} & \iint_{{\mathbb{S}}^{2}}\mathrm{d}\hat{\Omega}\,\left\{\exp\left[2\pi\rmi fL_{1}\left(1+\hat{\Omega}\cdot\hat{p}_{1}\right)\right]-1\right\} \nonumber \\*
+ & & \times \left\{\exp\left[-2\pi\rmi fL_{2}\left(1+\hat{\Omega}\cdot\hat{p}_{2}\right)\right]-1\right\} F_{1}^{A}(\hat{\Omega})F_{2}^{A}(\hat{\Omega}) \; .
+\end{eqnarray}
+The overlap function $\Gamma(f)$ tends to a constant value in the limit that the distances to the pulsars are large compared to the wavelength of GWs; PTAs operate in this limit, so the overlap may be approximated as a constant, 
+\begin{equation}
+\Gamma(f) \approx \Gamma_{0} = \sum_{A\,=\,+,\,\times}\iint_{{\mathbb{S}}^{2}}\mathrm{d}\hat{\Omega}\;F_{1}^{A}(\hat{\Omega})F_{2}^{A}(\hat{\Omega})\;.
+\end{equation}
+Neglecting the exponential terms in the overlap is the frequency-domain equivalent of neglecting the pulsar term in (\ref{eq:pulsarredshift}). The integral may be evaluated to give an expression depending only on the angle $\theta$ between the two pulsars; this is the famous Hellings and Downs curve, shown in figure \ref{fig:HnD},
+\begin{equation}
+\Gamma_{0} = \frac{1}{2}+\frac{3x}{2}\left(\ln x -\frac{1}{6}\right)
+\end{equation}
+where
+\begin{equation}
+x = \frac{1-\cos\theta}{2}\; .
+\end{equation}
 \begin{figure}
  \centering
  \includegraphics[trim=0cm 0cm 0cm 0cm, width=0.6\textwidth]{HnDcurve.pdf}
- \caption{The Hellings and Downs curve, the correlation between two pulsars seperated on the sky by an angle $\theta$.}
+ \caption{The Hellings and Downs curve, the correlation between two pulsars separated on the sky by an angle $\theta$ \citep{HellingsDowns}.}
  \label{fig:HnD}
 \end{figure}
 
-The sensitivity bandwidth of a PTA is set by the sampling properties of the data set. If measurements are spaced in time by $\delta t$ and taken for a total length of time $T$ then the PTA is sensitive to frequencies in the range $(1/T)<f<(1/\delta t)$. The characteristic strain that the PTA is sensitive to scales linearly with $f$ in this range. This gives the wedge shaped curves plotted in \ref{app:a}. The absolute value of the sensitivity is fixed by normalising to a calculated limit at a given frequency for each PTA. For a discussion of the sensitivities of PTA to both individual sources and stochastic background see \cite{MooreTaylorGair}.
+The sensitivity bandwidth of a PTA is set by the sampling properties of the data set. If measurements are spaced in time by $\delta t$ and taken for a total length of time $T$, then the PTA is sensitive to frequencies in the range $(1/T) < f < (1/\delta t)$. The characteristic strain that the PTA is sensitive to scales linearly with $f$ in this range. This gives the wedge shaped curves plotted in \ref{app:a}. The absolute value of the sensitivity is fixed by normalising to a calculated limit at a given frequency for each PTA. For a discussion of the sensitivities of PTA to both individual sources and stochastic background, see \citet{MooreTaylorGair}.
 
-There is a discrepancy between the treatment of PTA sensitivity curves here and the higher frequency detectors discussed in sections \ref{sec:ground} and \ref{sec:space}. When observing a long lived source, such as an inspiral, with a high frequency detector the convention was to define a \emph{characteristic} strain to satisfy (\ref{eq:hc}). Here the convention is to leave the strain untouched and instead adjust the PTA sensitivity curve with observation time, again to satisfy (\ref{eq:hc}). This discrepancy is an unfortunate result of the conventions in use by the different GW communities; however it is also natural given the sources under observation. When observing a transient source, such as a burst or inspiral, which changes within the lifetime of the detector it is natural to consider the detector as performing constantly while the signal changes. However when observing a monochromatic source or a stochastic background which is unchanging over the detector lifetime it is more natural to consider the source as being fixed and the sensitivity of the detector gradually improving. All that is required by the definition in (\ref{eq:hc}) is that the ratio $h_{c}(f)/h_{n}(f)$ is constant.
+There is a discrepancy between the treatment of PTA sensitivity curves here and the higher frequency detectors discussed in sections \ref{sec:ground} and \ref{sec:space}. When observing a long-lived source, such as an inspiral, with a high frequency detector the convention was to define a \emph{characteristic} strain to satisfy (\ref{eq:hc}). Here the convention is to leave the strain untouched and instead adjust the PTA sensitivity curve with observation time, again to satisfy (\ref{eq:hc}). This discrepancy is an unfortunate result of the conventions in use by the different GW communities; however, it is also natural given the sources under observation. When observing a transient source, such as a burst or inspiral, which changes within the lifetime of the detector, it is natural to consider the detector as performing constantly while the signal changes. However, when observing a monochromatic source or a stochastic background, which is unchanging over the detector lifetime, it is more natural to consider the source as being fixed and the sensitivity of the detector gradually improving. All that is required by the definition in (\ref{eq:hc}) is that the ratio $h_\mathrm{c}(f)/h_{n}(f)$ is constant.
 
 
 
