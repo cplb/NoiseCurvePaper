@@ -41,7 +41,7 @@ The averaging in (\ref{eq:skyav}) assumes a uniform distribution of polarisation
 On Earth approximations to the free floating test masses described above are achieved by suspending the mass from a pendulum system with natural frequency much greater than that of the GW. The interferometric detectors listed in Table \ref{table:t} are all sensitive to GWs in the frequency range ${\cal{O}}(10-10^{3})\,\textrm{Hz}$. They all have multiple narrow lines in their sensitivity curves, which arise from noise sources in the instrument including resonances in the suspension system and electronic noise at multiples of $60\,\textrm{Hz}$: these have been removed in the \ref{app:a} figures for clarity. The detectors fall broadly into three categories: 1\textsuperscript{st} generation detectors, which have already operated; 2\textsuperscript{nd} generation detectors currently under construction; and 3\textsuperscript{rd} generation detectors at the planning stage. 
 
 \begin{table}[h!]
-\caption{\label{table:t} For the aVIRGO sensitivity curve an interpolation to the data published on \url{https://wwwcascina.virgo.infn.it/advirgo/} (2013) was used. For KAGRA (Kamioka Gravitational Wave Detector) an interpolation to the data for version D of the detector published on \url{http://gwcenter.icrr.u-tokyo.ac.jp/en/researcher/parameter} (2013) was used. For the remaining detectors analytic fits to the sensitivity curves due to \cite{Sathyaprakash} were used.}
+\caption{\label{table:t} For the AdV sensitivity curve an interpolation to the data published on \url{https://wwwcascina.virgo.infn.it/advirgo/} (2013) was used. For KAGRA (Kamioka Gravitational Wave Detector) an interpolation to the data for version D of the detector published on \url{http://gwcenter.icrr.u-tokyo.ac.jp/en/researcher/parameter} (2013) was used. For the remaining detectors analytic fits to the sensitivity curves due to \cite{Sathyaprakash} were used.}
 \begin{indented}
 \item[]\begin{tabular}{ l l l l l }
 \br
@@ -50,11 +50,11 @@ On Earth approximations to the free floating test masses described above are ach
   GEO600 $^{a}$	&	Germany 	& $600\,\textrm{m}$ 	& 2001-present 	   & 1$^{\textrm{st}}$\\
   TAMA300 $^{b}$& 	Japan		& $300\,\textrm{m}$ 	& 1995-present     & 1$^{\textrm{st}}$\\
   iLIGO	$^{c}$	&	US		& $4\,\textrm{km}$ 	& 2004-2010 	   & 1$^{\textrm{st}}$\\
-  iVIRGO $^{d}$	& 	Italy		& $3\,\textrm{km}$ 	& 2007-2010 	   & 1$^{\textrm{st}}$\\
-  aLIGO $^{e}$	&	US		& $4\,\textrm{km}$ 	& \emph{est.} 2016 & 2$^{\textrm{nd}}$\\
+  Virgo $^{d}$	& 	Italy		& $3\,\textrm{km}$ 	& 2007-2010 	   & 1$^{\textrm{st}}$\\
+  aLIGO $^{e}$	&	US		& $4\,\textrm{km}$ 	& \emph{est.} 2015 & 2$^{\textrm{nd}}$\\
   KAGRA	$^{f}$	&	Japan		& $3\,\textrm{km}$ 	& \emph{est.} 2018 & 2$^{\textrm{nd}}$\\
-  aVIRGO $^{g}$	&	Italy	 	& $3\,\textrm{km}$ 	& \emph{est.} 2017 & 2$^{\textrm{nd}}$\\
-  ET (Einstein Telescope)$^{h}$ &Italy		& $10\,\textrm{km}$ 	& \emph{est.} 2025 & 3$^{\textrm{rd}}$\\
+  AdV $^{g}$	&	Italy	 	& $3\,\textrm{km}$ 	& \emph{est.} 2016 & 2$^{\textrm{nd}}$\\
+  ET (Einstein Telescope)$^{h}$ & Italy		& $10\,\textrm{km}$ 	& \emph{est.} 2025 & 3$^{\textrm{rd}}$\\
 \br
 \multicolumn{5}{l}{$^{a}$\cite{2008CQGra..25k4043G}, $^{b}$\cite{2002CQGra..19.1409A}, }\\
 \multicolumn{5}{l}{$^{c}$\cite{2009RPPh...72g6901A}, $^{d}$\cite{accadia_virgo:_2012}, $^{e}$\cite{2010CQGra..27h4006H}, }\\
@@ -79,7 +79,7 @@ These missions are designed to probe the deci-Hz region of the GW spectrum, they
 
 
 
-\subsection{Pulsar timing arrays (PTAs)}\label{sec:PTAgeneralproperties}
+\subsection{Pulsar timing arrays}\label{sec:PTAgeneralproperties}
 PTAs can be thought of as naturally occurring interferometers with galactic scale arm lengths, hence they are sensitive to much lower frequencies than the detectors considered so far. Each pulsar is a very regular clock and the measured pulse arrival time (in practice, arrival times are corrected to arrival times at the solar-system  barycenter, SSB) can be compared against a prediction leaving a residual which includes the effects of passing GWs. Using an array of these pulsars spread across the sky allows us to correlate residuals between different pulsars and exploit the fact that the GWs influence all pulsars where as intrinsic pulsar noise clearly does not. The correlation between different pulsars depends only on their angular separation on the sky and has a distinctive shape, known as the Hellings and Downs curve \citep{HellingsDowns}, which we will now derive.
 
 The redshift of the rate of arrival of pulses for a pulsar at a distance $L$ from Earth, in the direction of the unit spatial vector $\vec{p}$ induced by a GW travelling in the direction of the unit vector $\hat{\Omega}$ is given by \citep{anholm-2009}
@@ -102,7 +102,7 @@ The overlap function, $\Gamma(f)$, tends to a constant value in the limit that t
 Neglecting the exponential terms in the overlap is the frequency domain equivalent of neglecting the pulsar term in (\ref{eq:pulsarredshift}). The integral may be evaluated to give an expression depending only on the angle, $\theta$, between the two pulsars; this is the famous Hellings and Downs curve, see figure \ref{fig:HnD},
 \begin{equation} \Gamma_{0}=\frac{1}{2}+\frac{3x}{2}\left(\log (x)-\frac{1}{6}\right) \quad \textrm{where}\quad x=\frac{1-\cos\theta}{2}\; .\end{equation}
 
-\begin{figure}[h!]
+\begin{figure}
  \centering
  \includegraphics[trim=0cm 0cm 0cm 0cm, width=0.6\textwidth]{HnDcurve.pdf}
  \caption{The Hellings and Downs curve, the correlation between two pulsars seperated on the sky by an angle $\theta$.}
