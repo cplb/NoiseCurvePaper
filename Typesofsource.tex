@@ -1,58 +1,80 @@
 \section{Types of source}\label{sec:voc}
 
-Sources of GWs can be broadly split into three categories: well modelled sources, for which we have a description of the expected waveform; stochastic backgrounds, for which we can describe the statistical behaviour; and unmodelled (or poorly-modelled) transient sources. The classic example of a well modelled source is the inspiral of two compact objects, this is discussed in section \ref{sec:insp}. Stochastic backgrounds can either be formed from many overlapping sources, which are each individually susceptible to being modelled, or from some intrinsically random process, these are discussed in section \ref{sec:stoch}. An example of an unmodelled (or poorly-modelled) transient source is a supernova; searches of this type are often called burst searches and are discussed in section \ref{sec:bursts}.
+GW signals can be broadly split into three categories: those from well-modelled sources, for which we have a description of the expected waveform; stochastic backgrounds, for which we can describe the statistical behaviour; and unmodelled (or poorly-modelled) transient sources. The classic example of a well-modelled source is the inspiral of two compact objects, this is discussed in section \ref{sec:insp}. Stochastic backgrounds can either be formed from many overlapping sources, which individually could be modelable, or from some intrinsically random process, these are discussed in section \ref{sec:stoch}. An example of an unmodelled (or poorly-modelled) transient source is a supernova; searches for signals of this type are often called burst searches and are discussed in section \ref{sec:bursts}.
 
 \subsection{Inspirals}\label{sec:insp}
-Inspiralling binaries spend a variable amount of time in each frequency band. If $\phi$ is the orbital phase then the number of cycles generated at frequency $f$ can be estimated as
-\begin{equation}\label{eq:inspiral} {\cal{N}}_{\textrm{cycles}} = \frac{f}{2\pi}\frac{\textrm{d}\phi}{\textrm{d}f}=\frac{f^{2}}{\dot{f}} \; ,\end{equation}
-where an overdot represents the time derivative and $f=\dot{\phi}$. The squared SNR will scale with ${\cal{N}}_{\textrm{cycles}}$, so it would be expected that $h_{c}(f)\approx \sqrt{{\cal{N}}_{\textrm{cycles}}}\tilde{h}(f)$. The exact conversion can be derived by considering the Fourier transform in the stationary phase approximation. Consider a source signal with approximately constant amplitude, $h$, and central frequency $f'$.
-\begin{eqnarray}&h(t)= h\exp\left(\rmi \phi(t)\right) \\
-\Rightarrow &\tilde{h}(f)=\int_{-\infty}^{\infty}d\textrm{t}\;h\exp \left(2\pi \rmi \left(\frac{\phi(t)}{2\pi t}-f\right)t\right)\end{eqnarray}
-Without loss of generality assume an initial phase of zero and expand the exponent in powers of $t$,
-\begin{eqnarray} \label{eq:FTofEMRI} \tilde{h}(f) &\approx \int_{-\infty}^{\infty}\rmd t\; h \exp\left[2\pi\rmi \dot{f'} \left(t^{2}+\frac{f'-f}{\dot{f'}}t\right)\right]\nonumber \\
-&\approx h\exp\left[-\pi\rmi\frac{\left(f'-f\right)^{2}}{2\dot{f'}}\right]\int_{-\infty}^{\infty}\rmd t\;\exp\left[2\pi\rmi\dot{f'}\left(t+\frac{f'-f}{2\dot{f'}}\right)^{2}\right] \nonumber \\
-&\approx\frac{h}{\sqrt{2i\dot{f'}}}\exp\left[-\pi\rmi\frac{\left(f'-f\right)^{2}}{2\dot{f'}}\right]\; .
+
+Inspiralling binaries may the most important GW source. They spend a variable amount of time in each frequency band. If $\phi$ is the orbital phase, then the number of cycles generated at frequency $f$ can be estimated as
+\begin{equation}\label{eq:inspiral}
+{N}_{\mathrm{cycles}} = \frac{f}{2\pi} \frac{\mathrm{d}\phi}{\mathrm{d}f} = \frac{f^{2}}{\dot{f}} \; ,
+\end{equation}
+where an overdot represents the time derivative and $\dot{\phi} = 2\pi f$. The squared SNR scales with ${N}_{\mathrm{cycles}}$, so it would be expected that $h_\mathrm{c}(f)\approx \sqrt{{N}_{\mathrm{cycles}}}\tilde{h}(f)$.
+
+The form for $h_\mathrm{c}$ can be derived from the Fourier transform in the stationary-phase approximation. Consider a source signal with approximately constant amplitude, $h_0$, and central frequency $f'$. In this case,
+\begin{eqnarray}
+h(t) &=& h_0\exp\left[\rmi \phi(t)\right] \; ; \\
+\tilde{h}(f) &=& \int_{-\infty}^{\infty}\rmd t\; h_0\exp \left\{2\pi \rmi \left[\frac{\phi(t)}{2\pi t}-f\right]t\right\} \; .
 \end{eqnarray}
-From (\ref{eq:differentdescriptions}) and (\ref{eq:FTofEMRI}) the characteristic strain and the Fourier transform can be related for inspiralling sources \citep{FinnThorne}
-\begin{equation}\label{eq:insphc}h_{c}(f) = \sqrt{\frac{2f^{2}}{\dot{f}}}h\;.\end{equation}
-Equation (\ref{eq:insphc}) is the relation between $h_{c}(f)$ and the instantaneous amplitude $h$ for an inspiralling source; for other types of source a new relation which satisfies (\ref{eq:hc}) will have to be found. Equation (\ref{eq:hc}) should be considered as the definition of characteristic strain and (\ref{eq:insphc}) a consequence of it for inspirals.
-
-
-
+Without loss of generality, we can assume an initial phase of zero, such that $\phi(t) \approx 2\pi f't$. The largest contribution to the integral comes from where the argument of the exponential is approximately zero. Expanding the exponent in powers of $t$ about $f = f'$,
+\begin{eqnarray} \label{eq:FTofEMRI}
+\tilde{h}(f) &\simeq& \int_{-\infty}^{\infty}\rmd t\; h_0 \exp\left[2\pi\rmi \dot{f'} \left(t^{2}+\frac{f'-f}{\dot{f'}}t\right)\right]\nonumber \\
+&\simeq& h_0\exp\left[-\pi\rmi\frac{\left(f'-f\right)^{2}}{2\dot{f'}}\right]\int_{-\infty}^{\infty}\rmd t\;\exp\left[2\pi\rmi\dot{f'}\left(t+\frac{f'-f}{2\dot{f'}}\right)^{2}\right] \nonumber \\
+&\simeq& \frac{h_0}{\sqrt{2\rmi\dot{f'}}}\exp\left[-\pi\rmi\frac{\left(f'-f\right)^{2}}{2\dot{f'}}\right]\; .
+\end{eqnarray}
+From (\ref{eq:strain-hc}) and (\ref{eq:FTofEMRI}), the characteristic strain for inspiralling sources is given by \citep{FinnThorne}
+\begin{equation}\label{eq:insphc}
+h_\mathrm{c}(f) = \sqrt{\frac{2f^{2}}{\dot{f}}}h_0 \;.
+\end{equation}
+Equation (\ref{eq:hc}) should be considered as the definition of characteristic strain and (\ref{eq:insphc}) a consequence of it for inspirals. Equation (\ref{eq:insphc}) is the relation between $h_\mathrm{c}(f)$ and the instantaneous amplitude $h_0$ for an inspiralling source; for other types of source a new relation satisfying (\ref{eq:hc}) has to be found.
 
 
 \subsection{Stochastic backgrounds}\label{sec:stoch}
-Another important source of GWs arises from stochastic backgrounds due to large populations of individually unresolvable sources. The population of sources will in general be at cosmological distances and it is necessary to distinguish the frequency in the source rest frame, $f_{\textrm{r}}$, from the measured frequency, $f$; these are related through the redshift, $z$, via $f_{\textrm{r}}=(1+z)f$. The comoving number density of sources, $n$, producing the background will also be a function of redshift; if the sources producing the stochastic background are all in the local universe then simply set $n(z)=\delta (z)$ and replace $d_{\textrm{L}}(z)$ with $d$ in all that follows (where $d_{\textrm{L}}(z)$ and $d$ are respectively the luminosity and comoving distances to the source, $d_{\textrm{L}}(z)=(1+z)d_{m}$). Equation (\ref{eq:omega}) gives an expression for the energy density in GWs per logarithmic frequency interval,
-\begin{equation}\label{eq:stoch} fS_{\textrm{E}}(f)=\frac{\pi c^{2}}{4G}f^{2}h_{c}(f)^{2} \; . \end{equation}
-The total energy emitted in the logarithmic frequency interval $\textrm{d}\left(\log (f_{\textrm{r}})\right)$ by a single binary in the population is $\left(\textrm{d}E_{\textrm{GW}}/\textrm{d}(\log f_{\textrm{r}})\right)\textrm{d}(\log f_{\textrm{r}})$; the energy density may be written as
-\begin{equation}\label{eq:Phinney} fS_{\textrm{E}}(f)=\int_{0}^{\infty}dz\; \frac{\textrm{d}n}{\textrm{d}z}\frac{1}{(1+z)}\frac{1}{d_{\textrm{L}}(z)^{2}}\frac{\textrm{d}E_{\textrm{GW}}}{\textrm{d}\left(\log f_{\textrm{r}} \right)} \; , \end{equation}
+
+Another important source of GWs are stochastic backgrounds, which can be produced from a large population of unresolvable sources. These can be at cosmological distances, then it is necessary to distinguish the frequency in the source rest frame $f_{\mathrm{r}}$ from the measured frequency $f$; the two are related through the redshift $z$ via $f_{\mathrm{r}}=(1+z)f$.
+
+The comoving number density of sources $\nu$ producing the background is also a function of redshift; if the sources producing the background are all in the local universe, then simply set $\nu(z) = \nu_0\delta (z)$ and replace $d_{\mathrm{L}}(z)$ with $d$ in all that follows, where $d_{\mathrm{L}}(z)$ and $d$ are respectively the luminosity and comoving distances to the source, $d_{\mathrm{L}}(z)=(1+z)d$.
+
+We shall assume the the individual sources are binaries, in which case the number density of sources is also be a function of component mass. It is convenient to work in terms of the chirp mass, defined as ${\mathcal{M}}=\mu^{3/5}M^{2/5}$, where $\mu$ is the reduced mass and $M$ is the total mass of the binary. The comoving number density of sources shall be represented by $\nu(z, \mathcal{M})$.
+
+Equation (\ref{eq:omega}) gives an expression for the energy density in GWs per logarithmic frequency interval,
+\begin{equation}\label{eq:stoch}
+fS_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G}f^{2}h_\mathrm{c}^{2}(f) \; .
+\end{equation}
+The total energy emitted in the logarithmic frequency interval $\mathrm{d}\left(\log f_{\mathrm{r}}\right)$ by a single binary in the population is $\left[\mathrm{d}E_{\mathrm{GW}}/\mathrm{d}(\log f_{\mathrm{r}})\right]\mathrm{d}(\log f_{\mathrm{r}})$; the energy density may be written as
+\begin{equation}\label{eq:Phinney}
+fS_{\mathrm{E}}(f) = \int_{0}^{\infty} \rmd z\; \frac{\mathrm{d}\nu}{\mathrm{d}z}\frac{1}{(1+z)}\frac{1}{d_{\mathrm{L}}^{2}(z)}\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} \; , \end{equation}
 where the factor of $\left( 1+z \right)^{-1}$ accounts for the redshift of the energy.
 
-For simplicity consider all the binaries comprising the background to be in circular orbits with frequencies $\nu=f_{\textrm{r}}/2$, and to be far from their last stable orbit; the energy radiated may then be calculated using the quadrupole approximation, \cite{petersmathews1963}. The chirp mass is defined as ${\cal{M}}=\mu^{3/5}M^{2/5}$, where $\mu$ is the reduced mass and $M$ is the total mass of the binary. The number density of sources will also be a function of chirp mass, $n(z,{\cal{M}})$. The energy in GWs from a single binary per logarithmic frequency interval is, 
-\begin{equation}\label{eq:Thorne} \frac{\textrm{d}E_{\textrm{GW}}}{\textrm{d}\left(\log f_{\textrm{r}} \right)}=\frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{\textrm{r}}^{2/3} \; , \end{equation}
-between an minimum and maximum frequency set by the initial and final radius of the binary orbit. Here we assume that the maximum and minimum frequencies are outside of the range of frequencies probed by our detector and hence may be neglected. Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}) an expression for characteristic strain can now be found, \cite{SesanaVecchioColancino}
-\begin{equation}\label{eq:bigint}
-h_{c}(f)^{2}=\frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\textrm{d}z\;\int_{0}^{\infty}\textrm{d}{\cal{M}}\;\frac{\textrm{d}^{2}n}{\textrm{d}z\,\textrm{d}{\cal{M}}}\frac{1}{d_{\textrm{L}}(z)^{2}}\left( \frac{{\cal{M}}^{5}}{1+z} \right)^{1/3}\; .
+For simplicity, consider the background to comprise of binaries in circular orbits, with frequencies $f_\mathrm{GW} =f_{\mathrm{r}}/2$, which are far from their last stable orbit. The energy radiated may then be calculated using the quadrupole approximation \citep{petersmathews1963}. The energy in GWs from a single binary per logarithmic frequency interval is, 
+\begin{equation}\label{eq:Thorne}
+\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} = \frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{\mathrm{r}}^{2/3} \; ,
 \end{equation}
-From (\ref{eq:bigint}) it can be seen that the characteristic strain due to a stochastic background of binaries is a power law in frequency with spectral index $\alpha=-2/3$. The amplitude of the background depends on the population statistics of the binaries under consideration via $n(z,{\cal{M}})$. The power law is often parametrised as
-\begin{equation}\label{eq:power} h_{c}(f)= A\left(\frac{f}{f_{0}}\right)^{\alpha}\; , \end{equation}
-and constraints are then placed on $A$. In practice this power law will also have upper and lower frequency cut-offs related to the population of objects creating the GW spectrum. The stochastic background due to other sources, such as cosmic strings or relic GWs from the early Universe, can also be written in the same form as (\ref{eq:power}) but with different spectral indices: $\alpha=-7/6$ for cosmic strings or $\alpha$ in the range $-1$ to $-0.8$ for relic GWs, \cite{Jenet}.
+between an minimum and maximum frequency set by the initial and final radius of the binary orbit. Here, we assume that the maximum and minimum frequencies are outside of the range of our detector and hence can be neglected. Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}), an expression for characteristic strain can now be found \citep{SesanaVecchioColancino}
+\begin{equation}\label{eq:bigint}
+h_\mathrm{c}^{2}(f) = \frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\mathrm{d}\nu\;\int_{0}^{\infty}\mathrm{d}{\cal{M}}\;\frac{\mathrm{d}^{2}\nu}{\mathrm{d}z\,\mathrm{d}{\mathcal{M}}}\frac{1}{d_{\mathrm{L}}^{2}(z)}\left( \frac{{\mathcal{M}}^{5}}{1+z} \right)^{1/3}\; .
+\end{equation}
 
-
+From (\ref{eq:bigint}) it can be seen that the characteristic strain due to a stochastic background of binaries is a power law in frequency with spectral index $\alpha=-2/3$. The amplitude of the background depends on the population statistics of the binaries under consideration via $\nu(z,{\mathcal{M}})$. The power law is often parametrised as
+\begin{equation}\label{eq:power} 
+h_\mathrm{c}(f) = A\left(\frac{f}{f_{0}}\right)^{\alpha}\; , 
+\end{equation}
+and constraints are then placed on $A$. In practice, this power law also has upper and lower frequency cut-offs related to the population of source objects. A stochastic background from other sources, such as cosmic strings or relic GWs from the early Universe, can also be written in the same form as (\ref{eq:power}), but with different spectral indices: $\alpha=-7/6$ for cosmic strings or $\alpha$ in the range $-1$ to $-0.8$ for relic GWs \citep{Jenet}.
 
 
 \subsection{Burst sources}\label{sec:bursts}
 
-Some sources of GWs can produce signals with large amplitudes, greater than the detector noise. The duration of such a signal is typically very short, of the order of a few wave periods, and so there is not time to accumulate SNR in each frequency band in the way inspirals do. As a consequence, waveform models are not required to produce a detection; we simply rely on the "excess power" produced by these so-called burst sources. Typically, we may be looking for signals from core collapse supernovae \citep{Ott2009}, the late stages of merging compact binaries, or more generally, signals from any unexpected or poorly modelled sources.
+Some sources of GWs can produce signals with large amplitudes, greater than the detector noise. The typical duration of such a signal is short, of the order of a few wave periods, and so there is not time to accumulate SNR in each frequency band as for inspirals. As a consequence, waveform models are not required for detection; we simply rely on identifying the excess power produced by these burst sources. Typically, we may be looking for signals from core-collapse supernovae \citep{Ott2009}, the late stages of merging compact binaries, or more generally, signals from any unexpected or poorly modelled sources.
 
-Burst searches are often carried out using time-frequency techniques. The data stream from a detector is temporally split into segments, the length of which can be tuned to give greater sensitivity to particular sources. Each segment is then transformed into the frequency domain, whitened and normalised to the noise spectrum to produce a time-frequency plot. Potential GW signals are identified by searching for clusters of pixels that contain an excess of power (see e.g. \cite{Bursts}).
+Burst searches are often carried out using time--frequency techniques. The data stream from a detector is temporally split into segments, the length of which can be tuned to give greater sensitivity to particular sources. Each segment is then transformed into the frequency domain, whitened and normalised to the noise spectrum to produce a time--frequency plot. Potential GW signals are identified by searching for clusters of pixels that contain an excess of power \citep[e.g.,][]{Bursts}.
 
 The presence of excess power across a number of pixels eliminates modelled noise sources, but such a cluster may also be caused by atypical noise within a detector. We can improve our confidence of a GW signal by making use of information obtained from other GW detectors. Signals across a network of detectors should have compatible arrival times (given the sky direction) as well as consistent amplitudes, frequencies and shapes of the waveform. Different pipelines are currently in use that analyse the signal consistency in different ways: both coincidence searches \citep{Chatterji2004} and fully coherent methods \citep{Klimenko2008} are used.
 
-An important aspect of burst search algorithms is to accurately estimate the noise properties within each time segment. To this extent, null data streams can be constructed that should be insensitive to real GW signals. In order to estimate the false alarm rate, the data from different detectors can be shifted in time to remove any genuine coincident GW signals. These time-shifts are then analysed to simulate the potential occurence of coincident noise events. The algorithms are tuned using time-shifted data to ensure there is no bias in the final search.
+An important aspect of burst search algorithms is to accurately estimate the noise properties within each time segment. To this extent, null data streams can be constructed that are insensitive to real GW signals. In order to estimate the false alarm rate, the data from different detectors can be shifted in time to remove any genuine coincident GW signals. These time-shifts are then analysed to simulate the potential occurence of coincident noise events. The algorithms are tuned using time-shifted data to ensure there is no bias in the final search.
 
-As discussed in \ref{sec:insp}, the expected relation between $h_{c}(f)$ and a typical waveform $\tilde{h}(f)$ is simply
-\begin{equation}\label{eq:simple} h_{c}(f)=\tilde{h}(f)\sqrt{{\cal{N}}_{\textrm{cycles}}} \; , \end{equation}
-where ${\cal{N}}_{\textrm{cycles}}$ is the number of cycles of radiation generated by the source. Here, ${\cal{N}}_{\textrm{cycles}}$ is of order unity and $\tilde{h}(f)$ is strongly peaked around some central frequency.
+As discussed in \ref{sec:insp}, the expected relation between $h_\mathrm{c}(f)$ and a typical waveform $\tilde{h}(f)$ is
+\begin{equation}\label{eq:simple} 
+h_\mathrm{c}(f) = \tilde{h}(f)\sqrt{{N}_{\mathrm{cycles}}} \; , 
+\end{equation}
+where ${N}_{\mathrm{cycles}}$ is the number of cycles of radiation generated by the source. For bursts, $N_{\mathrm{cycles}}$ is of order unity and $\tilde{h}(f)$ is strongly peaked around some central frequency.
 
 
