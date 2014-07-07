@@ -24,7 +24,7 @@ Gravitational radiation has two independent polarization states denoted $+$ and 
 s(t) = n(t)+h(t) \; .
 \end{equation}
 We will work with the Fourier transform of the signal, using the conventions that
-\begin{eqnarray} 
+\begin{eqnarray} \label{eq:defFourier}
 \tilde{x}(f) &= {\mathcal{F}}\left\{x(t)\right\} &= \int_{-\infty}^{\infty}\mathrm{d}t\;x(t)\exp (-2\pi \rmi f t ) \; , \\
 x(t) &= {\mathcal{F}}^{-1}\left\{\tilde{x}(f)\right\} &= \int_{-\infty}^{\infty}\mathrm{d}f\;\tilde{x}(f)\exp (2\pi \rmi f t ) \; .
 \end{eqnarray}
@@ -37,27 +37,25 @@ where angle brackets $\left<\ldots\right>$ denote an ensemble average over many 
 
 Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} power spectral density.\footnote{An alternative convention is to use the two-sided power spectral density $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
-When integrated over all positive frequencies the power spectral density gives the mean square noise amplitude. Starting with taking the average of the square of the detector noise:
+When integrated over all positive frequencies the power spectral density gives the mean square noise amplitude. Starting with taking the \emph{time} average of the square of the detector noise:
 \begin{eqnarray}\label{eq:meansquare}
-\overline{n(t)^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\;\left| n(t) \right|^{2} \nonumber \\
- &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi ft \right)\exp\left(-2\pi \rmi f't \right)
+\overline{n(t)^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\; n(t) ^{2} \nonumber \\
+ &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\; n(t)n^{*}(t) \nonumber \\
+ &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')e^{2\pi \rmi ft }e^{-2\pi \rmi f't } \nonumber\\
+ &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\cal{F}}\left\{ n(\tau) \right\}(f){\cal{F}}\left\{ n(\tau) \right\}(f')^{*}e^{2\pi \rmi ft }e^{-2\pi \rmi f't }
 \end{eqnarray}
-Using the Fourier property ${\mathcal{F}}\left\{ n(t+\tau) \right\} = \tilde{n}(f)\exp (-2\pi \rmi f\tau )$, the exponential factors may be absorbed as a time-translation of the noise by an amount $t$. The noise is stationary and is invariant under this time translation. We are thus taking the time average...
-\cplb{I give up here. This derivation makes no sense in it's current state.}
+Where in the penultimate line we have used the definition of the Fourier transform, (\ref{eq:defFourier}), and in the last line we have just changed notation. A property of Fourier transforms is that in the time domain a translation by amount $t$ translates to a rotation in phase by $2\pi ft$ in the frequency domain; if ${\mathcal{F}}\left\{ n(\tau) \right\} = \tilde{n}(f)$ then ${\mathcal{F}}\left\{ n(\tau-t) \right\} = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore the exponential factors in (\ref{eq:meansquare}) may be absorbed as a time-translation of the noise by an amount $t$
+\begin{eqnarray}
+\overline{n(t)^{2}} & = \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\cal{F}}\left\{ n(\tau-t) \right\}(f){\cal{F}}\left\{ n(\tau-t) \right\}(f')^{*} \, .
+\end{eqnarray}
+Using the ergodic property of the system described above the time average (denoted by $\overline{(\ldots)}$) may now be changed into an ensemble average (denoted by $\left<\ldots\right>$).
+The noise is stationary so it's expectation value is unchanged by the time translation performed above. Therefore using (\ref{eq:psd}) gives
 \begin{eqnarray}\label{eq:meansquare1}
-\overline{n(t)^{2}} & = \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\cal{F}}\left\{ n(\tau-t) \right\}(f){\cal{F}}\left\{ n(\tau-t) \right\}(f')^{*} \nonumber \\
 &=\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\nonumber \\
+&=\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\frac{1}{2}S_{n}(f)\delta(f-f') \nonumber \\
 & = \int_{0}^{\infty}\mathrm{d}f\; S_{n}(f)
 \end{eqnarray}
-Using the property of Fourier transforms, ${\cal{F}}\left\{ n(t+\tau) \right\}(f)=\tilde{n}(f)\exp (-2\pi \rmi f\tau )$, the time average can be turned into an ensemble average and hence the definition of power spectral density in (\ref{eq:psd}) may be used.
-\begin{eqnarray}\label{eq:meansquare1}
-%\left<n(t)^{2}\right>&=\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\int_{-T}^{T}\mathrm{d}t\; {\cal{F}}\left\{n(\tau+t)\right\}\left[{\cal{F}}\left\{n(\tau+t)\right\}\right]^{*}\nonumber \\
-\overline{n(t)^{2}}& = \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\int_{-T}^{T}\mathrm{d}t\; \tilde{n}(f)\tilde{n}^{*}(f') \nonumber \\
-&=\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\nonumber \\
-%&= \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\frac{1}{2}S_{n}(f)\delta (f-f')\nonumber\\
-& = \int_{0}^{\infty}\mathrm{d}f\; S_{n}(f)
-\end{eqnarray}
-\cplb{Try someting based on Wiener--Khinchin theorem?}
+ 
 
 Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem which involves constructing a Wiener optimal filter \citep{Wiener49}. Let $K(t)$ be the filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
 \begin{equation}\label{eq:conv}
