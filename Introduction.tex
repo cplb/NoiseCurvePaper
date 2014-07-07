@@ -10,7 +10,7 @@ There already exists an extensive literature assessing the potential of all of t
 In this work, we discuss the differing conventions commonly used in GW astronomy. The amplitude of a GW is a strain, a dimensionless quantity $h$. This gives a fractional change in length, or equivalently light travel time, across a detector. The strain is small, making it a challenge to measure: we are yet to obtain a direct detection
 of a GW. To calibrate our expectations for detection, it is necessary to quantify the sensitivity of our instruments and the strength of their target signals.
 
-When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parametrizations based upon the strain: the characteristic strain, the power spectral density and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
+When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parametrizations based upon the strain: the characteristic strain, the PSD and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
 
 We begin by expounding the various conventions and the relationships between the conventions in sections \ref{sec:conventions} and \ref{sec:voc}. A review of GW detectors (both current and proposed) is given in section \ref{sec:detectors} and a review of GW sources is given in section \ref{sec:sources}. In \ref{app:a} several example sensitivity curves are presented. A website where similar figures can be generated is available at \url{www.ast.cam.ac.uk/~rhc26/sources/}. Here the user may select which sources and detectors to include to tailor the figure to their specific requirements.
 
@@ -29,15 +29,15 @@ We will work with the Fourier transform of the signal, using the conventions tha
 x(t) &= {\mathcal{F}}^{-1}\left\{\tilde{x}(f)\right\} &= \int_{-\infty}^{\infty}\mathrm{d}f\;\tilde{x}(f)\exp (2\pi \rmi f t ) \; .
 \end{eqnarray}
 
-For simplicity, it is assumed that the noise in the GW detector is stationary and Gaussian (with zero mean); under these assumptions the noise is fully characterised via the one-sided noise power spectral density $S_{n}(f)$, 
+For simplicity, it is assumed that the noise in the GW detector is stationary and Gaussian (with zero mean); under these assumptions the noise is fully characterised via the one-sided noise power spectral density (PSD) $S_{n}(f)$, 
 \begin{equation}\label{eq:psd}
 \left<\tilde{n}(f)\tilde{n}^{*}(f')\right>=\frac{1}{2}\delta (f-f')S_{n}(f) \; ,
 \end{equation}
-where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise power spectral density $S_{n}(f)$ has units of inverse frequency.
+where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
 
-Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} power spectral density.\footnote{An alternative convention is to use the two-sided power spectral density $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
+Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
-When integrated over all positive frequencies the power spectral density gives the mean square noise amplitude. Starting with taking the average of the square of the detector noise:
+When integrated over all positive frequencies the PSD gives the mean square noise amplitude. Starting with taking the average of the square of the detector noise:
 \begin{eqnarray}\label{eq:meansquare}
 \overline{n(t)^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\;\left| n(t) \right|^{2} \nonumber \\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi ft \right)\exp\left(-2\pi \rmi f't \right)
@@ -49,7 +49,7 @@ Using the Fourier property ${\mathcal{F}}\left\{ n(t+\tau) \right\} = \tilde{n}(
 &=\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\nonumber \\
 & = \int_{0}^{\infty}\mathrm{d}f\; S_{n}(f)
 \end{eqnarray}
-Using the property of Fourier transforms, ${\cal{F}}\left\{ n(t+\tau) \right\}(f)=\tilde{n}(f)\exp (-2\pi \rmi f\tau )$, the time average can be turned into an ensemble average and hence the definition of power spectral density in (\ref{eq:psd}) may be used.
+Using the property of Fourier transforms, ${\cal{F}}\left\{ n(t+\tau) \right\}(f)=\tilde{n}(f)\exp (-2\pi \rmi f\tau )$, the time average can be turned into an ensemble average and hence the definition of PSD in (\ref{eq:psd}) may be used.
 \begin{eqnarray}\label{eq:meansquare1}
 %\left<n(t)^{2}\right>&=\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\int_{-T}^{T}\mathrm{d}t\; {\cal{F}}\left\{n(\tau+t)\right\}\left[{\cal{F}}\left\{n(\tau+t)\right\}\right]^{*}\nonumber \\
 \overline{n(t)^{2}}& = \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\int_{-T}^{T}\mathrm{d}t\; \tilde{n}(f)\tilde{n}^{*}(f') \nonumber \\
@@ -95,7 +95,7 @@ Whilst the magnitude of the Fourier transform of the signal $|\tilde{h}(f)|$ pro
 
 \subsection{Characteristic strain}\label{sec:character-strain}
 
-The characteristic strain $h_c$ is designed to include the effect of integrating an inspiralling signal. Its counterpart for describing noise is the noise amplitude $h_n$. These are defined as
+The characteristic strain $h_\mathrm{c}$ is designed to include the effect of integrating an inspiralling signal. Its counterpart for describing noise is the noise amplitude $h_n$. These are defined as
 \begin{eqnarray}\label{eq:strain-hc} 
 h_\mathrm{c}(f)^{2} &= 4f^{2}\left| \tilde{h}(f) \right|^{2} \; ,\\
 h_{n}(f)^{2} &= fS_{n}(f),
@@ -105,11 +105,11 @@ such that the SNR in (\ref{eq:traditionalSNR}) may be written
 \begin{equation}\label{eq:hc} 
 \varrho^{2} = \int_{0}^{\infty} \mathrm{d}\left(\log f\right)\; \left[\frac{h_\mathrm{c}(f)}{h_{n}(f)}\right]^{2} \;.
 \end{equation}
-The strain amplitudes $h_\mathrm{c}(f)$ and $h_{c}(f)$ are dimensionless. Using this convention, when plotting on a log--log scale, the area between the source and detector curves is related to the SNR via (\ref{eq:hc}). This convention allows the reader to integrate by eye to assess the detectability of a given source (see figure \ref{fig:hc}).
+The strain amplitudes $h_\mathrm{c}(f)$ and $h_{n}(f)$ are dimensionless. Using this convention, when plotting on a log--log scale, the area between the source and detector curves is related to the SNR via (\ref{eq:hc}). This convention allows the reader to integrate by eye to assess the detectability of a given source (see figure \ref{fig:hc}).
 
 An additional advantage of this convention is that the values on the strain axis for the detector curve $h_n(f)$ have a simple physical interpretation: they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis $h_\mathrm{c}(f)$ do not directly relate to the amplitude of the waves from the source. Another disadvantage is that the characteristic strain for a monochromatic source is infinite.
 
-\subsection{Power spectral density (PSD)}\label{sec:psd}
+\subsection{Power spectral density }\label{sec:psd}
 
 A second commonly used quantity for sensitivity curves is the square root of the PSD (see figure \ref{fig:S}). When discussing a detector this is
 \begin{equation}\label{eq:temp1}
@@ -120,7 +120,7 @@ where we have used (\ref{eq:strain-hn}); by analogy, we can define an equivalent
 \sqrt{S_{h}(f)} = h_\mathrm{c}(f)f^{-1/2} = 2 f^{1/2} \left| \tilde{h}(f) \right| \; ,
 \label{eq:ShforSources}
 \end{equation}
-where we have used (\ref{eq:strain-hc}). Both $\sqrt{S_{n}(f)}$ and $\sqrt{S_{h}(f)}$ have units of $\mathrm{Hz^{-1/2}}$. The root power spectral density is the most frequently plotted quantity in the literature.
+where we have used (\ref{eq:strain-hc}). Both $\sqrt{S_{n}(f)}$ and $\sqrt{S_{h}(f)}$ have units of $\mathrm{Hz^{-1/2}}$. The root PSD is the most frequently plotted quantity in the literature.
 
 The PSD has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the SNR.
 

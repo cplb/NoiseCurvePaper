@@ -103,7 +103,7 @@ PTAs can be thought of as naturally occurring interferometers with galactic-scal
 
 The redshift of the rate of arrival of pulses for a pulsar at a distance $L$ from the Solar-System barycentre (SSB), in the direction of the unit spatial vector $\hat{p}$ induced by a GW travelling in direction of the unit vector $\hat{\Omega}$ is \citep{anholm-2009}
 \begin{equation}\label{eq:pulsarredshift}
-z(t,\hat{\Omega})= \frac{1}{2} \frac{\hat{p}^{j}\hat{p}^{i}} {1+\hat{\Omega}\cdot\hat{p}}\left[h_{ij}^{\mathrm{Pulsar}}\left(t-\frac{L}/c,\hat{\Omega} \right)-h_{ij}^{\mathrm{Earth}}(t,\hat{\Omega} )\right] = \frac{1}{2}\frac{\hat{p}^{j}\hat{p}^{i}}{1+\hat{\Omega}\cdot\hat{p}} \Delta h_{ij}(t,\hat{\Omega})\; .
+z(t,\hat{\Omega})= \frac{1}{2} \frac{\hat{p}^{j}\hat{p}^{i}} {1+\hat{\Omega}\cdot\hat{p}}\left[h_{ij}^{\mathrm{Pulsar}}\left(t-\frac{L}{c},\hat{\Omega} \right)-h_{ij}^{\mathrm{Earth}}(t,\hat{\Omega} )\right] = \frac{1}{2}\frac{\hat{p}^{j}\hat{p}^{i}}{1+\hat{\Omega}\cdot\hat{p}} \Delta h_{ij}(t,\hat{\Omega})\; .
 \end{equation}
 The redshift includes two terms: the pulsar term and the Earth term. The pulsar term is often neglected in PTA analysis as it can be considered as an extra noise term which averages to zero across the array. The experimentally measured quantity is not the redshift but the timing residual, the two are related via
 \begin{equation}\label{eq:restored}
@@ -111,9 +111,9 @@ R(t,\hat{\Omega}) = \int_{0}^{t}\mathrm{d}t'\;z(t',\hat{\Omega}) \; .
 \end{equation}
 All of the pulsars, and the Earth, are subject to the same metric perturbation field. This may be expressed in terms of its Fourier transform
 \begin{equation}
-h_{ij}(t,\vec{x}) = \sum_{A\,=\,+,\,\times}\int\mathrm{d}f\;\iint_{\mathbb{S}_{2}}\mathrm{d}\hat{\Omega}\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega}) \exp\left[2\pi i f (t-\hat{\Omega}\cdot\vec{x}\right] \; ,
+h_{ij}(t,\vec{r}) = \sum_{A\,=\,+,\,\times}\int\mathrm{d}f\;\iint_{\mathbb{S}_{2}}\mathrm{d}\hat{\Omega}\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega}) \exp\left[2\pi i f \left(t-\frac{\hat{\Omega}\cdot\vec{x}}{c}\right)\right] \; ,
 \end{equation}
-where $e^{A}_{ij}(\hat{\Omega})$ is the $A$ polarisation basis tensor for direction $\hat{\Omega}$  and $\vec{x}$ is the spatial position. Choosing the SSB as the origin of our coordinate system, so the pulsar is at position $L\hat{p}$, gives
+where $e^{A}_{ij}(\hat{\Omega})$ is the $A$ polarisation basis tensor for direction $\hat{\Omega}$  and $\vec{r}$ is the spatial position. Choosing the SSB as the origin of our coordinate system, so the pulsar is at position $L\hat{p}$, gives
 \begin{equation}\label{eq:deltahij}
 \Delta h_{ij}(t,\hat{\Omega}) = \sum_{A\,=\,+,\,\times}\int\mathrm{d}f\; \tilde{h}_{A}(f,\hat{\Omega})e_{ij}^{A}(\hat{\Omega})\exp\left(2\pi \rmi f t\right)\left\{\exp\left[-2\pi\rmi fL \left(1+\hat{p}\cdot\hat{\Omega}\right)\right]-1\right\} \; .
 \end{equation}
