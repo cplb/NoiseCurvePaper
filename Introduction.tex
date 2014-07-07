@@ -59,9 +59,9 @@ Using the property of Fourier transforms, ${\cal{F}}\left\{ n(t+\tau) \right\}(f
 \end{eqnarray}
 \cplb{Try someting based on Wiener--Khinchin theorem?}
 
-Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem which involves constructing a Wiener optimal filter \cplb{[citation needed]}. Let $K(t)$ be the filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
+Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem which involves constructing a Wiener optimal filter \citep{Wiener49}. Let $K(t)$ be the filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
 \begin{equation}\label{eq:conv}
-\left(s*K\right)(\tau) = \int_{-\infty}^{\infty}\mathrm{d}t\;(n(t)+h(t))K(t-\tau) = \mathcal{S} + \mathcal{N} \; .
+\left(s*K\right)(\tau) = \int_{-\infty}^{\infty}\mathrm{d}t\;(n(t)+h(t))K(t-\tau) \approx \mathcal{S} + \mathcal{N} \; .
 \end{equation}
 The signal contribution $\mathcal{S}$ is defined as the expectation of the convolution in (\ref{eq:conv}) when a signal is present, maximised by varying the offset $\tau$. \cplb{I think this needs expanding.} Since the expectation of pure noise is zero it, follows that
 \begin{equation}
@@ -74,12 +74,12 @@ The squared contribution from noise $\mathcal{N}^{2}$ is defined as the mean squ
 %&=\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}t\;\int_{-\infty}^{\infty}\mathrm{d}t'\;\frac{1}{2}S_{n}(f)K(t)K^{*}(t')\exp\left(2\pi\rmi f (t-t')\right)\nonumber \\
  &= \int_{-\infty}^{\infty}\mathrm{d}f \; \frac{1}{2}S_{n}(f)\tilde{K}(f)\tilde{K}^{*}(f) \; ,
  \end{eqnarray}
-using the definition of $S_{n}(f)$ from (\ref{eq:psd}). Hence the optimum signal-to-noise ratio (SNR) $\varrho$ is given by \cplb{Why is this optimal?}
+using the definition of $S_{n}(f)$ from (\ref{eq:psd}). Hence the signal-to-noise ratio (SNR) $\varrho$ is given by
 \begin{equation}\label{eq:SNRinnerprod} 
 \varrho^{2} = \frac{\mathcal{S}^{2}}{\mathcal{N}^{2}}= \frac{\innerprod{\frac{1}{2}S_{n}(f)\tilde{K}(f)}{\tilde{h}}^{2}}{\innerprod{\frac{1}{2}S_{n}(f)\tilde{K}(f)}{\frac{1}{2}S_{n}(f)\tilde{K}(f)}} \;,
 \end{equation}
-\cplb{Inner product should be between signals: you don't specify the Fourier transform} where we have introduced the inner product between signal $A$ and $B$ as \citep{Finn1992}
-\begin{equation}\label{eq:snrinnerprod} \left( A | B \right) = 4\Re\left\{\int_{0}^{\infty}\mathrm{d}f\;\frac{\tilde{A}^{*}(f)\tilde{B}(f)}{S_{n}(f)}\right\} \; .\end{equation}
+where we have introduced the inner product between signal $A$ and $B$ as \citep{Finn1992}
+\begin{equation}\label{eq:snrinnerprod} \left( \tilde{A}(f) | \tilde{B}(f) \right) = 4\Re\left\{\int_{0}^{\infty}\mathrm{d}f\;\frac{\tilde{A}^{*}(f)\tilde{B}(f)}{S_{n}(f)}\right\} \; .\end{equation}
 The optimum filter maximises the SNR in (\ref{eq:SNRinnerprod}). From the Cauchy--Schwarz inequality, it follows that the optimum filter is
 \begin{equation}
 \tilde{K}(f)=\frac{\tilde{h}(f)}{S_{n}(f)} \; .
@@ -107,13 +107,11 @@ such that the SNR in (\ref{eq:traditionalSNR}) may be written
 \end{equation}
 The strain amplitudes $h_\mathrm{c}(f)$ and $h_{c}(f)$ are dimensionless. Using this convention, when plotting on a log--log scale, the area between the source and detector curves is related to the SNR via (\ref{eq:hc}). This convention allows the reader to integrate by eye to assess the detectability of a given source (see figure \ref{fig:hc}).
 
-An additional advantage of this convention is that the values on the strain axis for the detector curve $h_n(F)$ have a simple physical interpretation: they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis $h_\mathrm{c}(f)$ do not directly relate to the amplitude of the waves from the source. Another disadvantage is that the characteristic strain for a monochromatic source is infinite.
+An additional advantage of this convention is that the values on the strain axis for the detector curve $h_n(f)$ have a simple physical interpretation: they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis $h_\mathrm{c}(f)$ do not directly relate to the amplitude of the waves from the source. Another disadvantage is that the characteristic strain for a monochromatic source is infinite.
 
-\subsection{Power spectral density}\label{sec:psd}
+\subsection{Power spectral density (PSD)}\label{sec:psd}
 
-\cplb{Can we abbreviate to PSD?}
-
-A second commonly used quantity for sensitivity curves is the square root of the power spectral density (see figure \ref{fig:S}). When discussing a detector this is
+A second commonly used quantity for sensitivity curves is the square root of the PSD (see figure \ref{fig:S}). When discussing a detector this is
 \begin{equation}\label{eq:temp1}
 \sqrt{S_{n}(f)} = h_{n}(f)f^{-1/2} \; ,
 \end{equation}
@@ -124,7 +122,7 @@ where we have used (\ref{eq:strain-hn}); by analogy, we can define an equivalent
 \end{equation}
 where we have used (\ref{eq:strain-hc}). Both $\sqrt{S_{n}(f)}$ and $\sqrt{S_{h}(f)}$ have units of $\mathrm{Hz^{-1/2}}$. The root power spectral density is the most frequently plotted quantity in the literature.
 
-The power spectral density has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the SNR.
+The PSD has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the SNR.
 
 
 \subsection{Energy density}\label{sec:energy-density}
@@ -165,8 +163,8 @@ The reduced Hubble parameter $h_{100}$ has nothing to do with strain. The most c
 This quantity has one aesthetic advantage over the others: it automatically accounts for the fact that there is less energy in low frequency waves of the same amplitude. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the SNR.
 
 \subsection{Relating the different descriptions}
-The dimensionless energy density in GWs $\Omega_{\mathrm{GW}}$, spectral energy density $S_{\mathrm{E}}$, one-sided power spectral density $S_{h}$, characteristic strain $h_\mathrm{c}$ and frequency-domain strain $\tilde{h}(f)$ are related via
-\begin{equation}
+The dimensionless energy density in GWs $\Omega_{\mathrm{GW}}$, spectral energy density $S_{\mathrm{E}}$, one-sided PSD, $S_{h}$, characteristic strain $h_\mathrm{c}$ and frequency-domain strain $\tilde{h}(f)$ are related via
+\begin{equation}\label{eq:differentdescriptions}
 H_0^2\Omega_\mathrm{GW}(f)= \frac{8 \pi G}{3 c^{2}} fS_{\mathrm{E}}(f) = \frac{2\pi^2}{3} f^3 S_h(f) = \frac{2\pi^2}{3} f^2 h_\mathrm{c}^2(f) = \frac{8\pi^2}{3} f^4 \left|\tilde{h}(f)\right|^2\; ,
 \end{equation}
 using (\ref{eq:strain-hc}), (\ref{eq:ShforSources}), (\ref{eq:spectralenergydensity}), (\ref{eq:omega}) and (\ref{eq:crit-density}).
