@@ -60,7 +60,7 @@ Given a detector output, the challenge is to extract the signal. There is a well
 \begin{equation}\label{eq:conv}
 \left(s*K\right)(\tau) = \int_{-\infty}^{\infty}\mathrm{d}t\;\left[h(t)+n(t)\right]K(t-\tau) \approx \mathcal{S} + \mathcal{N} \; .
 \end{equation}
-The signal contribution $\mathcal{S}$ is defined as the expectation of the convolution in (\ref{eq:conv}) when a signal is present, maximised by varying the offset $\tau$. \cplb{I think this needs expanding.} Since the expectation of pure noise is zero it, follows that
+The signal contribution $\mathcal{S}$ is defined as the expectation of the convolution in (\ref{eq:conv}) when a signal is present, maximised by varying the offset to achieve the best overlap with the data. Since the expectation of pure noise is zero it, follows that
 \begin{equation}
 \mathcal{S} = \int_{-\infty}^{\infty}\mathrm{d}t\;h(t)K(t)=\int_{-\infty}^{\infty}\mathrm{d}t\;h(t)K^{*}(t)=\int_{-\infty}^{\infty}\mathrm{d}f\; \tilde{h}(f)\tilde{K}^{*}(f) \; .
 \end{equation}
