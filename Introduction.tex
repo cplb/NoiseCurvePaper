@@ -42,13 +42,13 @@ When integrated over all positive frequencies, the PSD gives the mean square noi
 \overline{\left|n(t)\right|^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; n(t)n^{*}(t) \\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right) \nonumber\\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau) \right\}(f')\right]^{*} \nonumber \\*
- & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)
+ & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)\;.
 \end{eqnarray}
 Where we have substituted in using the definitions of the Fourier transform and its inverse. A property of Fourier transforms is that in the a time-domain translation by amount $t$ translates to a frequency-domain phase change $2\pi ft$; if ${\mathcal{F}}\left\{ n(\tau) \right\}(f) = \tilde{n}(f)$, then ${\mathcal{F}}\left\{ n(\tau-t) \right\}(f) = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore, the exponential factors in (\ref{eq:meansquare}) may be absorbed as
 \begin{eqnarray}
 \overline{\left|n(t)\right|^{2}} &=& \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T} \mathrm{d}t\:\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau-t) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau-t) \right\}(f')\right]^{*} \, .
 \end{eqnarray}
-Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{(\ldots)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by time-translation performed above. Therefore,
+Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{\left(\ldots\right)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by time-translation performed above. Therefore,
 \begin{eqnarray}\label{eq:meansquare1}
 \overline{\left|n(t)\right|^{2}} &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right> \\
 &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\frac{1}{2}S_{n}(f)\delta(f-f') \nonumber \\
@@ -140,7 +140,7 @@ where the definition (\ref{eq:ShforSources}) have been used. Equation (\ref{eq:s
 \begin{equation}\label{eq:spectralenergydensity}
 S_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ;
 \end{equation}
-a corresponding expression for the noise can be formulated by replacing $S_h(F)$ with $S_{n}(f)$.
+a corresponding expression for the noise can be formulated by replacing $S_h(f)$ with $S_{n}(f)$.
 
 Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe:
 \begin{equation}
