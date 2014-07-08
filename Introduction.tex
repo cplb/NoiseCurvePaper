@@ -33,7 +33,7 @@ For simplicity, it is assumed that the noise in the GW detector is stationary an
 \begin{equation}\label{eq:psd}
 \left<\tilde{n}(f)\tilde{n}^{*}(f')\right>=\frac{1}{2}\delta (f-f')S_{n}(f) \; ,
 \end{equation}
-where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
+where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a single realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
 
 Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
@@ -42,13 +42,13 @@ When integrated over all positive frequencies, the PSD gives the mean square noi
 \overline{\left|n(t)\right|^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; n(t)n^{*}(t) \\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right) \nonumber\\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau) \right\}(f')\right]^{*} \nonumber \\*
- & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)
+ & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)\;,
 \end{eqnarray}
-Where we have substituted in using the definitions of the Fourier transform and its inverse. A property of Fourier transforms is that in the a time-domain translation by amount $t$ translates to a frequency-domain phase change $2\pi ft$; if ${\mathcal{F}}\left\{ n(\tau) \right\}(f) = \tilde{n}(f)$, then ${\mathcal{F}}\left\{ n(\tau-t) \right\}(f) = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore, the exponential factors in (\ref{eq:meansquare}) may be absorbed as
+where we have substituted in using the definitions of the Fourier transform and its inverse. A property of Fourier transforms is that a time-domain translation by amount $t$ is equivalent to a frequency-domain phase change $2\pi ft$; if ${\mathcal{F}}\left\{ n(\tau) \right\}(f) = \tilde{n}(f)$, then ${\mathcal{F}}\left\{ n(\tau-t) \right\}(f) = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore, the exponential factors in (\ref{eq:meansquare}) may be absorbed as
 \begin{eqnarray}
 \overline{\left|n(t)\right|^{2}} &=& \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T} \mathrm{d}t\:\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau-t) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau-t) \right\}(f')\right]^{*} \, .
 \end{eqnarray}
-Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{(\ldots)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by time-translation performed above. Therefore,
+Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{\left(\ldots\right)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by time-translation performed above. Therefore,
 \begin{eqnarray}\label{eq:meansquare1}
 \overline{\left|n(t)\right|^{2}} &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right> \\
 &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\frac{1}{2}S_{n}(f)\delta(f-f') \nonumber \\
@@ -60,7 +60,7 @@ Given a detector output, the challenge is to extract the signal. There is a well
 \begin{equation}\label{eq:conv}
 \left(s*K\right)(\tau) = \int_{-\infty}^{\infty}\mathrm{d}t\;\left[h(t)+n(t)\right]K(t-\tau) \approx \mathcal{S} + \mathcal{N} \; .
 \end{equation}
-The signal contribution $\mathcal{S}$ is defined as the expectation of the convolution in (\ref{eq:conv}) when a signal is present, maximised by varying the offset $\tau$. \cplb{I think this needs expanding.} Since the expectation of pure noise is zero it, follows that
+The signal contribution $\mathcal{S}$ is defined as the expectation of the convolution in (\ref{eq:conv}) when a signal is present, maximised by varying the offset to achieve the best overlap with the data. Since the expectation of pure noise is zero it, follows that
 \begin{equation}
 \mathcal{S} = \int_{-\infty}^{\infty}\mathrm{d}t\;h(t)K(t)=\int_{-\infty}^{\infty}\mathrm{d}t\;h(t)K^{*}(t)=\int_{-\infty}^{\infty}\mathrm{d}f\; \tilde{h}(f)\tilde{K}^{*}(f) \; .
 \end{equation}
@@ -73,7 +73,7 @@ The squared contribution from noise $\mathcal{N}^{2}$ is defined as the mean squ
  \end{eqnarray}
 using the definition of $S_{n}(f)$ from (\ref{eq:psd}). Hence the signal-to-noise ratio (SNR) $\varrho$ is given by
 \begin{equation}\label{eq:SNRinnerprod} 
-\varrho^{2} = \frac{\mathcal{S}^{2}}{\mathcal{N}^{2}}= \frac{\innerprod{\frac{1}{2}S_{n}(f)\tilde{K}(f)}{\tilde{h}(f)}^{2}}{\innerprod{\frac{1}{2}S_{n}(f)\tilde{K}(f)}{\frac{1}{2}S_{n}(f)\tilde{K}(f)}} \;,
+\varrho^{2} = \frac{\mathcal{S}^{2}}{\mathcal{N}^{2}}= \frac{\innerprod{\frac{1}{2}S_{n}(f)\tilde{K}(f)}{\tilde{h}(f)}^{2}}{\innerprod{\frac{1}{2}S_{n}(f)\tilde{K}(f)}{\frac{1}{2}S_{n}(f)\tilde{K}(f)}},
 \end{equation}
 where we have introduced the inner product between signal $\tilde{A}$ and $\tilde{B}$ as \citep{Finn1992}
 \begin{equation}\label{eq:snrinnerprod} \innerprod{\tilde{A}(f)}{\tilde{B}(f)} = 4\Re\left\{\int_{0}^{\infty}\mathrm{d}f\;\frac{\tilde{A}^{*}(f)\tilde{B}(f)}{S_{n}(f)}\right\} \; .\end{equation}
@@ -140,7 +140,7 @@ where the definition (\ref{eq:ShforSources}) have been used. Equation (\ref{eq:s
 \begin{equation}\label{eq:spectralenergydensity}
 S_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ;
 \end{equation}
-a corresponding expression for the noise can be formulated by replacing $S_h(F)$ with $S_{n}(f)$.
+a corresponding expression for the noise can be formulated by replacing $S_h(f)$ with $S_{n}(f)$.
 
 Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe:
 \begin{equation}
