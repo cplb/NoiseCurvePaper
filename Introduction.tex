@@ -33,7 +33,7 @@ For simplicity, it is assumed that the noise in the GW detector is stationary an
 \begin{equation}\label{eq:psd}
 \left<\tilde{n}(f)\tilde{n}^{*}(f')\right>=\frac{1}{2}\delta (f-f')S_{n}(f) \; ,
 \end{equation}
-where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
+where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a single realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
 
 Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
@@ -42,9 +42,9 @@ When integrated over all positive frequencies, the PSD gives the mean square noi
 \overline{\left|n(t)\right|^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; n(t)n^{*}(t) \\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right) \nonumber\\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau) \right\}(f')\right]^{*} \nonumber \\*
- & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)
+ & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right),
 \end{eqnarray}
-Where we have substituted in using the definitions of the Fourier transform and its inverse. A property of Fourier transforms is that in the a time-domain translation by amount $t$ translates to a frequency-domain phase change $2\pi ft$; if ${\mathcal{F}}\left\{ n(\tau) \right\}(f) = \tilde{n}(f)$, then ${\mathcal{F}}\left\{ n(\tau-t) \right\}(f) = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore, the exponential factors in (\ref{eq:meansquare}) may be absorbed as
+where we have substituted in using the definitions of the Fourier transform and its inverse. A property of Fourier transforms is that a time-domain translation by amount $t$ is equivalent to a frequency-domain phase change $2\pi ft$; if ${\mathcal{F}}\left\{ n(\tau) \right\}(f) = \tilde{n}(f)$, then ${\mathcal{F}}\left\{ n(\tau-t) \right\}(f) = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore, the exponential factors in (\ref{eq:meansquare}) may be absorbed as
 \begin{eqnarray}
 \overline{\left|n(t)\right|^{2}} &=& \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T} \mathrm{d}t\:\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau-t) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau-t) \right\}(f')\right]^{*} \, .
 \end{eqnarray}
