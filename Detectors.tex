@@ -23,12 +23,12 @@ where $A_{+}$ and $A_{\times}$ are the amplitudes of the two polarisation states
 \begin{equation}
 h(t)=F^{+}(\theta,\phi,\psi)A_{+}\cos\left(2\pi ft\right)+F^{\times}(\theta,\phi,\psi)A_{\times}\cos\left(2\pi f t + \Delta\phi \right)\; ,
 \end{equation}
-where the response functions inherit their angular dependence from the choice of coordinates,
+where the response functions inherit their angular dependence from the choice of coordinates
 \begin{eqnarray}\label{eq:responsefuncs}
 F^{+}(\theta,\phi,\psi)&=\frac{1}{2}H^{+}_{ij}\left(l_{1}^{i}l_{1}^{j}-l_{2}^{i}l_{2}^{j}\right) \; , \\
 F^{\times}(\theta,\phi,\psi)&=\frac{1}{2}H^{\times}_{ij}\left(l_{1}^{i}l_{1}^{j}-l_{2}^{i}l_{2}^{j}\right) \; . 
 \end{eqnarray}
-The response function of a two-arm interferometric detector is quadrupolar, an example is plotted in figure \ref{fig:LIGO}.
+
 
 \begin{figure}
  \centering
@@ -37,7 +37,7 @@ The response function of a two-arm interferometric detector is quadrupolar, an e
  \label{fig:LIGO}
 \end{figure}
 
-Throughout this paper detector sensitivity refers to the polarisation and sky averaged sensitivity $F$, where
+The response function of a two-arm interferometric detector is quadrupolar, an example is plotted in figure \ref{fig:LIGO}. Throughout this paper detector sensitivity refers to the polarisation and sky averaged sensitivity $F$, where
 \begin{equation}\label{eq:skyav}
 F^{2}=\int_{0}^{2\pi}\frac{\mathrm{d}\psi}{2\pi}\; \int_{0}^{2\pi} \frac{\mathrm{d}\phi}{2\pi}\; \int_{0}^{\pi}\frac{\sin\theta\,\mathrm{d}\theta}{2}\;\left[\frac{F^{+}\left(\theta,\phi,\psi\right)^{2}+F^{\times}\left(\theta,\phi,\psi\right)^{2}}{2}\right]\; .
 \end{equation}
@@ -144,11 +144,7 @@ The overlap function $\Gamma(f)$ tends to a constant value in the limit that the
 \end{equation}
 Neglecting the exponential terms in the overlap is the frequency-domain equivalent of neglecting the pulsar term in (\ref{eq:pulsarredshift}). The integral may be evaluated to give an expression depending only on the angle $\theta$ between the two pulsars; this is the famous Hellings and Downs curve, shown in figure \ref{fig:HnD},
 \begin{equation}
-\Gamma_{0} = \frac{1}{2}+\frac{3x}{2}\left(\ln x -\frac{1}{6}\right)
-\end{equation}
-where
-\begin{equation}
-x = \frac{1-\cos\theta}{2}\; .
+\Gamma_{0} = \frac{1}{2}+\frac{3x}{2}\left(\ln x -\frac{1}{6}\right)\quad \textrm{where}\quad x = \frac{1-\cos\theta}{2}\; .
 \end{equation}
 \begin{figure}
  \centering
@@ -164,11 +160,11 @@ There is a discrepancy between the treatment of PTA sensitivity curves here and 
 
 \subsubsection{Current PTAs}
 
-The PTAs currently in operation are the European Pulsar Timing Array \citep[EPTA;][]{Ferdman2010}, the Parkes Pulsar Timing Array \citep[PPTA;][]{Manchester2013} based in Australia, and the North American Nanohertz Observatory for Gravitational waves \citep[NANOGrav;][]{Jenet2009}. There are published limits on the amplitude of the stochastic background from all three detectors: the most recent from EPTA is \citet{Haasteren}, from PPTA is \citet{Shannon2013} and from NANOGrav is \citet{Arzoumanian2014}. These are all comparable and we use the EPTA limits in \ref{app:a}, the figures show the published limit based on an analysis of five pulsars over approximately ten years.
+The PTAs currently in operation are the European Pulsar Timing Array (EPTA\footnote{\url{http://www.epta.eu.org/}}, \cite{eptareview2013}), the Parkes Pulsar Timing Array (PPTA\footnote{\url{http://www.atnf.csiro.au/research/pulsar/ppta/}} \cite{parkesreview2013}) based in Australia, and the North American Nanohertz Observatory for Gravitational waves (NANOGrav\footnote{\url{http://nanograv.org/}} \cite{nanogravreview2013}). There are published limits on the amplitude of the stochastic background from all three detectors: the most recent from EPTA is \citet{Haasteren}, from PPTA is \citet{Shannon2013} and from NANOGrav is \citet{Arzoumanian2014}. These are all comparable and we use the EPTA limits in \ref{app:a}, the figures show the published limit based on an analysis of five pulsars over approximately ten years.
 
 \subsubsection{The International Pulsar Timing Array}
 
-Combining the existing arrays would yield a single PTA using approximately 4 times as many pulsars; this consortium of consortia is known as the International Pulsar Timing Array \citep[IPTA;][]{Hobbs2010}. The IPTA curves plotted in the figures are based on 20 pulsars timed for twice as long as the current EPTA.
+Combining the existing arrays would yield a single PTA using approximately 4 times as many pulsars; this consortium of consortia is known as the International Pulsar Timing Array (IPTA\footnote{\url{http://www.ipta4gw.org/}} \cite{iptareview2013}). The IPTA curves plotted in the figures are based on 20 pulsars timed for twice as long as the current EPTA.
 
 \subsubsection{SKA}
 
