@@ -3,14 +3,14 @@
 %CPLB: alternate openning I put together a while ago.
 %Even the best of us can be frustrated by the use of different conventions or units when describing a single quantity. It is a common occurrence in physics that  there is a particular parameterization that is perfect for one experiment or calculation, but this is not of universal applicability. When comparing results across studies it is then necessary to trawl through the literature to check that $x$ is really the same parameter. Astronomy and astrophysics are rife with specialized units, from the jansky (a spectral flux density of $10^{-26}$ watts per square metre per hertz) to the solar neutrino unit (a neutrino flux that produces an interaction rate of $10^{-36}$ per second per target atom). Inevitably, things get lost in translation. The mismatch of conventions can be confusing to those new to the field, especially students.
 
-The next few years promises to deliver the first direct detection of gravitational waves (GWs). This will most likely be achieved by the advanced Laser Interferometer Gravitational-wave Observatory \citep[LIGO;][]{2010CQGra..27h4006H} and Virgo \citep{Accadia2011} detectors operating in the frequency range $(10$--$10^{3})~\mathrm{Hz}$. By the end of the decade, it is expected that pulsar timing arrays \citep[PTAs;][]{1990ApJ361300F} shall detect very low frequency GWs around $10^{-8}~\mathrm{Hz}$. Further into the future, space-based detectors, such as the evolved Laser Interferometer Space Antenna \citep[eLISA;][]{2012CQGra..29l4016A}, will probe GWs in the millihertz regime. These advances shall herald the beginning of multi-wavelength GW astronomy as a means of observing the Universe.
+The next few years promises to deliver the first direct detection of gravitational waves (GWs). This will most likely be achieved by the advanced Laser Interferometer Gravitational-wave Observatory \citep[LIGO;][]{2010CQGra..27h4006H} and Virgo \citep{Accadia2011} detectors operating in the frequency range $(10$--$10^{3})~\mathrm{Hz}$. By the end of the decade, it is expected that pulsar timing arrays \citep[PTAs;][]{1990ApJ361300F} shall also detect very low frequency GWs around $10^{-8}~\mathrm{Hz}$. Further into the future, space-based detectors, such as the evolved Laser Interferometer Space Antenna \citep[eLISA;][]{2012CQGra..29l4016A}, will probe GWs in the millihertz regime. These advances shall herald the beginning of multi-wavelength GW astronomy as a means of observing the Universe.
 
-There already exists an extensive literature assessing the potential of all of these detectors to probe the astrophysics of various sources. There are several different methods commonly used to describe the sensitivity of a GW detector and the strength of a GW source. It is common practice to summarise this information on a sensitivity-curve plot. When producing these plots, it is desirable to have a consistent convention between detectors and sources which allows information about both to be plotted on the same graph. Ideally, the detectors and sources are represented in such a way that the relative detectability of the signals is immediately apparent from the plot.
+There already exists an extensive literature assessing the potential of all of these detectors to probe the astrophysics of various sources. There are several different methods commonly used to describe the sensitivity of a GW detector and the strength of a GW source. It is common practice to summarise this information on a sensitivity-curve plot. When producing these plots, it is desirable to have a consistent convention between detectors and sources that allows information about both to be plotted on the same graph. Ideally, the detectors and sources are represented in such a way that the relative detectability of the signals is immediately apparent from the plot.
 
 In this work, we discuss the differing conventions commonly used in GW astronomy. The amplitude of a GW is a strain, a dimensionless quantity $h$. This gives a fractional change in length, or equivalently light travel time, across a detector. The strain is small, making it a challenge to measure: we are yet to obtain a direct detection
 of a GW. To calibrate our expectations for detection, it is necessary to quantify the sensitivity of our instruments and the strength of their target signals.
 
-When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parametrizations based upon the strain: the characteristic strain, the PSD and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
+When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parametrizations based upon the strain: the characteristic strain, the power spectral density (PSD) and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
 
 We begin by expounding the various conventions and the relationships between the conventions in sections \ref{sec:conventions} and \ref{sec:voc}. A review of GW detectors (both current and proposed) is given in section \ref{sec:detectors} and a review of GW sources is given in section \ref{sec:sources}. In \ref{app:a} several example sensitivity curves are presented. A website where similar figures can be generated is available at \url{www.ast.cam.ac.uk/~rhc26/sources/}. Here the user may select which sources and detectors to include to tailor the figure to their specific requirements.
 
@@ -19,7 +19,7 @@ We begin by expounding the various conventions and the relationships between the
 
 \subsection{Signal analysis preliminaries}
 
-Gravitational radiation has two independent polarization states denoted $+$ and $\times$; a general signal can be described as a linear combination of the two polarization states, $h \nobreak=\nobreak A_{+} h_{+}\nobreak +\nobreak A_{\times} h_{\times}$. The sensitivity of a detector to these depends upon the relative orientations of the source and detector. The output of a gravitational wave detector $s(t)$ contains a superposition of noise $n(t)$ and (possibly) the signal $h(t)$,
+Gravitational radiation has two independent polarization states denoted $+$ and $\times$; a general signal can be described as a linear combination of the two polarization states, $h \nobreak=\nobreak A_{+} h_{+}\nobreak +\nobreak A_{\times} h_{\times}$. The sensitivity of a detector to these depends upon the relative orientations of the source and detector. The output of a gravitational wave detector $s(t)$ contains a superposition of noise $n(t)$ and (possibly) a signal $h(t)$,
 \begin{equation}
 s(t) = n(t)+h(t) \; .
 \end{equation}
@@ -29,7 +29,7 @@ We shall work with the Fourier transform of the signal, using the conventions th
 x(t) &= {\mathcal{F}}^{-1}\left\{\tilde{x}(f)\right\}(t) &= \int_{-\infty}^{\infty}\mathrm{d}f\;\tilde{x}(f)\exp (2\pi \rmi f t ) \; .
 \end{eqnarray}
 
-For simplicity, it is assumed that the noise in the GW detector is stationary and Gaussian (with zero mean); under these assumptions the noise is fully characterised via the one-sided noise power spectral density (PSD) $S_{n}(f)$, 
+For simplicity, it is assumed that the noise in the GW detector is stationary and Gaussian (with zero mean); under these assumptions the noise is fully characterised via the one-sided noise PSD $S_{n}(f)$, 
 \begin{equation}\label{eq:psd}
 \left<\tilde{n}(f)\tilde{n}^{*}(f')\right>=\frac{1}{2}\delta (f-f')S_{n}(f) \; ,
 \end{equation}
@@ -38,17 +38,17 @@ where angle brackets $\left<\ldots\right>$ denote an ensemble average over many 
 Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
 When integrated over all positive frequencies, the PSD gives the mean square noise amplitude. Starting by taking the time average of the square of the detector noise:
-\begin{eqnarray}\label{eq:meansquare}
+\begin{eqnarray}
 \overline{\left|n(t)\right|^{2}} &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; n(t)n^{*}(t) \\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\tilde{n}(f)\tilde{n}^{*}(f')\exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right) \nonumber\\
  &= \lim_{T\rightarrow\infty}\frac{1}{2T} & \int_{-T}^{T}\mathrm{d}t\; \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau) \right\}(f')\right]^{*} \nonumber \\*
- & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)\;,
+\label{eq:meansquare} & & \times \exp\left(2\pi \rmi ft\right)\exp\left(-2\pi \rmi f't\right)\;,
 \end{eqnarray}
 where we have substituted in using the definitions of the Fourier transform and its inverse. A property of Fourier transforms is that a time-domain translation by amount $t$ is equivalent to a frequency-domain phase change $2\pi ft$; if ${\mathcal{F}}\left\{ n(\tau) \right\}(f) = \tilde{n}(f)$, then ${\mathcal{F}}\left\{ n(\tau-t) \right\}(f) = \tilde{n}(f)\exp (2\pi \rmi ft )$. Therefore, the exponential factors in (\ref{eq:meansquare}) may be absorbed as
 \begin{eqnarray}
 \overline{\left|n(t)\right|^{2}} &=& \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T} \mathrm{d}t\:\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau-t) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau-t) \right\}(f')\right]^{*} \, .
 \end{eqnarray}
-Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{\left(\ldots\right)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by time-translation performed above. Therefore,
+Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{\left(\ldots\right)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by the time-translation performed above. Therefore,
 \begin{eqnarray}\label{eq:meansquare1}
 \overline{\left|n(t)\right|^{2}} &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right> \\
 &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\frac{1}{2}S_{n}(f)\delta(f-f') \nonumber \\
@@ -56,7 +56,7 @@ Since the noise is a randomly varying signal, we can use the ergodic principle t
 \end{eqnarray}
 using (\ref{eq:psd}).
 
-Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem which involves constructing a Wiener optimal filter \citep{Wiener49}. Let $K(t)$ be the filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
+Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem that involves constructing a Wiener optimal filter \citep{Wiener49}. Let $K(t)$ be a real filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
 \begin{equation}\label{eq:conv}
 \left(s*K\right)(\tau) = \int_{-\infty}^{\infty}\mathrm{d}t\;\left[h(t)+n(t)\right]K(t-\tau) \approx \mathcal{S} + \mathcal{N} \; .
 \end{equation}
@@ -81,14 +81,14 @@ The optimum filter maximises the SNR in (\ref{eq:SNRinnerprod}). From the Cauchy
 \begin{equation}
 \tilde{K}(f)=\frac{\tilde{h}(f)}{S_{n}(f)} \; .
 \end{equation}
-This is the Wiener filter, it may be multiplied by an arbitrary constant since this does not change the SNR. Using this form for $\tilde{K}(f)$, the squared SNR is
+This is the Wiener filter, which may be multiplied by an arbitrary constant since this does not change the SNR. Using this form for $\tilde{K}(f)$, the squared SNR is
 \begin{equation}
 \varrho^2 = \int_0^\infty\mathrm{d}f \frac{4| \tilde{h}(f)|^{2}}{S_n(f)} = \innerprod{\tilde{h}(f)}{\tilde{h}(f)}.
 \label{eq:traditionalSNR} 
 \end{equation}
 In order to construct the Wiener filter, it is necessary to know \emph{a priori} the form of the signal, $\tilde{h}(f)$.
 
-Whilst the magnitude of the Fourier transform of the signal $|\tilde{h}(f)|$ provides a simple quantification of the GW amplitude as a function of frequency, it has one main deficiency. For an inspiralling source the instantaneous amplitude can be orders of magnitude below the noise level in the detector; however, as the signal continues over many orbits, the SNR can be integrated up to a detectable level. It is useful to have a quantification of the GW amplitude that accounts for this effect; three such methods are described in the following subsections.
+Whilst the magnitude of the Fourier transform of the signal $|\tilde{h}(f)|$ provides a simple quantification of the GW amplitude as a function of frequency, it has one main deficiency. For an inspiralling source the instantaneous amplitude can be orders of magnitude below the noise level in a detector; however, as the signal continues over many orbits, the SNR can be integrated up to a detectable level. It is useful to have a quantification of the GW amplitude that accounts for this effect; three such methods are described in the following subsections.
 
 \subsection{Characteristic strain}\label{sec:character-strain}
 
@@ -112,14 +112,14 @@ A second commonly used quantity for sensitivity curves is the square root of the
 \begin{equation}\label{eq:temp1}
 \sqrt{S_{n}(f)} = h_{n}(f)f^{-1/2} \; ,
 \end{equation}
-where we have used (\ref{eq:strain-hn}); by analogy, we can define an equivalent for for source amplitudes
+where we have used (\ref{eq:strain-hn}); by analogy, we can define an equivalent for source amplitudes
 \begin{equation}
 \sqrt{S_{h}(f)} = h_\mathrm{c}(f)f^{-1/2} = 2 f^{1/2} \left| \tilde{h}(f) \right| \; ,
 \label{eq:ShforSources}
 \end{equation}
 where we have used (\ref{eq:strain-hc}). Both $\sqrt{S_{n}(f)}$ and $\sqrt{S_{h}(f)}$ have units of $\mathrm{Hz^{-1/2}}$. The root PSD is the most frequently plotted quantity in the literature.
 
-The PSD has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer is directly related to the SNR.
+The PSD has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer directly related to the SNR.
 
 
 \subsection{Energy density}\label{sec:energy-density}
@@ -130,7 +130,7 @@ The energy in GWs is described by the Isaacson stress--energy tensor \citep[sect
 \begin{equation}
 T_{\mu\nu}=\frac{c^{2}}{32\pi G}\left<\partial_{\mu}\bar{h}_{\alpha\beta}\partial_{\nu}\bar{h}^{\alpha\beta}\right> \;,
 \end{equation}
-where the anle brackets denote averaging over several wavelengths or periods. The energy density $\rho c^{2}$ is given by the $T_{00}$ component of this tensor. Consequently
+where the angle brackets denote averaging over several wavelengths or periods. The energy density $\rho c^{2}$ is given by the $T_{00}$ component of this tensor. Consequently
 \begin{eqnarray}
 \label{eq:specNRGdensity}
 \rho c^{2} &=& \frac{c^{2}}{16\pi G}\int_{-\infty}^{\infty}\mathrm{d}f\;\left(2\pi f\right)^{2}\tilde{h}(f)\tilde{h}^{*}(f) \\*
