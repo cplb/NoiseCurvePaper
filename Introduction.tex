@@ -3,14 +3,11 @@
 %CPLB: alternate openning I put together a while ago.
 %Even the best of us can be frustrated by the use of different conventions or units when describing a single quantity. It is a common occurrence in physics that  there is a particular parameterization that is perfect for one experiment or calculation, but this is not of universal applicability. When comparing results across studies it is then necessary to trawl through the literature to check that $x$ is really the same parameter. Astronomy and astrophysics are rife with specialized units, from the jansky (a spectral flux density of $10^{-26}$ watts per square metre per hertz) to the solar neutrino unit (a neutrino flux that produces an interaction rate of $10^{-36}$ per second per target atom). Inevitably, things get lost in translation. The mismatch of conventions can be confusing to those new to the field, especially students.
 
-The next few years promises to deliver the first direct detection of gravitational waves (GWs). This will most likely be achieved by the advanced Laser Interferometer Gravitational-wave Observatory \citep[LIGO;][]{2010CQGra..27h4006H} and Virgo \citep{Accadia2011} detectors operating in the frequency range $(10$--$10^{3})~\mathrm{Hz}$. By the end of the decade, it is expected that pulsar timing arrays \citep[PTAs;][]{1990ApJ361300F} shall also detect very low frequency GWs around $10^{-8}~\mathrm{Hz}$. Further into the future, space-based detectors, such as the evolved Laser Interferometer Space Antenna \citep[eLISA;][]{2012CQGra..29l4016A}, will probe GWs in the millihertz regime. These advances shall herald the beginning of multi-wavelength GW astronomy as a means of observing the Universe.
+The next few years  promise to deliver the first direct detection of gravitational waves (GWs). This will most likely be achieved by the advanced Laser Interferometer Gravitational-wave Observatory \citep[LIGO;][]{2010CQGra..27h4006H} and advanced Virgo \citep{Acernese2009} detectors operating in the frequency range $(10$--$10^{3})~\mathrm{Hz}$. By the end of the decade, it is expected that pulsar timing arrays \citep[PTAs;][]{1990ApJ361300F} will also detect very low frequency GWs around $10^{-8}~\mathrm{Hz}$. Further into the future, space-based detectors, such as the evolved Laser Interferometer Space Antenna \citep[eLISA;][]{TheGravitationalUniverse}, will probe GWs in the millihertz regime. These advances shall herald the beginning of multi-wavelength GW astronomy as a means of observing the Universe.
 
 There already exists an extensive literature assessing the potential of all of these detectors to probe the astrophysics of various sources. There are several different methods commonly used to describe the sensitivity of a GW detector and the strength of a GW source. It is common practice to summarise this information on a sensitivity-curve plot. When producing these plots, it is desirable to have a consistent convention between detectors and sources that allows information about both to be plotted on the same graph. Ideally, the detectors and sources are represented in such a way that the relative detectability of the signals is immediately apparent from the plot.
 
-In this work, we discuss the differing conventions commonly used in GW astronomy. The amplitude of a GW is a strain, a dimensionless quantity $h$. This gives a fractional change in length, or equivalently light travel time, across a detector. The strain is small, making it a challenge to measure: we are yet to obtain a direct detection
-of a GW. To calibrate our expectations for detection, it is necessary to quantify the sensitivity of our instruments and the strength of their target signals.
-
-When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parametrizations based upon the strain: the characteristic strain, the power spectral density (PSD) and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
+In this work, we discuss the differing conventions commonly used in GW astronomy. The amplitude of a GW is a strain, a dimensionless quantity $h$. This gives a fractional change in length, or equivalently light travel time, across a detector. The strain is small, making it a challenge to measure: we are yet to obtain a direct detection of a GW. To calibrate our expectations for future detections it is necessary to quantify the sensitivity of our instruments and the strength of their target signals. When discussing the loudness of sources and the sensitivity of detectors there are three commonly used parametrizations based upon the strain: the characteristic strain, the power spectral density (PSD) and the spectral energy density. We aim to disambiguate these three and give a concrete comparison of different detectors. It is hoped that this will provide a useful reference for new and experienced researchers in this field alike. 
 
 We begin by expounding the various conventions and the relationships between the conventions in sections \ref{sec:conventions} and \ref{sec:voc}. A review of GW detectors (both current and proposed) is given in section \ref{sec:detectors} and a review of GW sources is given in section \ref{sec:sources}. In \ref{app:a} several example sensitivity curves are presented. A website where similar figures can be generated is available at \url{www.ast.cam.ac.uk/~rhc26/sources/}. Here the user may select which sources and detectors to include to tailor the figure to their specific requirements.
 
@@ -23,7 +20,7 @@ Gravitational radiation has two independent polarization states denoted $+$ and 
 \begin{equation}
 s(t) = n(t)+h(t) \; .
 \end{equation}
-We shall work with the Fourier transform of the signal, using the conventions that
+We shall have recourse to work with the Fourier transform of the signal, using the conventions that
 \begin{eqnarray} \label{eq:defFourier}
 \tilde{x}(f) &= {\mathcal{F}}\left\{x(t)\right\}(f) &= \int_{-\infty}^{\infty}\mathrm{d}t\;x(t)\exp (-2\pi \rmi f t ) \; , \\
 x(t) &= {\mathcal{F}}^{-1}\left\{\tilde{x}(f)\right\}(t) &= \int_{-\infty}^{\infty}\mathrm{d}f\;\tilde{x}(f)\exp (2\pi \rmi f t ) \; .
@@ -33,7 +30,7 @@ For simplicity, it is assumed that the noise in the GW detector is stationary an
 \begin{equation}\label{eq:psd}
 \left<\tilde{n}(f)\tilde{n}^{*}(f')\right>=\frac{1}{2}\delta (f-f')S_{n}(f) \; ,
 \end{equation}
-where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a single realisation to work with, however the ensemble average can replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
+where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a single realisation to work with, however the ensemble average can be replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
 
 Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare1}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
@@ -48,15 +45,14 @@ where we have substituted in using the definitions of the Fourier transform and 
 \begin{eqnarray}
 \overline{\left|n(t)\right|^{2}} &=& \lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T} \mathrm{d}t\:\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;{\mathcal{F}}\left\{ n(\tau-t) \right\}(f)\left[{\mathcal{F}}\left\{ n(\tau-t) \right\}(f')\right]^{*} \, .
 \end{eqnarray}
-Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{\left(\ldots\right)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by the time-translation performed above. Therefore,
+Since the noise is a randomly varying signal, we can use the ergodic principle to equate a time average, denoted by $\overline{\left(\ldots\right)}$, with an ensemble average, denoted by $\left<\ldots\right>$. The noise is stationary, consequently, its expectation value is unchanged by the time-translation performed above. Therefore, using (\ref{eq:psd}), the mean square noise amplitude is given by
 \begin{eqnarray}\label{eq:meansquare1}
 \overline{\left|n(t)\right|^{2}} &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right> \\
 &=& \int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\frac{1}{2}S_{n}(f)\delta(f-f') \nonumber \\
-&=& \int_{0}^{\infty}\mathrm{d}f\; S_{n}(f),
+&=& \int_{0}^{\infty}\mathrm{d}f\; S_{n}(f).
 \end{eqnarray}
-using (\ref{eq:psd}).
 
-Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem that involves constructing a Wiener optimal filter \citep{Wiener49}. Let $K(t)$ be a real filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise
+Given a detector output, the challenge is to extract the signal. There is a well known solution to this problem that involves constructing a Wiener optimal filter \citep{Wiener49}. Let $K(t)$ be a real filter function with Fourier transform $\tilde{K}(f)$. Convolving this with the detector output gives a contribution from the signal and a contribution from the noise,
 \begin{equation}\label{eq:conv}
 \left(s*K\right)(\tau) = \int_{-\infty}^{\infty}\mathrm{d}t\;\left[h(t)+n(t)\right]K(t-\tau) \approx \mathcal{S} + \mathcal{N} \; .
 \end{equation}
@@ -77,7 +73,7 @@ using the definition of $S_{n}(f)$ from (\ref{eq:psd}). Hence the signal-to-nois
 \end{equation}
 where we have introduced the inner product between signal $\tilde{A}$ and $\tilde{B}$ as \citep{Finn1992}
 \begin{equation}\label{eq:snrinnerprod} \innerprod{\tilde{A}(f)}{\tilde{B}(f)} = 4\Re\left\{\int_{0}^{\infty}\mathrm{d}f\;\frac{\tilde{A}^{*}(f)\tilde{B}(f)}{S_{n}(f)}\right\} \; .\end{equation}
-The optimum filter maximises the SNR in (\ref{eq:SNRinnerprod}). From the Cauchy--Schwarz inequality, it follows that the optimum filter is
+The optimum filter is that function $\tilde{K}(f)$ which maximises the SNR in (\ref{eq:SNRinnerprod}). From the Cauchy--Schwarz inequality, it follows that the optimum filter is
 \begin{equation}
 \tilde{K}(f)=\frac{\tilde{h}(f)}{S_{n}(f)} \; .
 \end{equation}
@@ -86,7 +82,7 @@ This is the Wiener filter, which may be multiplied by an arbitrary constant sinc
 \varrho^2 = \int_0^\infty\mathrm{d}f \frac{4| \tilde{h}(f)|^{2}}{S_n(f)} = \innerprod{\tilde{h}(f)}{\tilde{h}(f)}.
 \label{eq:traditionalSNR} 
 \end{equation}
-In order to construct the Wiener filter, it is necessary to know \emph{a priori} the form of the signal, $\tilde{h}(f)$.
+In order to construct the Wiener filter, it is necessary to know \emph{a priori} the form of the signal, $\tilde{h}(f)$, for this reason the Wiener filter is sometimes called the \emph{matched} filter.
 
 Whilst the magnitude of the Fourier transform of the signal $|\tilde{h}(f)|$ provides a simple quantification of the GW amplitude as a function of frequency, it has one main deficiency. For an inspiralling source the instantaneous amplitude can be orders of magnitude below the noise level in a detector; however, as the signal continues over many orbits, the SNR can be integrated up to a detectable level. It is useful to have a quantification of the GW amplitude that accounts for this effect; three such methods are described in the following subsections.
 
@@ -142,20 +138,16 @@ S_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ;
 \end{equation}
 a corresponding expression for the noise can be formulated by replacing $S_h(f)$ with $S_{n}(f)$.
 
-Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe:
+Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe, $\rho_{\mathrm{c}}$:
 \begin{equation}
 \label{eq:omega}
-\Omega_\mathrm{GW}(f) = \frac{fS_{\mathrm{E}}(f)}{\rho_{\mathrm{c}}c^{2}} \; .
+\Omega_\mathrm{GW}(f) = \frac{fS_{\mathrm{E}}(f)}{\rho_{\mathrm{c}}c^{2}} \; , \quad \textrm{where}\quad \rho_{\mathrm{c}}=\frac{3H_{0}^{2}}{8\pi G} \;.
 \end{equation}
-The critical density of the universe is
-\begin{equation}\label{eq:crit-density}
-\rho_{\mathrm{c}}=\frac{3H_{0}^{2}}{8\pi G} \;,
-\end{equation}
- where $H_{0}$ is the Hubble constant which is commonly parametrized as
+where $H_{0}$ is the Hubble constant which is commonly parametrized as
 \begin{equation}
 H_0 =h_{100}\times 100~\mathrm{km\,s^{-1}\,Mpc^{-1}}.
 \end{equation}
-The reduced Hubble parameter $h_{100}$ has nothing to do with strain. The most common quantity related to energy density to be plotted on sensitivity curves is $\Omega_{\mathrm{GW}}h_{100}^{2}$ (figure \ref{fig:omega}) as this removes sensitivity to the measured value of the Hubble constant.
+The reduced Hubble parameter $h_{100}$ has nothing to do with strain! The most common quantity related to energy density to be plotted on sensitivity curves is $\Omega_{\mathrm{GW}}h_{100}^{2}$ (figure \ref{fig:omega}) as this removes sensitivity to the historically very uncertain measured value of the Hubble constant.
 
 This quantity has one aesthetic advantage over the others: it automatically accounts for the fact that there is less energy in low frequency waves of the same amplitude. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the SNR.
 
