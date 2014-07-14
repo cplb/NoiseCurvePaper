@@ -102,20 +102,20 @@ The strain amplitudes $h_\mathrm{c}(f)$ and $h_{n}(f)$ are dimensionless. Using 
 
 An additional advantage of this convention is that the values on the strain axis for the detector curve $h_n(f)$ have a simple physical interpretation: they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis $h_\mathrm{c}(f)$ do not directly relate to the amplitude of the waves from the source. Another disadvantage is that the characteristic strain for a monochromatic source is infinite.
 
-\subsection{Power spectral density }\label{sec:psd}
+\subsection{Power spectral density}\label{sec:psd}
 
-A second commonly used quantity for sensitivity curves is the square root of the PSD (see figure \ref{fig:S}). When discussing a detector this is
+A second commonly used quantity for sensitivity curves is the square root of the PSD or the amplitude spectral density (see figure \ref{fig:S}). When discussing a detector, rearranging (\ref{eq:strain-hn}) gives
 \begin{equation}\label{eq:temp1}
-\sqrt{S_{n}(f)} = h_{n}(f)f^{-1/2} \; ,
+\sqrt{S_{n}(f)} = h_{n}(f)f^{-1/2} \; ;
 \end{equation}
-where we have used (\ref{eq:strain-hn}); by analogy, we can define an equivalent for source amplitudes
+by analogy, we can define an equivalent for source amplitudes
 \begin{equation}
 \sqrt{S_{h}(f)} = h_\mathrm{c}(f)f^{-1/2} = 2 f^{1/2} \left| \tilde{h}(f) \right| \; ,
 \label{eq:ShforSources}
 \end{equation}
 where we have used (\ref{eq:strain-hc}). Both $\sqrt{S_{n}(f)}$ and $\sqrt{S_{h}(f)}$ have units of $\mathrm{Hz^{-1/2}}$. The root PSD is the most frequently plotted quantity in the literature.
 
-The PSD has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer directly related to the SNR.
+The PSD, as sefined by (\ref{eq:psd}), has the nice property, demonstrated in (\ref{eq:meansquare1}), that integrated over all positive frequencies it gives the mean square amplitude of the signal in the detector. However, in one important regard it is less appealing than characteristic strain: the height of the source above the detector curve is no longer directly related to the SNR.
 
 
 \subsection{Energy density}\label{sec:energy-density}
@@ -138,14 +138,19 @@ S_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ;
 \end{equation}
 a corresponding expression for the noise can be formulated by replacing $S_h(f)$ with $S_{n}(f)$.
 
-Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe, $\rho_{\mathrm{c}}$:
+Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe $\rho_{\mathrm{c}}$,
 \begin{equation}
 \label{eq:omega}
-\Omega_\mathrm{GW}(f) = \frac{fS_{\mathrm{E}}(f)}{\rho_{\mathrm{c}}c^{2}} \; , \quad \textrm{where}\quad \rho_{\mathrm{c}}=\frac{3H_{0}^{2}}{8\pi G} \;.
+\Omega_\mathrm{GW}(f) = \frac{fS_{\mathrm{E}}(f)}{\rho_{\mathrm{c}}c^{2}} \; .
 \end{equation}
-where $H_{0}$ is the Hubble constant which is commonly parametrized as
+The critical density is
 \begin{equation}
-H_0 =h_{100}\times 100~\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\label{eq:crit-density}
+\rho_{\mathrm{c}}=\frac{3H_{0}^{2}}{8\pi G} \;,
+\end{equation}
+where $H_{0}$ is the Hubble constant, commonly parametrized as
+\begin{equation}
+H_0 = h_{100}\times 100~\mathrm{km\,s^{-1}\,Mpc^{-1}}.
 \end{equation}
 The reduced Hubble parameter $h_{100}$ has nothing to do with strain! The most common quantity related to energy density to be plotted on sensitivity curves is $\Omega_{\mathrm{GW}}h_{100}^{2}$ (figure \ref{fig:omega}) as this removes sensitivity to the historically very uncertain measured value of the Hubble constant.
 
