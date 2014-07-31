@@ -8,9 +8,9 @@ Inspiralling binaries may the most important GW source. They spend a variable am
 \begin{equation}\label{eq:inspiral}
 {N}_{\mathrm{cycles}} = \frac{f}{2\pi} \frac{\mathrm{d}\phi}{\mathrm{d}f} = \frac{f^{2}}{\dot{f}} \; ,
 \end{equation}
-where an overdot represents the time derivative and $\dot{\phi} = 2\pi f$. The squared SNR scales with ${N}_{\mathrm{cycles}}$, so it would be expected that $h_\mathrm{c}(f)\approx \sqrt{{N}_{\mathrm{cycles}}}\left|\tilde{h}(f)\right|$.
+where an overdot represents the time derivative and $\dot{\phi} = 2\pi f$. The squared SNR scales with ${N}_{\mathrm{cycles}}$, so it would be expected that $h_\mathrm{c}(f)\approx \sqrt{{N}_{\mathrm{cycles}}}|\tilde{h}(f)|$.
 
-The form for $h_\mathrm{c}$ can be derived from the Fourier transform in the stationary-phase approximation. Consider a source signal with approximately constant amplitude, $h_0$, and central frequency $f'$. In this case,
+The form for $h_\mathrm{c}$ can be derived from the Fourier transform in the stationary-phase approximation. Consider a source signal with approximately constant amplitude $h_0$ and central frequency $f'$. In this case,
 \begin{eqnarray}
 h(t) &=& h_0\exp\left[\rmi \phi(t)\right] \; ; \\
 \tilde{h}(f) &=& \int_{-\infty}^{\infty}\rmd t\; h_0\exp \left\{2\pi \rmi \left[\frac{\phi(t)}{2\pi t}-f\right]t\right\} \; .
@@ -41,11 +41,11 @@ fS_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G}f^{2}h_\mathrm{c}^{2}(f) \; .
 The total energy emitted in the logarithmic frequency interval $\mathrm{d}\left(\log f_{\mathrm{r}}\right)$ by a single binary in the population is $\left[\mathrm{d}E_{\mathrm{GW}}/\mathrm{d}(\log f_{\mathrm{r}})\right]\mathrm{d}(\log f_{\mathrm{r}})$; the energy density may be written as
 \begin{equation}\label{eq:Phinney}
 fS_{\mathrm{E}}(f) = \int_{0}^{\infty} \rmd z\; \frac{\mathrm{d}\nu}{\mathrm{d}z}\frac{1}{(1+z)}\frac{1}{d_{\mathrm{L}}^{2}(z)}\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} \; , \end{equation}
-where the factor of $\left( 1+z \right)^{-1}$ accounts for the redshift of the energy.
+where the factor of $\left( 1+z \right)^{-1}$ accounts for the redshifting of the energy.
 
-For simplicity, consider the background to comprise of binaries in circular orbits, with frequencies $f_\mathrm{GW} =f_{\mathrm{r}}/2$, which are far from their last stable orbit. The energy radiated may then be calculated using the quadrupole approximation \citep{petersmathews1963}. The energy in GWs from a single binary per logarithmic frequency interval is, 
+For simplicity, consider the background to comprise of binaries in circular orbits, with frequencies $f_\mathrm{GW} =f_{\mathrm{r}}/2$, which are far from their last stable orbit. The energy radiated may then be calculated using the quadrupole approximation \citep{petersmathews1963}. The energy in GWs from a single binary per logarithmic frequency interval is
 \begin{equation}\label{eq:Thorne}
-\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} = \frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{\mathrm{r}}^{2/3} \; ,
+\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} = \frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{\mathrm{r}}^{2/3}
 \end{equation}
 between an minimum and maximum frequency set by the initial and final radius of the binary orbit. Here, we assume that the maximum and minimum frequencies are outside of the range of our detector and hence can be neglected. Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}), an expression for characteristic strain can now be found \citep{SesanaVecchioColancino}
 \begin{equation}\label{eq:bigint}
@@ -58,7 +58,7 @@ h_\mathrm{c}(f) = A\left(\frac{f}{f_{0}}\right)^{\alpha}\; ,
 \end{equation}
 and constraints are then placed on $A$. In practice, this power law also has upper and lower frequency cut-offs related to the population of source objects. A stochastic background from other sources, such as cosmic strings or relic GWs from the early Universe, can also be written in the same form as (\ref{eq:power}), but with different spectral indices: $\alpha=-7/6$ for cosmic strings or $\alpha$ in the range $-1$ to $-0.8$ for relic GWs \citep{Jenet}.
 
-An alternative method for graphically representing the sensitivity of a GW detector to stochastic backgrounds, called the \emph{power-law-integrated sensitivity curve}, was suggested by \cite{2013PhRvD..88l4032T}. This method accounts for the fact that there is power across all frequencies in the sensitivity band by integrating the noise weighted signal over frequency. As our aim here is to present stochastic backgrounds alongside other types of sources for comparison we do not use this approach.
+An alternative method for graphically representing the sensitivity of a GW detector to stochastic backgrounds, called the \emph{power-law-integrated sensitivity curve}, was suggested by \cite{2013PhRvD..88l4032T}. This method accounts for the there being power across all frequencies in the sensitivity band by integrating the noise-weighted signal over frequency. As our aim here is to present stochastic backgrounds alongside other types of sources for comparison, we do not use this approach.
 
 
 \subsection{Burst sources}\label{sec:bursts}
@@ -77,10 +77,9 @@ h_\mathrm{c}(f) = \left|\tilde{h}(f)\right|\sqrt{{N}_{\mathrm{cycles}}} \; ,
 \end{equation}
 where ${N}_{\mathrm{cycles}}$ is the number of cycles of radiation generated by the source, which is of order unity for bursts. 
 
-An alternative characterisation of the signal amplitude commonly used for burst sources is the root-sum-square of the waveform polarisations, $h_\mathrm{rss}$. If $\tilde{h}(f)$ is constant across the bandwidth $\Delta f$ this is related to the characteristic strain via Equation \ref{eq:rela}. In this work, we favour a constant $h_\mathrm{c}(f)$ rather than $h_\mathrm{rss}$ for consistency with the other types of source.
-\begin{eqnarray}
-&h_\mathrm{rss} = \sqrt{\int{|h_+(t)|}^2 + {|h_\times(t)|}^2\,\rmd t} \\
-&h_\mathrm{rss} \simeq |\tilde{h}(f)|\sqrt{\Delta f}\,\label{eq:rela}.
-\end{eqnarray}
-
+An alternative characterisation of the signal amplitude commonly used for burst sources is the root-sum-square of the waveform polarisations:
+\begin{equation}
+h_\mathrm{rss} = \left[\int \rmd t {|h_+(t)|}^2 + {|h_\times(t)|}^2\right]^{1/2}.
+\end{equation}
+If $\tilde{h}(f)$ is constant across the bandwidth $\Delta f$, this is related to the characteristic strain via \cplb{What about the detector response?}. In this work, we favour a constant $h_\mathrm{c}(f)$ rather than $h_\mathrm{rss}$ for consistency with the other types of source where the bandwidth is detector specific.
 
