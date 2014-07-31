@@ -10,22 +10,26 @@ Inspiralling binaries may the most important GW source. They spend a variable am
 \end{equation}
 where an overdot represents the time derivative and $\dot{\phi} = 2\pi f$. The squared SNR scales with ${N}_{\mathrm{cycles}}$, so it would be expected that $h_\mathrm{c}(f)\approx \sqrt{{N}_{\mathrm{cycles}}}|\tilde{h}(f)|$.
 
-The form for $h_\mathrm{c}$ can be derived from the Fourier transform in the stationary-phase approximation. Consider a source signal with approximately constant amplitude $h_0$ and central frequency $f'$. In this case,
+The form for $h_\mathrm{c}$ can be derived from the Fourier transform in the stationary-phase approximation. Consider a source signal with approximately constant (root-mean-square) amplitude $h_0$ and central frequency $f'$. In this case,
 \begin{eqnarray}
-h(t) &=& h_0\exp\left[\rmi \phi(t)\right] \; ; \\
-\tilde{h}(f) &=& \int_{-\infty}^{\infty}\rmd t\; h_0\exp \left\{2\pi \rmi \left[\frac{\phi(t)}{2\pi t}-f\right]t\right\} \; .
+h(t) &=& \sqrt{2} h_0 \cos\left[\rmi \phi(t)\right] \; ; \\
+\tilde{h}(f) &=& \frac{h_0}{\sqrt{2}} \int_{-\infty}^{\infty}\rmd t\; \exp \left\{2\pi \rmi \left[\frac{\phi(t)}{2\pi t}-f\right]t\right\} + \exp \left\{-2\pi \rmi \left[\frac{\phi(t)}{2\pi t}+f\right]t\right\} \; .
+\label{eq:fourier-h}
 \end{eqnarray}
-Without loss of generality, we can assume an initial phase of zero, such that $\phi(t) \approx 2\pi f't$. The largest contribution to the integral comes from where the argument of the exponential is approximately zero. Expanding the exponent in powers of $t$ about $f = f'$,
+Without loss of generality, we can assume an initial phase of zero, such that $\phi(0) = 0$. The largest contribution to the integral comes from where the argument of the exponentials is approximately zero. For the first term, this occurs when $f = f'$, then the term in brackets is
+\begin{equation}
+\left[\frac{\phi(t)}{2\pi t}-f\right]_{f\,=\,f'} = f' + \dot{f'}t + \mathcal{O}\left(t^2\right) - f' = \dot{f'}t + \mathcal{O}\left(t^2\right).
+\end{equation}
+The higher-order terms cause the expoential to oscillate rapidly such that these terms integrate to zero and may be neglected. Performing a similar expansion about $f = -f'$ for the second term in (\ref{eq:fourier-h}) gives
 \begin{eqnarray} \label{eq:FTofEMRI}
-\tilde{h}(f) &\simeq& \int_{-\infty}^{\infty}\rmd t\; h_0 \exp\left[2\pi\rmi \dot{f'} \left(t^{2}+\frac{f'-f}{\dot{f'}}t\right)\right]\nonumber \\
-&\simeq& h_0\exp\left[-\pi\rmi\frac{\left(f'-f\right)^{2}}{2\dot{f'}}\right]\int_{-\infty}^{\infty}\rmd t\;\exp\left[2\pi\rmi\dot{f'}\left(t+\frac{f'-f}{2\dot{f'}}\right)^{2}\right] \nonumber \\
-&\simeq& \frac{h_0}{\sqrt{2\rmi\dot{f'}}}\exp\left[-\pi\rmi\frac{\left(f'-f\right)^{2}}{2\dot{f'}}\right]\; .
+\tilde{h}(f) &\simeq& \frac{h_0}{\sqrt{2}} \int_{-\infty}^{\infty}\rmd t\; \exp\left(2\pi\rmi \dot{f'} t^{2}\right) + \exp\left(-2\pi\rmi \dot{f'} t^{2}\right) \nonumber \\
+&\simeq& \frac{h_0}{\sqrt{2\dot{f'}}}.
 \end{eqnarray}
 From (\ref{eq:strain-hc}) and (\ref{eq:FTofEMRI}), the characteristic strain for inspiralling sources is given by \citep{FinnThorne}
 \begin{equation}\label{eq:insphc}
 h_\mathrm{c}(f) = \sqrt{\frac{2f^{2}}{\dot{f}}}h_0 \;.
 \end{equation}
-Equation (\ref{eq:hc}) should be considered as the definition of characteristic strain and (\ref{eq:insphc}) a consequence of it for inspirals. Equation (\ref{eq:insphc}) is the relation between $h_\mathrm{c}(f)$ and the instantaneous amplitude $h_0$ for an inspiralling source; for other types of source a new relation satisfying (\ref{eq:hc}) has to be found.
+Equation (\ref{eq:hc}) should be considered as the definition of characteristic strain and (\ref{eq:insphc}) a consequence of it for inspirals. Equation (\ref{eq:insphc}) is the relation between $h_\mathrm{c}(f)$ and the instantaneous root-mean-square amplitude $h_0$ for an inspiralling source; for other types of source a new relation satisfying (\ref{eq:hc}) has to be found.
 
 
 \subsection{Stochastic backgrounds}\label{sec:stoch}
@@ -36,11 +40,11 @@ We shall assume that the individual sources are binaries, in which case the numb
 
 Equation (\ref{eq:differentdescriptions}) gives an expression for the energy density in GWs per logarithmic frequency interval,
 \begin{equation}\label{eq:stoch}
-fS_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G}f^{2}h_\mathrm{c}^{2}(f) \; .
+fS_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G}f^{2}\left[h_\mathrm{c}(f)\right]^2 \; .
 \end{equation}
 The total energy emitted in the logarithmic frequency interval $\mathrm{d}\left(\log f_{\mathrm{r}}\right)$ by a single binary in the population is $\left[\mathrm{d}E_{\mathrm{GW}}/\mathrm{d}(\log f_{\mathrm{r}})\right]\mathrm{d}(\log f_{\mathrm{r}})$; the energy density may be written as
 \begin{equation}\label{eq:Phinney}
-fS_{\mathrm{E}}(f) = \int_{0}^{\infty} \rmd z\; \frac{\mathrm{d}\nu}{\mathrm{d}z}\frac{1}{(1+z)}\frac{1}{d_{\mathrm{L}}^{2}(z)}\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} \; , \end{equation}
+fS_{\mathrm{E}}(f) = \int_{0}^{\infty} \rmd z\; \frac{\mathrm{d}\nu}{\mathrm{d}z}\frac{1}{(1+z)}\frac{1}{\left[d_{\mathrm{L}}(z)\right]^2}\frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} \; , \end{equation}
 where the factor of $\left( 1+z \right)^{-1}$ accounts for the redshifting of the energy.
 
 For simplicity, consider the background to comprise of binaries in circular orbits, with frequencies $f_\mathrm{GW} =f_{\mathrm{r}}/2$, which are far from their last stable orbit. The energy radiated may then be calculated using the quadrupole approximation \citep{petersmathews1963}. The energy in GWs from a single binary per logarithmic frequency interval is
@@ -49,7 +53,7 @@ For simplicity, consider the background to comprise of binaries in circular orbi
 \end{equation}
 between an minimum and maximum frequency set by the initial and final radius of the binary orbit. Here, we assume that the maximum and minimum frequencies are outside of the range of our detector and hence can be neglected. Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}), an expression for characteristic strain can now be found \citep{SesanaVecchioColancino}
 \begin{equation}\label{eq:bigint}
-h_\mathrm{c}^{2}(f) = \frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\mathrm{d}z\;\int_{0}^{\infty}\mathrm{d}{\cal{M}}\;\frac{\mathrm{d}^{2}\nu}{\mathrm{d}z\,\mathrm{d}{\mathcal{M}}}\frac{1}{d_{\mathrm{L}}^{2}(z)}\left( \frac{{\mathcal{M}}^{5}}{1+z} \right)^{1/3}\; .
+\left[h_\mathrm{c}(f)\right]^2 = \frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\mathrm{d}z\;\int_{0}^{\infty}\mathrm{d}{\cal{M}}\;\frac{\mathrm{d}^{2}\nu}{\mathrm{d}z\,\mathrm{d}{\mathcal{M}}}\frac{1}{\left[d_{\mathrm{L}}(z)\right]^2}\left( \frac{{\mathcal{M}}^{5}}{1+z} \right)^{1/3}\; .
 \end{equation}
 
 From (\ref{eq:bigint}) it can be seen that the characteristic strain due to a stochastic background of binaries is a power law in frequency with spectral index $\alpha=-2/3$. The amplitude of the background depends on the population statistics of the binaries under consideration via $\nu(z,{\mathcal{M}})$. The power law is often parametrised as
@@ -73,7 +77,7 @@ An important aspect of burst search algorithms is to accurately estimate the noi
 
 As discussed in \ref{sec:insp}, the expected relation between $h_\mathrm{c}(f)$ and a typical waveform $\tilde{h}(f)$ is
 \begin{equation}\label{eq:simple} 
-h_\mathrm{c}(f) = \left|\tilde{h}(f)\right|\sqrt{{N}_{\mathrm{cycles}}} \; , 
+h_\mathrm{c}(f) = \sqrt{{N}_{\mathrm{cycles}}}\left|\tilde{h}(f)\right| \; , 
 \end{equation}
 where ${N}_{\mathrm{cycles}}$ is the number of cycles of radiation generated by the source, which is of order unity for bursts. 
 
