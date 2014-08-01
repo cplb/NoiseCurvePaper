@@ -12,7 +12,7 @@ where an overdot represents the time derivative and $\dot{\phi} = 2\pi f$. The s
 
 The form for $h_\mathrm{c}$ can be derived from the Fourier transform in the stationary-phase approximation. Consider a source signal with approximately constant (root-mean-square) amplitude $h_0$ and central frequency $f'$. In this case,
 \begin{eqnarray}
-h(t) &=& \sqrt{2} h_0 \cos\left[\rmi \phi(t)\right] \; ; \\
+h(t) &=& \sqrt{2} h_0 \cos\left[\phi(t)\right] \; , \\
 \tilde{h}(f) &=& \frac{h_0}{\sqrt{2}} \int_{-\infty}^{\infty}\rmd t\; \exp \left\{2\pi \rmi \left[\frac{\phi(t)}{2\pi t}-f\right]t\right\} + \exp \left\{-2\pi \rmi \left[\frac{\phi(t)}{2\pi t}+f\right]t\right\} \; .
 \label{eq:fourier-h}
 \end{eqnarray}
@@ -20,7 +20,7 @@ Without loss of generality, we can assume an initial phase of zero, such that $\
 \begin{equation}
 \left[\frac{\phi(t)}{2\pi t}-f\right]_{f\,=\,f'} = f' + \dot{f'}t + \mathcal{O}\left(t^2\right) - f' = \dot{f'}t + \mathcal{O}\left(t^2\right).
 \end{equation}
-The higher-order terms cause the expoential to oscillate rapidly such that these terms integrate to zero and may be neglected. Performing a similar expansion about $f = -f'$ for the second term in (\ref{eq:fourier-h}) gives
+The higher-order terms cause the expoential to oscillate rapidly such that these terms integrate to zero and may be neglected. Performing a similar expansion about $f = -f'$ for the second term in (\ref{eq:fourier-h}) and then evaluating the Gaussian integrals gives
 \begin{eqnarray} \label{eq:FTofEMRI}
 \tilde{h}(f) &\simeq& \frac{h_0}{\sqrt{2}} \int_{-\infty}^{\infty}\rmd t\; \exp\left(2\pi\rmi \dot{f'} t^{2}\right) + \exp\left(-2\pi\rmi \dot{f'} t^{2}\right) \nonumber \\
 &\simeq& \frac{h_0}{\sqrt{2\dot{f'}}}.
@@ -85,5 +85,9 @@ An alternative characterisation of the signal amplitude commonly used for burst 
 \begin{equation}
 h_\mathrm{rss} = \left[\int \rmd t {|h_+(t)|}^2 + {|h_\times(t)|}^2\right]^{1/2}.
 \end{equation}
-If $\tilde{h}(f)$ is constant across the bandwidth $\Delta f$, this is related to the characteristic strain via \cplb{What about the detector response?}. In this work, we favour a constant $h_\mathrm{c}(f)$ rather than $h_\mathrm{rss}$ for consistency with the other types of source where the bandwidth is detector specific.
+For a linearly polarised GW, with $\tilde{h}(f)$ constant across the bandwidth $\Delta f$, this is approximately related to the characteristic strain via 
+\begin{equation}
+h_\mathrm{rss} \simeq |\tilde{h}(f)|\sqrt{\Delta f}\,,\label{eq:rela}
+\end{equation}
+where we have neglected the detector response functions (see section \ref{sec:principles}), which are of order unity. In this work, we favour a constant $h_\mathrm{c}(f)$ rather than $h_\mathrm{rss}$ for consistency with the other types of source where the bandwidth is detector specific.
 
