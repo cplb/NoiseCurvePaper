@@ -1,4 +1,5 @@
-% BibTeX standard bibliography style `jphysicsB' (one of the harvard family)
+% BibTeX bibliography style `jphysicsCB' (one of the harvard family)
+        % Modification of jphysicsB.bst:
 	% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
 	% Copyright (C) 1991, all rights reserved.
 	% Copying of this file is authorized only if either
