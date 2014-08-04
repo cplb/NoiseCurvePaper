@@ -25,6 +25,7 @@ ENTRY
     author
     booktitle
     chapter
+    doi
     edition
     editor
     eprint
@@ -175,6 +176,17 @@ FUNCTION {format.arxiv}
     { "" }
     {"\href{http://arxiv.org/abs/" eprint *  "}" * 
              "{\tt arXiv:" * eprint *  "}" *}
+  if$
+}
+
+FUNCTION {add.doi}
+{ duplicate$ empty$
+    { skip$ }
+    { doi empty$
+        {}
+        {"\href{http://dx.doi.org/" doi * "}{" * swap$ * "}" *}
+      if$
+    }
   if$
 }
 
@@ -712,6 +724,10 @@ FUNCTION {article}
   list.label.output
   " " list.year * output.nonnull
   format.authors "author" item.check
+  new.block
+  format.title "title" output.check
+  add.doi
+  new.block
   crossref missing$
     { journal emphasize "journal" duplicate$ item.check
       " " * format.vol.num.pages * output
