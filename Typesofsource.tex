@@ -51,7 +51,7 @@ For simplicity, consider the background to comprise of binaries in circular orbi
 \begin{equation}\label{eq:Thorne}
 \frac{\mathrm{d}E_{\mathrm{GW}}}{\mathrm{d}\left(\log f_{\mathrm{r}} \right)} = \frac{G^{2/3}\pi^{2/3}}{3}{\cal{M}}^{5/3}f_{\mathrm{r}}^{2/3}
 \end{equation}
-between an minimum and maximum frequency set by the initial and final radius of the binary orbit. Here, we assume that the maximum and minimum frequencies are outside of the range of our detector and hence can be neglected. Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}), an expression for characteristic strain can now be found \citep{SesanaVecchioColancino}
+between minimum and maximum frequencies set by the initial and final radii of the binary orbit respectively. Here, we assume that the maximum and minimum frequencies are outside of the range of our detector and hence can be neglected. Using (\ref{eq:stoch}), (\ref{eq:Phinney}) and (\ref{eq:Thorne}), an expression for characteristic strain can now be found \citep{SesanaVecchioColancino}
 \begin{equation}\label{eq:bigint}
 \left[h_\mathrm{c}(f)\right]^2 = \frac{4G^{5/3}}{3\pi^{1/3}c^{2}}f^{-4/3}\int_{0}^{\infty}\mathrm{d}z\;\int_{0}^{\infty}\mathrm{d}{\cal{M}}\;\frac{\mathrm{d}^{2}\nu}{\mathrm{d}z\,\mathrm{d}{\mathcal{M}}}\frac{1}{\left[d_{\mathrm{L}}(z)\right]^2}\left( \frac{{\mathcal{M}}^{5}}{1+z} \right)^{1/3}\; .
 \end{equation}
@@ -60,9 +60,11 @@ From (\ref{eq:bigint}) it can be seen that the characteristic strain due to a st
 \begin{equation}\label{eq:power} 
 h_\mathrm{c}(f) = A\left(\frac{f}{f_{0}}\right)^{\alpha}\; , 
 \end{equation}
-and constraints are then placed on $A$. In practice, this power law also has upper and lower frequency cut-offs related to the population of source objects. A stochastic background from other sources, such as cosmic strings or relic GWs from the early Universe, can also be written in the same form as (\ref{eq:power}), but with different spectral indices: $\alpha=-7/6$ for cosmic strings or $\alpha$ in the range $-1$ to $-0.8$ for relic GWs \citep{Jenet}.
+and constraints are then placed on $A$. In practice, this power law also has upper and lower frequency cut-offs related to the population of source objects.
 
-An alternative method for graphically representing the sensitivity of a GW detector to stochastic backgrounds, called the \emph{power-law-integrated sensitivity curve}, was suggested by \cite{2013PhRvD..88l4032T}. This method accounts for the there being power across all frequencies in the sensitivity band by integrating the noise-weighted signal over frequency. As our aim here is to present stochastic backgrounds alongside other types of sources for comparison, we do not use this approach.
+A stochastic background from other sources, such as cosmic strings or relic GWs from the early Universe, can also be written in the same form as (\ref{eq:power}), but with different spectral indices: $\alpha=-7/6$ for cosmic strings or $\alpha$ in the range $-1$ to $-0.8$ for relic GWs \citep{Jenet}.
+
+An alternative method for graphically representing the sensitivity of a GW detector to stochastic backgrounds, called the \emph{power-law-integrated sensitivity curve}, was suggested by \cite{2013PhRvD..88l4032T}. This method accounts for the there being power across all frequencies in the sensitivity band by integrating the noise-weighted signal over frequency. As our aim here is to present stochastic backgrounds alongside other types of sources for comparison, we will not use this approach.
 
 
 \subsection{Burst sources}\label{sec:bursts}
@@ -73,7 +75,7 @@ Burst searches are often carried out using time--frequency techniques. The data 
 
 The presence of excess power across a number of pixels eliminates modelled noise sources, but such a cluster may also be caused by atypical noise within a detector. We can improve our confidence of a GW signal by making use of information obtained from other GW detectors. Signals across a network of detectors should have compatible arrival times (given the sky direction) as well as consistent amplitudes, frequencies and shapes of the waveform. Different pipelines are currently in use that analyse the signal consistency in different ways: both coincidence searches \citep{Chatterji2004} and fully coherent methods \citep{Klimenko2008} are used.
 
-An important aspect of burst search algorithms is to accurately estimate the noise properties within each time segment. To this extent, null data streams can be constructed that are insensitive to real GW signals. In order to estimate the false alarm rate, the data from different detectors can be shifted in time to remove any genuine coincident GW signals. These time-shifts are then analysed to simulate the potential occurence of coincident noise events. The algorithms are tuned using time-shifted data to ensure there is no bias in the final search.
+\cplb{This paragraph needs references} An important aspect of burst search algorithms is to accurately estimate the noise properties within each time segment. To this extent, null data streams can be constructed that are insensitive to real GW signals. In order to estimate the false alarm rate, the data from different detectors can be shifted in time to remove any genuine coincident GW signals. These time-shifts are then analysed to simulate the potential occurence of coincident noise events. The algorithms are tuned using time-shifted data to ensure there is no bias in the final search.
 
 As discussed in \ref{sec:insp}, the expected relation between $h_\mathrm{c}(f)$ and a typical waveform $\tilde{h}(f)$ is
 \begin{equation}\label{eq:simple} 
@@ -83,11 +85,11 @@ where ${N}_{\mathrm{cycles}}$ is the number of cycles of radiation generated by 
 
 An alternative characterisation of the signal amplitude commonly used for burst sources is the root-sum-square of the waveform polarisations:
 \begin{equation}
-h_\mathrm{rss} = \left[\int \rmd t {|h_+(t)|}^2 + {|h_\times(t)|}^2\right]^{1/2}.
+h_\mathrm{rss}^2 = \int \rmd t \; {|h_+(t)|}^2 + {|h_\times(t)|}^2 \; .
 \end{equation}
 For a linearly polarised GW, with $\tilde{h}(f)$ constant across the bandwidth $\Delta f$, this is approximately related to the characteristic strain via 
 \begin{equation}
-h_\mathrm{rss} \simeq |\tilde{h}(f)|\sqrt{\Delta f}\,,\label{eq:rela}
+h_\mathrm{rss} \simeq |\tilde{h}(f)|\sqrt{\Delta f}\;,\label{eq:rela}
 \end{equation}
 where we have neglected the detector response functions (see section \ref{sec:principles}), which are of order unity. In this work, we favour a constant $h_\mathrm{c}(f)$ rather than $h_\mathrm{rss}$ for consistency with the other types of source where the bandwidth is detector specific.
 
