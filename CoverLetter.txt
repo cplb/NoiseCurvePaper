@@ -1,0 +1,19 @@
+Dear editor
+
+This paper has grown slowly out of the collective studies of the authors. It has been read by several incoming students to the gravitational wave community and been found most useful. The document has also been read by a large number of experienced researchers, most recently during an internal review process by the LSC, and was very well received.
+
+As you state on your website, articles to be published in IOP journals should meet, among other requirements, the following:
+
+ - Are original, novel and add significantly to research already published: our paper meets this by deriving ab-initio the relationships between the different characterisations of gravitational wave amplitude. The gravitational wave community is now quite large and well developed, and as such many characterisations exist; to name but a few: characteristic strain, one and two-sided power spectral density, the energy density, the frequency-domain strain and the root-sum-square amplitude. This is a frequent source of confusion for even experienced researchers and can be, frankly, bewildering for newcomers to the field. Therefore there is a clear need for a paper which presents a self contained derivation of the relationships between these quantities and a discussion of their relative merits.
+
+ - Are of interest to the community: our paper meets this requirement in abundance. We were extremely pleased by the response we received from the recent internal LSC review. Many independent people from the community contacted us to discuss the merits of the different conventions, and how they related to their own work. This shows that there is a clear need for a paper of this type in the literature.
+
+ - Sound motivation and purpose: the era of gravitational wave astronomy is nearly upon us, the next few years will see the commissioning of multiple ground-based detectors, the unification of the current generation of pulsar timing arrays to form the IPTA, and work beginning on the mission to address the ESA L3 theme: The gravitational Universe. The need to have a solid, unified understanding of the sensitivity of these detectors is apparent to anyone in the community working in any of the areas mentioned above.
+
+We are of course aware that the flavour of this paper is somewhat different to the majority published in this journal; in some ways this is slightly more akin to a review article. However, the authors feel that the pedagogical nature of the paper, and the exceedingly good fit for the target audience of your journal mean this paper is an excellent candidate for CQG.
+
+We hope you will agree, and we look forward to hearing from you.
+
+Yours faithfully,
+
+Christopher Moore, Robert Cole and Christopher Berry
