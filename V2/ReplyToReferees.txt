@@ -1,0 +1,46 @@
+Dear Sir/Madam
+
+Please find below a point by point reply to the comments of the two referees and a description of the changes we have made to the manuscript. 
+
+We have made changes to address all of the comments by the referees. These changes have removed a number of small typographical mistakes and improved the overall readability of the manuscript. All of the authors would like to thank the referees for their comments.
+
+Yours faithfully,
+
+Christopher Moore, Robert Cole and Christopher Berry.
+
+
+
+Referee 1
+It is very gratifying to hear that the referee enjoyed reading the manuscript. We would like to thank the referee for their time and their kind comments.
+
+
+Referee 2
+Major points:
+1)	DISCUSS WITH ROB.
+
+2)	We agree with this comment and think that it's well worth emphasising this point. We have added the following passage to the end of sec 5.4...
+
+"It should be noted, however, that the sensitivity curves plotted in Appendix A would change substantially for stochastic backgrounds. This is because searches for stochastic backgrounds utilise the cross correlation of the outputs of multiple detectors for detection (Allen and Romano, 1999; Maggiore, 2000), instead of the individual outputs. Therefore the sensitivity of a network of ground based detectors is much greater than that of any individual detector. The shape of the sensitivity curve for a stochastic background would also differ from the curves plotted here, for a discussion of this point see Thrane and Romano (2013)."
+
+
+Other comments (in order of appearance in the text):
+1)	We thank the referee for pointing out this interesting source of confusion. We have checked this, and it seems that it was originally "evolved LISA", but the alternative "evolving LISA" has gradually become more popular and is now the prefered option. We have found numerous examples of both acronyms being used; for two conflicting examples on the same website see https://www.elisascience.org/news/top-news/gravitationaluniverseselectedasl3 and https://www.elisascience.org/articles/elisa-consortium/home . We have changed the main body of the text to read "evolving" added the following footnote...
+
+"The “e” in eLISA originally stood for evolved, however, the preference is now for evolving."
+
+2)	We agree with the referees comment and have amended the passage to read...
+
+"Another disadvantage is that applying the definition 17 to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed."
+
+3)	We have made this correction.
+
+4)	We have made this correction.
+
+5)	We have made this correction.
+
+6)	We agree with the referee on this comment. The message we were trying to convey here is that current limits are comparable in order of magnitude. We have changed the relevant passage in sec 4.4.1 to read...
+
+"The limits from the existing detectors are all of a similar magnitude; the PPTA limit is a factor of ∼ 2.5 lower than the other two. In Appendix A we use the EPTA limits, the figures show the published limit on A from equation 40 at a frequency of f0 = 1 yr−1 , based on an analysis of 5 pulsars over approximately 10 yr."
+
+7)	THE EPTA CURVE DOESN'T ASSUME A DELTA_T. NEED TO CLARIFY ASSUMPTIONS FOR OTHER CURVES.
+

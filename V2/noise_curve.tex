@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    INSTITUTE OF PHYSICS PUBLISHING                                   %
+%                                                                      %
+%   `Preparing an article for publication in an Institute of Physics   %
+%    Publishing journal using LaTeX'                                   %
+%                                                                      %
+%    LaTeX source code `ioplau2e.tex' used to generate `author         %
+%    guidelines', the documentation explaining and demonstrating use   %
+%    of the Institute of Physics Publishing LaTeX preprint files       %
+%    `iopart.cls, iopart12.clo and iopart10.clo'.                      %
+%                                                                      %
+%    `ioplau2e.tex' itself uses LaTeX with `iopart.cls'                %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[fleqn,12pt]{iopart}
+\newcommand{\gguide}{{\it Preparing graphics for IOP journals}}
+%Uncomment next line if AMS fonts required
+\usepackage{iopams}  
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{appendix}
+\usepackage[margin=1cm]{caption}
+\usepackage{braket}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{color}
+
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 	definition of a solar mass symbol for use in equations.      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Msun}{\ensuremath{M_{ \odot }}}
+\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\innerprod}[2]{\ensuremath{\left({#1}\middle|{#2}\right)}}
+\newcommand{\cplb}[1]{{\color{red} #1}}
+\newcommand{\rhc}[1]{{\color{green} #1}}
+\newcommand{\cjm}[1]{{\color{blue} #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+\title{Gravitational-wave sensitivity curves}
+\author{C J Moore$^1$, R H Cole$^1$ \& C P L Berry$^{1,\,2}$}
+\address{$^1$ Institute of Astronomy, Madingley Road, Cambridge, CB3 0HA, United Kingdom}
+\address{$^2$ School of Physics and Astronomy, University of Birmingham, Edgbaston, Birmingham B15 2TT, United Kingdom}
+\ead{cjm96@cam.ac.uk}
+
+\begin{abstract}
+There are several common conventions in use by the gravitational wave community to describe the amplitude of sources and the sensitivity of detectors. These are frequently confused. We outline the merits of and differences between the various quantities used for parameterizing noise curves and characterizing gravitational wave amplitudes. We conclude by producing plots that consistently compare different detectors. Similar figures can be generated on-line for general use at \url{http://www.ast.cam.ac.uk/~rhc26/sources/}.
+\end{abstract}
+
+\pacs{04.30.--w, 04.30.Db, 04.80.Nn, 95.55.Ym}
+
+\input{Introduction}
+\input{Typesofsource}
+\input{Detectors}
+\input{Sources}
+
+\section{Concluding remarks}\label{sec:discussion}
+
+When quantifying the sensitivity of a GW detector and the loudness of a GW source, there are three commonly used quantities: the characteristic strain, the power spectral density, and the spectral energy density. We have carefully defined these quantities and derived the relationships between them. The characteristic strain (section \ref{sec:character-strain}) is most directly related to the SNR, the PSD is mostly closely related to the mean square amplitude in the detector, and the energy density has a clear physical interpretation. We have produced example plots using each of these quantities for a wide range of detectors and sources. The predicted source amplitudes are based on astrophysical estimates of the event rates and are subject to varying degrees of uncertainty.\footnote{There is also the exciting possibility of sources yet to be considered.} Interactive versions of these plots, with user-specified detectors and sources, are available on-line at \url{http://www.ast.cam.ac.uk/~rhc26/sources/}. Trying to summarise an entire field of astronomy on one plot is an impossible task; however, we hope that the figures and analysis presented here provide useful insight.
+
+\ack{CJM, RHC and CPLB are supported by the Science \& Technology Facilities Council. We are indebted to Jonathan Gair, for useful advice and proof-reading the manuscript. We also thank Stephen Taylor and Justin Ellis for useful conversations about pulsar timing. The authors thanks a number of members of the LIGO--Virgo Scientific Collaboration, especially Chris Messenger, for useful comments and suggestions. This paper has been assigned LIGO document LIGO-P1400129.}
+
+\input{Plots}
+\clearpage
+
+\bibliographystyle{jphysicsCB}
+\bibliography{bibliography}
+
+\end{document}
+
