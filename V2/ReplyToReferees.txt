@@ -26,7 +26,7 @@ Major points:
 Other comments (in order of appearance in the text):
 1)	We thank the referee for pointing out this interesting source of confusion. We have checked this, and it seems that it was originally "evolved LISA", but the alternative "evolving LISA" has gradually become more popular and is now the prefered option. We have found numerous examples of both acronyms being used; for two conflicting examples on the same website see https://www.elisascience.org/news/top-news/gravitationaluniverseselectedasl3 and https://www.elisascience.org/articles/elisa-consortium/home . We have changed the main body of the text to read "evolving" added the following footnote...
 
-"The “e” in eLISA originally stood for evolved, however, the preference is now for evolving."
+"The e in eLISA originally stood for evolved, however, the preference is now for evolving."
 
 2)	We agree with the referees comment and have amended the passage to read...
 
