@@ -15,8 +15,26 @@ It is very gratifying to hear that the referee enjoyed reading the manuscript. W
 
 
 Referee 2
+(**) The referees suggestion of a dynamic online plotting tool, allowing for user-specified values (of chirp masses for example) is an excellent idea. We intend to gradually improve the website over time and this is certainly on our to-do list. However, the current structure is not well-suited to this kind of customisation and so a radical overhaul is required beyond the current scope of this paper.
+
 Major points:
-1)	DISCUSS WITH ROB.
+1)	We agree with the referee that the sources sections needed some improvements. Before we discuss the individual improvements, it should be noted that it is in general impossible to treat all the sources rigorously and consistently in a way that produces a meaningful sensitivity curve. We discuss the difficulties in producing a unified treatment in detail in sections 2 and 3.
+
+However, we have adjusted some of our treatments, to take into account the referee's specific points.
+
+a-Sources with flat-topped boxes
+(i) SMBH binaries. We agree with the referee's discussion of characteristic strain for a binary with fixed chirp mass, h ~ f^(7/6). However, PTAs may detect a heavier (lighter) binary at an earlier (later) stage of the inspiral radiating at the same frequency. The desired shape of the box therefore depends not only on the scaling pointed out by the referee, but also on the distribution of SMBH chirp masses. This is astrophysically uncertain and so it is unclear what the best shape is.
+
+We have added the following text to sec 5.3.1 ...
+
+"The distribution of source amplitudes with frequency is dependent on the chirp mass distribution of binaries, which is astrophysically uncertain. Reflecting our lack of information about the true shape of this box, we draw it with a flat top in characteristic strain."
+
+An alternative method would be to plot the h ~ f^(7/6) strain for a fiducial binary, as suggested by the referee, and allow for varying chirp masses in the online curve generation tool. This relates to our previous point (**) about the website. We believe our current convention is equally valid.
+
+(ii) Pulsars. Previously we plotted the pulsar box with a flat top. We have now modified this, see sec 5.1.3.
+
+
+
 
 2)	We agree with this comment and think that it's well worth emphasising this point. We have added the following passage to the end of sec 5.4...
 
