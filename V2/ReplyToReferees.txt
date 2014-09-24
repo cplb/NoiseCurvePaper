@@ -38,9 +38,8 @@ Other comments (in order of appearance in the text):
 
 5)	We have made this correction.
 
-6)	We agree with the referee on this comment. The message we were trying to convey here is that current limits are comparable in order of magnitude. We have changed the relevant passage in sec 4.4.1 to read...
+6)	We agree with the referee on this comment. The message we were trying to convey here is that current limits are comparable in order of magnitude. We have changed the relevant passage in sec 4.4.1 to now state that the PPTA limit is lower by a factor of ~2.5. Also see comment (7) for more changes to section 4.4.1.
 
-"The limits from the existing detectors are all of a similar magnitude; the PPTA limit is a factor of ∼ 2.5 lower than the other two. In Appendix A we use the EPTA limits, the figures show the published limit on A from equation 40 at a frequency of f0 = 1 yr−1 , based on an analysis of 5 pulsars over approximately 10 yr."
+7)	We agree with the referee's comment that more information on the assumptions behind the PTA sensitivity curves in required. We have modified sections 4.4.1, 4.4.2 and 4.4.3 so that they now clearly state the total time, frequency of measurement, r.m.s. timing precision and number of pulsars for each PTA.
 
-7)	THE EPTA CURVE DOESN'T ASSUME A DELTA_T. NEED TO CLARIFY ASSUMPTIONS FOR OTHER CURVES.
 
