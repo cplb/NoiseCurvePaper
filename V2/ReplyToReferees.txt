@@ -39,7 +39,7 @@ b-The referee's suggestion for the addition of plots showing a range of amplitud
 
 c-We agree with the referee's comment that there was little astrophysical information in the statement that h_c/h_n = 100. We have replaced this with a fiducial source, at the suggestion of the referee. The relevant passage in the text now reads ...
 
-""
+"A 105 M binary can be observed out to a redshift z ∼ 5 with an SNR of 100 (Seoane et al., 2013). This fiducial source gives the amplitude of the boxes labelled “≈ 10 6 solar mass binaries” in Appendix A. The range of frequencies is (3 × 10−4 –3 × 10−1 ) Hz, extrapolated using the slope hc (f ) ∝ f −2/3 derived in section 3.2."
 
 2)	We agree with this comment and think that it's well worth emphasising this point. We have added the following passage to the end of sec 5.4...
 
