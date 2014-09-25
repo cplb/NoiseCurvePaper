@@ -20,7 +20,7 @@ Without loss of generality, we can assume an initial phase of zero, such that $\
 \begin{equation}
 \left[\frac{\phi(t)}{2\pi t}-f\right]_{f\,=\,f'} = f' + \dot{f'}t + \mathcal{O}\left(t^2\right) - f' = \dot{f'}t + \mathcal{O}\left(t^2\right).
 \end{equation}
-The higher-order terms cause the expoential to oscillate rapidly such that these terms integrate to zero and may be neglected. Performing a similar expansion about $f = -f'$ for the second term in (\ref{eq:fourier-h}) and then evaluating the Gaussian integrals gives
+The higher-order terms cause the expoential to oscillate rapidly, such that these terms integrate to zero and may be neglected. Performing a similar expansion about $f = -f'$ for the second term in (\ref{eq:fourier-h}), and then evaluating the Gaussian integrals gives
 \begin{eqnarray} \label{eq:FTofEMRI}
 \tilde{h}(f) &\simeq& \frac{h_0}{\sqrt{2}} \int_{-\infty}^{\infty}\rmd t\; \exp\left(2\pi\rmi \dot{f'} t^{2}\right) + \exp\left(-2\pi\rmi \dot{f'} t^{2}\right) \nonumber \\
 &\simeq& \frac{h_0}{\sqrt{2\dot{f'}}}.
@@ -89,7 +89,7 @@ h_\mathrm{rss}^2 = \int \rmd t \; {|h_+(t)|}^2 + {|h_\times(t)|}^2 \; .
 \end{equation}
 For a linearly polarised GW, with $\tilde{h}(f)$ constant across the bandwidth $\Delta f$, this is approximately related to the characteristic strain via 
 \begin{equation}
-h_\mathrm{rss} \simeq |\tilde{h}(f)|\sqrt{\Delta f}\;,\label{eq:rela}
+h_\mathrm{rss} \simeq \left|\tilde{h}(f)\right|\sqrt{\Delta f}\;,\label{eq:rela}
 \end{equation}
 where we have neglected the detector response functions (see section \ref{sec:principles}), which are of order unity. In this work, we favour a constant $h_\mathrm{c}(f)$ rather than $h_\mathrm{rss}$ for consistency with the other types of source where the bandwidth is detector specific.
 

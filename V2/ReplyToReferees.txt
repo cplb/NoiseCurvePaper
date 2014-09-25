@@ -1,8 +1,4 @@
-Dear Sir/Madam
-
-Please find below a point by point reply to the comments of the two referees and a description of the changes we have made to the manuscript. 
-
-We have made changes to address all of the comments by the referees. These changes have removed a number of small typographical mistakes and improved the overall readability of the manuscript. All of the authors would like to thank the referees for their comments.
+Please find below a point-by-point reply to the comments of the two referees, and a description of the changes we have made to the manuscript. We hope that these changes address all of the comments by the referees. They have corrected a number of small typographical mistakes and improved the overall readability of the manuscript. We would like to thank both the referees for their comments.
 
 Yours faithfully,
 
@@ -11,21 +7,21 @@ Christopher Moore, Robert Cole and Christopher Berry.
 
 
 Referee 1
+
 It is very gratifying to hear that the referee enjoyed reading the manuscript. We would like to thank the referee for their time and their kind comments.
 
 
 Referee 2
+
 (**) The referees suggestion of a dynamic online plotting tool, allowing for user-specified values (of chirp masses for example) is an excellent idea. We intend to gradually improve the website over time and this is certainly on our to-do list. However, the current structure is not well-suited to this kind of customisation and so a radical overhaul is required beyond the current scope of this paper.
 
 Major points:
-1)	We agree with the referee that the sources sections needed some improvements. Before we discuss the individual improvements, it should be noted that it is in general impossible to treat all the sources rigorously and consistently in a way that produces a meaningful sensitivity curve. We discuss the difficulties in producing a unified treatment in detail in sections 2 and 3.
-
-However, we have adjusted some of our treatments, to take into account the referee's specific points.
+1)	We agree with the referee that the sources sections needed some improvements. Before we discuss the individual improvements, it should be noted that it is in general not possible to treat all the sources rigorously and consistently in a way that produces a meaningful sensitivity curve. We discuss the difficulties in producing a unified treatment in detail in sections 2 and 3. However, we have adjusted some of our treatments, to take into account the referee's specific points.
 
 a-Sources with flat-topped boxes
 (i) SMBH binaries. We agree with the referee's discussion of characteristic strain for a binary with fixed chirp mass, h ~ f^(7/6). However, PTAs may detect a heavier (lighter) binary at an earlier (later) stage of the inspiral radiating at the same frequency. The desired shape of the box therefore depends not only on the scaling pointed out by the referee, but also on the distribution of SMBH chirp masses. This is astrophysically uncertain and so it is unclear what the best shape is.
 
-We have added the following text to sec 5.3.1 ...
+We have added to sec 5.3.1:
 
 "The distribution of source amplitudes with frequency is dependent on the chirp mass distribution of binaries, which is astrophysically uncertain. Reflecting our lack of information about the true shape of this box, we draw it with a flat top in characteristic strain."
 
@@ -33,25 +29,25 @@ An alternative method would be to plot the h ~ f^(7/6) strain for a fiducial bin
 
 (ii) Pulsars. Previously we plotted the pulsar box with a flat top. We have now modified this, see sec 5.1.3.
 
-b-The referee's suggestion for the addition of plots showing a range of amplitudes would not be feasible within the paper itself, but would be a possible future addition to the online tool, see (**). To address this point within the paper itself we have added the following passage to section 5.3.2...
+b-The referee's suggestion for the addition of plots showing a range of amplitudes would not be feasible within the paper itself, but would be a possible future addition to the online tool, see (**). To address this point within the paper itself we have added to section 5.3.2:
 
 "Plotted in Appendix A with the label “stochastic background ” is a third of the current limit with a cut off frequency of f = 1 yr−1. This is suggested by Monte Carlo population studies (Sesana et al., 2008), which give a range of plausible amplitudes the mean of which is plotted here."
 
-c-We agree with the referee's comment that there was little astrophysical information in the statement that h_c/h_n = 100. We have replaced this with a fiducial source, at the suggestion of the referee. The relevant passage in the text now reads ...
+c-We agree with the referee's comment that there was little astrophysical information in the statement that h_c/h_n = 100. We have replaced this with a fiducial source, at the suggestion of the referee. The relevant passage now reads:
 
-"A 105 M binary can be observed out to a redshift z ∼ 5 with an SNR of 100 (Seoane et al., 2013). This fiducial source gives the amplitude of the boxes labelled “≈ 10 6 solar mass binaries” in Appendix A. The range of frequencies is (3 × 10−4 –3 × 10−1 ) Hz, extrapolated using the slope hc (f ) ∝ f −2/3 derived in section 3.2."
+"A 10^5 M binary can be observed out to a redshift z ∼ 5 with an SNR of 100 (Seoane et al., 2013). This fiducial source gives the amplitude of the boxes labelled “≈ 10 6 solar mass binaries” in Appendix A. The range of frequencies is (3 × 10^−4 –3 × 10^−1 ) Hz, extrapolated using the slope hc (f ) ∝ f −2/3 derived in section 3.2."
 
-2)	We agree with this comment and think that it's well worth emphasising this point. We have added the following passage to the end of sec 5.4...
+2)	We agree with this comment and think that it's well worth emphasising this point. We have added to the end of sec 5.4:
 
-"It should be noted, however, that the sensitivity curves plotted in Appendix A would change substantially for stochastic backgrounds. This is because searches for stochastic backgrounds utilise the cross correlation of the outputs of multiple detectors for detection (Allen and Romano, 1999; Maggiore, 2000), instead of the individual outputs. Therefore the sensitivity of a network of ground based detectors is much greater than that of any individual detector. The shape of the sensitivity curve for a stochastic background would also differ from the curves plotted here, for a discussion of this point see Thrane and Romano (2013)."
+"Tthe sensitivity curves plotted in Appendix A would change substantially for stochastic backgrounds. This is because searches for stochastic backgrounds utilise the cross correlation of the outputs of multiple detectors for detection (Allen and Romano, 1999; Maggiore, 2000), instead of the individual outputs. Therefore, the sensitivity of a network of ground based detectors is much greater than that of any individual detector. The shape of the sensitivity curve for a stochastic background would also differ from the curves plotted here, for a discussion of this point see Thrane and Romano (2013)."
 
 
 Other comments (in order of appearance in the text):
-1)	We thank the referee for pointing out this interesting source of confusion. We have checked this, and it seems that it was originally "evolved LISA", but the alternative "evolving LISA" has gradually become more popular and is now the prefered option. We have found numerous examples of both acronyms being used; for two conflicting examples on the same website see https://www.elisascience.org/news/top-news/gravitationaluniverseselectedasl3 and https://www.elisascience.org/articles/elisa-consortium/home . We have changed the main body of the text to read "evolving" added the following footnote...
+1)	We thank the referee for pointing out this interesting source of confusion. We have checked this, and it seems that it was originally "evolved LISA", but the alternative "evolving LISA" has gradually become more popular and is now the prefered option. We have found numerous examples of both acronyms being used; for two conflicting examples on the same website see https://www.elisascience.org/news/top-news/gravitationaluniverseselectedasl3 and https://www.elisascience.org/articles/elisa-consortium/home . We have changed the main body of the text to read "evolving" added the footnote:
 
-"The e in eLISA originally stood for evolved, however, the preference is now for evolving."
+"The e in eLISA originally stood for evolved, but the preference now is for evolving."
 
-2)	We agree with the referees comment and have amended the passage to read...
+2)	We agree with the referees comment and have amended the passage to read:
 
 "Another disadvantage is that applying the definition 17 to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed."
 

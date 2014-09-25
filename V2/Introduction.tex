@@ -1,10 +1,7 @@
 \section{Introduction}
 
-%CPLB: alternate openning I put together a while ago.
-%Even the best of us can be frustrated by the use of different conventions or units when describing a single quantity. It is a common occurrence in physics that  there is a particular parameterization that is perfect for one experiment or calculation, but this is not of universal applicability. When comparing results across studies it is then necessary to trawl through the literature to check that $x$ is really the same parameter. Astronomy and astrophysics are rife with specialized units, from the jansky (a spectral flux density of $10^{-26}$ watts per square metre per hertz) to the solar neutrino unit (a neutrino flux that produces an interaction rate of $10^{-36}$ per second per target atom). Inevitably, things get lost in translation. The mismatch of conventions can be confusing to those new to the field, especially students.
-
 The next few years  promise to deliver the first direct detection of gravitational waves (GWs). This will most likely be achieved by the advanced versions of the Laser Interferometer Gravitational-wave Observatory \citep[LIGO;][]{2010CQGra..27h4006H} and Virgo \citep{Acernese2009} detectors operating in the frequency range $(10$--$10^{3})~\mathrm{Hz}$. By the end of the decade, it is expected that pulsar timing arrays \citep[PTAs;][]{1990ApJ361300F} will also detect very low frequency GWs around $10^{-8}~\mathrm{Hz}$. Further into the future, space-based detectors, such as the evolving Laser Interferometer Space Antenna \citep[eLISA;][]{TheGravitationalUniverse}
-\footnote{The e in eLISA originally stood for evolved, however, the preference is now for evolving.}
+\footnote{The e in eLISA originally stood for evolved, but the preference now is for evolving.}
 These advances shall herald the beginning of multi-wavelength GW astronomy as a means of observing the Universe.
 
 There already exists an extensive literature assessing the potential of all of these detectors to probe the astrophysics of various sources. There are several different methods commonly used to describe the sensitivity of a GW detector and the strength of a GW source. It is common practice to summarise this information on a sensitivity-curve plot. When producing these plots, it is desirable to have a consistent convention between detectors and sources that allows information about both to be plotted on the same graph. Ideally, the detectors and sources are represented in such a way that the relative detectability of the signals is immediately apparent.
@@ -35,7 +32,7 @@ For simplicity, it is assumed that the noise in the GW detector is stationary an
 \end{equation}
 where angle brackets $\left<\ldots\right>$ denote an ensemble average over many noise realisations \citep{Cutler1994}. In reality, we have only a single realisation to work with, but the ensemble average can be replaced by a time average for stationary stochastic noise. The procedure is to measure the noise over a sufficiently long duration $T$ and then compute the Fourier transform $\tilde{n}(f)$ with a frequency resolution $\Delta f = T^{-1}$; this is repeated many times to give an average. The noise PSD $S_{n}(f)$ has units of inverse frequency.
 
-Since the GW signal and detector output are both real it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare2}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
+Since the GW signal and detector output are both real, it follows that $\tilde{h}(-f)=\tilde{h}^{*}(f)$ and $\tilde{n}(-f)=\tilde{n}^{*}(f)$; therefore, $S_{n}(f)=S_{n}(-f)$. The fact that $S_{n}(f)$ is an even function means that Fourier integrals over all frequencies can instead be written as integrals over positive frequencies only, e.g., (\ref{eq:meansquare2}) and (\ref{eq:snrinnerprod}); it is for this reason that $S_{n}(f)$ is called the \emph{one-sided} PSD.\footnote{An alternative convention is to use the two-sided PSD $S^{(2)}_{n}(f) = S_{n}(f)/2$.}
 
 When integrated over all positive frequencies, the PSD gives the mean square noise amplitude. Starting by taking the time average of the square of the detector noise:
 \begin{eqnarray}
@@ -95,7 +92,7 @@ Whilst the magnitude of the Fourier transform of the signal $|\tilde{h}(f)|$ pro
 The characteristic strain $h_\mathrm{c}$ is designed to include the effect of integrating an inspiralling signal. Its counterpart for describing noise is the noise amplitude $h_n$. These are defined as
 \begin{eqnarray}\label{eq:strain-hc} 
 \left[h_\mathrm{c}(f)\right]^{2} &= 4f^{2}\left| \tilde{h}(f) \right|^{2} \; ,\\
-\left[h_{n}(f)\right]^{2} &= fS_{n}(f),
+\left[h_{n}(f)\right]^{2} &= fS_{n}(f) \; ,
 \label{eq:strain-hn}
 \end{eqnarray}
 such that the SNR in (\ref{eq:traditionalSNR}) may be written
@@ -105,9 +102,7 @@ such that the SNR in (\ref{eq:traditionalSNR}) may be written
 The strain amplitudes $h_\mathrm{c}(f)$ and $h_{n}(f)$ are dimensionless. Using this convention, when plotting on a log--log scale, the area between the source and detector curves is related to the SNR via (\ref{eq:hc}). This convention allows the reader to integrate by eye to assess the detectability of a given source (see figure \ref{fig:hc}).
 
 An additional advantage of this convention is that the values on the strain axis for the detector curve $h_n(f)$ have a simple physical interpretation: they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis $h_\mathrm{c}(f)$ do not directly relate to the amplitude of the waves from the source. 
-Another disadvantage is that applying the definition \ref{eq:strain-hc} to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed. 
-
-%Another disadvantage is that the characteristic strain for a monochromatic source is infinite.
+Another disadvantage is that applying (\ref{eq:strain-hc}) to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed. %% CPLB: Didn't we used to have a section explaining this? Perhaps add ref to 3.1?
 
 \subsection{Power spectral density}\label{sec:psd}
 
@@ -127,7 +122,7 @@ The PSD, as defined by (\ref{eq:psd}), has the nice property, demonstrated in (\
 
 \subsection{Energy density}\label{sec:energy-density}
 
-A third way of describing the amplitude of a GW is through the energy carried by the waves. This has the advantage of having a clear physical significance. The energy density is most commonly used in sensitivity curves showing stochastic backgrounds of GWs (see section \ref{sec:stoch}).
+A third way of describing the amplitude of a GW is through the energy carried by the radiation. This has the advantage of having a clear physical significance. The energy density is most commonly used in sensitivity curves showing stochastic backgrounds of GWs (see section \ref{sec:stoch}).
 
 The energy in GWs is described by the Isaacson stress--energy tensor \citep[section 35.15]{MTW}
 \begin{equation}
@@ -138,13 +133,13 @@ where the angle brackets denote averaging over several wavelengths or periods, a
 \rho c^{2} &=& \frac{c^{2}}{16\pi G}\int_{-\infty}^{\infty}\mathrm{d}f\;\left(2\pi f\right)^{2}\tilde{h}(f)\tilde{h}^{*}(f) \\*
  &=& \int_{0}^{\infty}\mathrm{d}f\;\frac{\pi c^{2}}{4G}f^{2}S_{h}(f)\; , \label{eq:specNRGdensity}
 \end{eqnarray} 
-where the definition (\ref{eq:ShforSources}) has been used. The integrand in Equation (\ref{eq:specNRGdensity}) is defined as the spectral energy density, the energy per unit volume of space, per unit frequency \citep{HellingsDowns}
+where the definition (\ref{eq:ShforSources}) has been used. The integrand in (\ref{eq:specNRGdensity}) is defined as the spectral energy density, the energy per unit volume of space, per unit frequency \citep{HellingsDowns}
 \begin{equation}\label{eq:spectralenergydensity}
 S_{\mathrm{E}}(f)=\frac{\pi c^{2}}{4G} f^{2}S_{h}(f) \; ;
 \end{equation}
 a corresponding expression for the noise can be formulated by replacing $S_h(f)$ with $S_{n}(f)$.
 
-Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval normalised to the critical density of the universe $\rho_{\mathrm{c}}$,
+Cosmological studies often work in terms of the dimensionless quantity $\Omega_{\mathrm{GW}}$, the energy density per logarithmic frequency interval, normalised to the critical density of the Universe $\rho_{\mathrm{c}}$,
 \begin{equation}
 \label{eq:omega}
 \Omega_\mathrm{GW}(f) = \frac{fS_{\mathrm{E}}(f)}{\rho_{\mathrm{c}}c^{2}} \; .
@@ -162,8 +157,9 @@ The reduced Hubble parameter $h_{100}$ has nothing to do with strain. The most c
 
 This quantity has one aesthetic advantage over the others: it automatically accounts for there being less energy in low frequency waves of the same amplitude. However, unlike characteristic strain, the area between the source and detector curves is no longer simply related to the SNR.
 
-\subsection{Relating the different descriptions}
-The dimensionless energy density in GWs $\Omega_{\mathrm{GW}}$, spectral energy density $S_{\mathrm{E}}$, one-sided PSD, $S_{h}$, characteristic strain $h_\mathrm{c}$ and frequency-domain strain $\tilde{h}(f)$ are related via
+\subsection{Relating the descriptions}
+
+The dimensionless energy density in GWs $\Omega_{\mathrm{GW}}$, spectral energy density $S_{\mathrm{E}}$, one-sided PSD $S_{h}$, characteristic strain $h_\mathrm{c}$ and frequency-domain strain $\tilde{h}(f)$ are related via
 \begin{equation}\label{eq:differentdescriptions}
 H_0^2\Omega_\mathrm{GW}(f)= \frac{8 \pi G}{3 c^{2}} fS_{\mathrm{E}}(f) = \frac{2\pi^2}{3} f^3 S_h(f) = \frac{2\pi^2}{3} f^2 \left[h_\mathrm{c}(f)\right]^2 = \frac{8\pi^2}{3} f^4 \left|\tilde{h}(f)\right|^2\; ,
 \end{equation}
