@@ -65,7 +65,6 @@ The squared contribution from noise $\mathcal{N}^{2}$ is defined as the mean squ
 \begin{eqnarray} 
 \mathcal{N}^{2} &= \int_{-\infty}^{\infty}\mathrm{d}t\;\int_{-\infty}^{\infty}\mathrm{d}t'\;K(t)K(t')\left<n(t)n(t')\right> \nonumber \\
  &= \int_{-\infty}^{\infty}\mathrm{d}t\;\int_{-\infty}^{\infty}\mathrm{d}t'\;K(t)K^{*}(t')\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}f'\;\left<\tilde{n}(f)\tilde{n}^{*}(f')\right>\exp\left[2\pi\rmi(ft-f't')\right]\nonumber \\
-%&=\int_{-\infty}^{\infty}\mathrm{d}f\;\int_{-\infty}^{\infty}\mathrm{d}t\;\int_{-\infty}^{\infty}\mathrm{d}t'\;\frac{1}{2}S_{n}(f)K(t)K^{*}(t')\exp\left(2\pi\rmi f (t-t')\right)\nonumber \\
  &= \int_{-\infty}^{\infty}\mathrm{d}f \; \frac{1}{2}S_{n}(f)\tilde{K}(f)\tilde{K}^{*}(f) \; ,
  \end{eqnarray}
 using the definition of $S_{n}(f)$ from (\ref{eq:psd}). Hence the signal-to-noise ratio (SNR) $\varrho$ is given by
@@ -102,7 +101,7 @@ such that the SNR in (\ref{eq:traditionalSNR}) may be written
 The strain amplitudes $h_\mathrm{c}(f)$ and $h_{n}(f)$ are dimensionless. Using this convention, when plotting on a log--log scale, the area between the source and detector curves is related to the SNR via (\ref{eq:hc}). This convention allows the reader to integrate by eye to assess the detectability of a given source (see figure \ref{fig:hc}).
 
 An additional advantage of this convention is that the values on the strain axis for the detector curve $h_n(f)$ have a simple physical interpretation: they correspond to the root-mean-square noise in a bandwidth $f$. One downside to plotting characteristic strain is that the values on the strain axis $h_\mathrm{c}(f)$ do not directly relate to the amplitude of the waves from the source. 
-Another disadvantage is that applying (\ref{eq:strain-hc}) to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed. %% CPLB: Didn't we used to have a section explaining this? Perhaps add ref to 3.1?
+Another disadvantage is that applying (\ref{eq:strain-hc}) to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed (see section \ref{sec:insp}).
 
 \subsection{Power spectral density}\label{sec:psd}
 

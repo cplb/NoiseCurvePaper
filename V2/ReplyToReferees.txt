@@ -49,7 +49,7 @@ Other comments (in order of appearance in the text):
 
 2)	We agree with the referees comment and have amended the passage to read:
 
-"Another disadvantage is that applying the definition 17 to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed."
+"Another disadvantage is that applying the definition 17 to a monochromatic source gives a formally undefined answer. The correct identification of characteristic strain for a monochromatic source is the amplitude of the wave times the square root of the number of periods observed (see section \ref{sec:insp})."
 
 3)	We have made this correction.
 
